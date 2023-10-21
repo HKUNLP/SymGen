@@ -1,0 +1,7 @@
+task_name: spider
+
+gen_q_stop: ['\n']
+gen_a_stop: ['--', '\n\n', ';', '#']
+
+metrics:
+  test_suite_db_dir: /mnt/lustre/yejiacheng/codes/GenSKG/spider/test_database

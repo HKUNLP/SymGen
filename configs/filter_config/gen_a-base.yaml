@@ -1,0 +1,5 @@
+field: gen_a
+filter_kwargs:
+  - post_proc:
+  - dedup:
+  - argmax:

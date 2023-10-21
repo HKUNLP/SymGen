@@ -1,0 +1,10 @@
+model:
+  _target_: src.models.api_client.OpenAIClient
+  keys_file: keys.txt
+
+generation_kwargs:
+  engine: ${model_name}
+  stop: ['--', '\n\n', ';', '#']
+  temperature: 0.8
+  max_tokens: 200
+  n: 40

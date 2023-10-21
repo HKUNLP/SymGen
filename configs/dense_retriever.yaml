@@ -1,0 +1,32 @@
+hydra:
+  job:
+    chdir: false
+output_file: ???
+batch_size: 64
+model_name: 'sentence-transformers/all-mpnet-base-v2'
+task_name: ???
+faiss_index: ???
+
+num_ice: 50
+
+dataset_reader:
+  _target_: src.dataset_readers.base_dsr.BaseDatasetReader
+  task_name: ${task_name}
+  model_name: ${model_name}
+  field: search_q
+  dataset_path: null
+  dataset_split: null
+
+index_reader:
+  _target_: src.dataset_readers.index_dsr.IndexDatasetReader
+  task_name: ${task_name}
+  model_name: ${model_name}
+  field: search_q
+  dataset_path: null
+  dataset_split: null
+
+model_config:
+  _target_: src.models.biencoder.BiEncoderConfig
+  q_model_name: ${model_name}
+  ctx_model_name: ${model_name}
+  norm_embed: true

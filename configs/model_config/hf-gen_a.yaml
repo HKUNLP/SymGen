@@ -1,0 +1,13 @@
+field: gen_a
+index_field: qa
+batch_size: 48
+model:
+  _target_: transformers.AutoModelForCausalLM.from_pretrained
+  pretrained_model_name_or_path: ${model_name}
+
+generation_kwargs:
+  temperature: 0.8
+  max_new_tokens: 200
+  stop: ${task_config.gen_a_stop}
+  do_sample: true
+  num_return_sequences: 40

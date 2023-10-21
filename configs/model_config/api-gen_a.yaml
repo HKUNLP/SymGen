@@ -1,0 +1,12 @@
+field: gen_a
+index_field: qa
+model:
+  _target_: src.models.api_client.OpenAIClient
+  keys_file: keys.txt
+
+generation_kwargs:
+  engine: ${model_name}
+  stop: ${task_config.gen_a_stop}
+  temperature: 0.8
+  max_tokens: 200
+  n: 20

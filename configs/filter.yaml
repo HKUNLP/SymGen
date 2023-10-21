@@ -1,0 +1,13 @@
+hydra:
+  job:
+    chdir: false
+
+dataset_path: ???
+output_file: ???
+eval: true
+filter_entry: false  # for majority vote
+at_least_one: false  # true while doing prompting inference
+
+defaults:
+  - filter_config: gen_a-mv
+  - task_config: spider
