@@ -1,0 +1,606 @@
+{"nl": "Add \"prefix_\" to every non-blank line in \"a.txt\"", "bash": "nl -s \"prefix_\" a.txt | cut -c7-", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Add the .abc suffix to the names of all *.txt regular files in the current directory tree", "bash": "find . -type f -iname '*.txt' -print0 | xargs -0 mv {} {}.abc", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Add cron lists from \"filename\" to list of cron jobs, giving errors for any lines that cannot be parsed by crontab.", "bash": "crontab filename", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Archive \"/media/Incoming/music/\" to \"/media/10001/music/\" on host \"server\" and skip files that are newer in the destination, delete any files in the destination not in the source, and compress data during transmission", "bash": "rsync -avzru --delete-excluded /media/Incoming/music/ server:/media/10001/music/", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Archive \"/path/to/copy\" on host \"remote.host\" as user \"user\" to \"/path/to/local/storage\" updating files with different checksums, showing human readable progress and statistics, and compressing data during transmission", "bash": "rsync -chavzP --stats user@remote.host:/path/to/copy /path/to/local/storage", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Archive \"/path/to/files\" on host \"remotemachine\" authentifying as user \"user\" and compressing data during transmission, copy symlinks as symlinks.", "bash": "rsync -avlzp user@remotemachine:/path/to/files /path/to/this/folder", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Archive \"foo/bar/baz.c\" to \"remote:/tmp/\" preserving the relative path of \"foo/bar/baz.c\"", "bash": "rsync -avR foo/bar/baz.c remote:/tmp/", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Archive \"myfile\" to \"/foo/bar/\" and create directory \"/foo/bar/\" if \"/foo/\" exists", "bash": "rsync -a myfile /foo/bar/", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Archive all files beginning with .env or .bash in current directory to user's home directory on host \"app1\", preserving timestamps and skipping files that are newer on \"app1\"", "bash": "rsync -vaut ~/.env* ~/.bash* app1:", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Archive all files (not directories) in \"folder1\" to \"copy_of_folder1\" specifying to include files info.txt and data.zip", "bash": "rsync -a -f\"+ info.txt\" -f\"+ data.zip\" -f'-! */' folder1/ copy_of_folder1/", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Archive all files specified on standard input under \"/path/to/files\" to \"/path\" on host \"targethost\" as user \"user\" with escalated privileges", "bash": "rsync -av --files-from=- --rsync-path=\"sudo rsync\" /path/to/files user@targethost:/path", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Archive directory specified by variable \"i\" to \"/iscsi\" preserving relative paths.", "bash": "rsync -avR $i /iscsi;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Archive directory specified by variable \"myFolder\" to current directory.", "bash": "rsync -av $myFolder .", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Archive preserving permissions and ownership files in \"/var/www/\" on host \"user@10.1.1.2\" to local \"/var/www/\"", "bash": "sudo rsync -az user@10.1.1.2:/var/www/ /var/www/", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Assigns MAC address 00:80:48:BA:d1:30 to interface eth0.", "bash": "ifconfig eth0 hw ether 00:80:48:BA:d1:30", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Attempt to connect as root via ssh to host whose IP address or hostname is specified by environment variable IPADDRESS - this will normally fail because ssh servers normally don't accept root logins.", "bash": "scp -rp \"DAILY_TEST_FOLDER\" \"root@${IPADDRESS}:/home/root/\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "bind \"\\C-i\" to \"complete\" function", "bash": "bind '\"\\C-i\":complete'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Calculate md5 checksum of $KEY, take the 1st to 10th character, append them with the string '/tmp/command_cache.' and save the rsultant string to variable FILE", "bash": "FILE=\"/tmp/command_cache.`echo -n \"$KEY\" | md5sum | cut -c -10`\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Calculate the md5 sum of the contents of the sorted list of files \"$FILES\"", "bash": "cat $(echo $FILES | sort) | md5sum", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Calculate md5 sum of empty string", "bash": "echo -n \"\" | md5sum", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Calculate md5 sum of empty string", "bash": "echo -n | md5sum", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Calculate the md5 sum of the list of files in the current directory", "bash": "find . -maxdepth 1 -type f | md5sum", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Change all files with no user under \"/var/www\" to have owner \"root\" and group \"apache\"", "bash": "sudo find /var/www -nouser -exec chown root:apache {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "change the extension of all the \".abc\" files in the folder \"/the/path\" to \".edefg\" and do not change in the sub directories", "bash": "find /the/path -depth -name \"*.abc\" -exec rename 's/\\.abc$/.edefg/' {} +", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "change the group of all the files in the folder /u/netinst/ to staff", "bash": "find /u/netinst -print | xargs chgrp staff", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Changes group ownership of 'logdir' to 'loggroup'.", "bash": "chgrp loggroup logdir", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Changes group ownership of 'public' and 'private' to 'god'.", "bash": "chgrp god public private", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Changes group ownership of 'shared' to 'Workers'.", "bash": "chgrp Workers shared", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "change the owner of all the files in the file system which belong to the user with the uid 999", "bash": "find / -user 999 -exec chown NEWUSER {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Change the ownership of \"/etc/udev/rules.d/51-android.rules\" to \"root\"", "bash": "sudo chown root. /etc/udev/rules.d/51-android.rules", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Change the ownership of \"file.sh\" to \"root\"", "bash": "sudo chown root file.sh", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Change the ownership of all aluno1's files in the current directory and below to aluno2", "bash": "find . -user aluno1 -exec chown aluno2 {}", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "change the permissions of all the directories in the folder \"/path/to/someDirectory\" to 755", "bash": "sudo find /path/to/someDirectory -type d -print0 | xargs -0 sudo chmod 755", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "change the permission of all the php files in the folder /var/www/ to 700", "bash": "find /var/www/ -type f -iname \"*.php\" -exec chmod 700 {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "change the permissions of all regular/normal files in the current directory, print0 is used for handling files with newlines in their file name", "bash": "find . -type f -print0 | xargs -0 chmod 664", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Change permissions to 644 for all directories under and below /path/to/someDirectory/", "bash": "find /path/to/someDirectory -type d -print0 | xargs -0 sudo chmod 755", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Change permission to 755 of all files/directories under current directory tree that have 777 permission", "bash": "find -perm 777 | xargs -I@ sudo chmod 755 '@'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "change the word \"GHBAG\" to \"stream-agg\" in all the file names in current folder which have the word \"-GHBAG-\" in their name", "bash": "find . -name '*-GHBAG-*' -exec rename 's/GHBAG/stream-agg/' {} +", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Combine every two lines of standard input", "bash": "paste -d \"\" - -", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Compare *.csv files in the current directory tree with their analogs stored in /some/other/path/ prompting before running `diff'", "bash": "find . -okdir diff {} /some/other/path/{} \";\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Compare files in \"/tmp/dir1\" and \"/tmp/dir2\", treating absent files as empty and all files as text", "bash": "diff -Nar /tmp/dir1 /tmp/dir2/", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Compresses all files in a current folder (not recursively).", "bash": "bzip2 *", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Compress all files in directory \"$PATH_TO_LOGS\" that were last modified more than \"$SOME_NUMBER_OF_DAYS\" days ago", "bash": "find $PATH_TO_LOGS -maxdepth 1 -mtime +$SOME_NUMBER_OF_DAYS -exec gzip -N {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Compresses all files in the directory 'PATH_TO_FOLDER' without recursion and keeps uncompressed files from deletion.", "bash": "find PATH_TO_FOLDER -maxdepth 1 -type f -exec bzip2 -zk {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Compress regular files in the current directory tree that were last modified more than 7 days ago", "bash": "find . -type f  -mtime +7 | tee compressedP.list | xargs compress", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Compresses with compression level 9 all files under the current folder but already compressed '*.bz2' files, performing in background.", "bash": "find \"$1\" -type f | egrep -v '\\.bz2' | xargs bzip2 -9 &", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Connect to host \"${HOSTNAME}\" as user \"${USERNAME}\" and execute \"${SCRIPT}\" non-interactively", "bash": "ssh -l ${USERNAME} ${HOSTNAME} \"${SCRIPT}\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Copy \"*.cc\", \"*.h\", and \"SConstruct\" to \"rsync://localhost:40001/bledge_ce\" using blocking IO", "bash": "rsync --blocking-io *.cc *.h SConstruct rsync://localhost:40001/bledge_ce", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Copies ${FILE} to COLLECT folder with unique name formatted like 'job_XXXXXXXXX'.", "bash": "cp \"${FILE}\" \"COLLECT/$(mktemp job_XXXXXXXXX)\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Copy a file xyz.c to all the .c files present in the C directory and below", "bash": "find ./C -name \"*.c\" | xargs -n1  cp xyz.c", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Copy all *.data files under /source_path to /target_path", "bash": "find /source_path -name *.data -exec cp {} /target_path \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Copy all files (not directories) in \"/path/to/local/storage\" to \"/path/to/copy\" on host \"remote.host\" authenticating as user \"user\"", "bash": "rsync /path/to/local/storage user@remote.host:/path/to/copy", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "copy all the files with the extension \".type\" from one folder to a target directory", "bash": "find \"$sourcedir\" -type f -name \"*.type\" | xargs cp -t targetdir", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Copy directory structure from directory 'olddir' to 'newdir'", "bash": "find olddir -type d -printf \"newdir/%P\\0\" | xargs -0 mkdir -p", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Copy file in current directory of local host to host \"remote\", connecting as ssh user matching current local username, and copying the file in home directory on remote host - enable compression during transfer.", "bash": "scp -C file remote:", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Copy the owner and group from \"file.txt\" to \"$tempfile\"", "bash": "chown --reference=file.txt -- \"$tempfile\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Counts all lines in $i file.", "bash": "cat $i | wc -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Count all the lines of all php files in current directory recursively", "bash": "find -name '*.php' | xargs cat | wc -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Counts lines in each *.php file.", "bash": "find . -name '*.php' -type f | xargs wc -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Counts lines in each *.php file.", "bash": "wc -l $(find . -name \"*.php\")", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Counts lines in each *.php file.", "bash": "wc -l `find . -name \"*.php\"`", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Count the number of directories under directory '/directory/' non-recursively", "bash": "find /directory/ -maxdepth 1 -type d -print| wc -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Count the number of files in the /usr/ports directory tree whose names begin with 'pkg-plist' and which contain 'dirrmtry'", "bash": "find /usr/ports/ -name pkg-plist\\* -exec grep dirrmtry '{}' '+' | wc -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Count the number of open files for PID \"$PYTHONPID\" every 2 seconds", "bash": "watch \"ls /proc/$PYTHONPID/fd | wc -l\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Counts number of processors and saves in variable NUMCPU.", "bash": "NUMCPU=$(grep $'^processor\\t*:' /proc/cpuinfo |wc -l)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Count the number of regular files with case insensitive name pattern $srchfor under 'teste2' directory tree", "bash": "find teste2 -type f -iname \"$srchfor\"|wc -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create 1000 files each file having a number from 1 to 1000 named \"file000\" to \"file999\"", "bash": "seq 1 1000 | split -l 1 -a 3 -d - file", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Creates 5-letter random file name and saves it in 'rand_str' variable.", "bash": "rand_str=\"$(mktemp --dry-run XXXXX)\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "create a compressed archive \"compressFileName.tar.gz\" with verbose output", "bash": "tar -zcvf compressFileName.tar.gz folderToCompress", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create a compressed archive named 'my_directory.tar.gz' with files inside directory 'my_directory' without including the directory entry 'my_directory' itself", "bash": "tar -czvf my_directory.tar.gz -C my_directory .", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create a rsa key with comment specified by variable APP and passphrase specified y SSHKEYPASS.", "bash": "ssh-keygen -t rsa -C \"$APP\" -N \"$SSHKEYPASS\" -f ~/.ssh/id_rsa", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create a ssh key with no passphrase and store it in \"outfile\".", "bash": "ssh-keygen -f outfile -N ''", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create a symolic link in \"/usr/local/bin/\" to \"/Applications/Sublime\\ Text.app/Contents/SharedSupport/bin/subl\"", "bash": "ln -s /Applications/Sublime\\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create a symbolic link in the current directory to \"$file\"", "bash": "ln -s \"$file\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create a symbolic link in target directory \"~/newlinks\" to \"$source\"", "bash": "ln -s \"$source\" -t ~/newlinks", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create a symbolic link named \".profile\" to \"git-stuff/home/profile\" without dereferencing \".profile\"", "bash": "ln -sn git-stuff/home/profile .profile", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create a symbolic link named \"/usr/bin/my-editor\" to \"/usr/share/my-editor/my-editor-executable\" and attemp to hard link directories", "bash": "ln -sF /usr/share/my-editor/my-editor-executable   /usr/bin/my-editor", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create a symbolic link named \"/usr/local/bin/subl\" to \"/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl\"", "bash": "sudo ln -s \"/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl\" /usr/local/bin/subl", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create a symbolc link named \"public_html\" to \"current/app/webroot\" under the current working directory", "bash": "ln -s `pwd`/current/app/webroot public_html", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create a symbolic link named \"~/bin/subl\" to \"/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl\"", "bash": "ln -s \"/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl\" ~/bin/subl", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create a symbolic link named the basename of \"$file\" to \"$file\"", "bash": "ln -s $file `basename $file`", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "create a symbolic link with absolute path \"/cygdrive/c/Program Files\" to file \"/cygdrive/c/ProgramFiles\"", "bash": "ln -s \"/cygdrive/c/Program Files\" /cygdrive/c/ProgramFiles", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create a tar file containing all the files in ~/Library folder that contain spaces in their names", "bash": "find ~/Library -name '* *' -print0 | xargs -0 tar rf blah.tar", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create an archive named newArch from the contents of ./test directory", "bash": "find ./test -printf \"././%f\\n\"| cpio -o -F newArch", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create the directory '.npm-packages' in the user's home directory($HOME)", "bash": "mkdir \"${HOME}/.npm-packages\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "create directory /tmp/foo", "bash": "mkdir /tmp/foo", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create directory dir2", "bash": "mkdir dir2", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "create symbolic links in directory \"/usr/local/symlinks \" to all files located in directiry \"incoming\" and that have been modified earlier then 5 days and owned by user \"nr\"", "bash": "find /incoming -mtime -5 -user nr -exec ln -s '{}' /usr/local/symlinks ';'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create tar archive \"dirall.tar\" and copy all files from directory tree /tmp/a1 to it", "bash": "find /tmp/a1 -exec tar -rvf dirall.tar {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Create tar archive \"foo.tar\" and copy all files from directory tree /tmp/a1 to it", "bash": "find /tmp/a1 | xargs tar cvf foo.tar", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Creates temporary file in a TMPDIR folder with name like tmp.XXXXXXXXXX.", "bash": "mktemp", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Delete all __temp__* files/directories under current directory tree", "bash": "find . -depth -name '__temp__*' -exec rm -rf '{}' \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Delete all __temp__* files/directories under current directory tree", "bash": "find . -name __temp__* -exec rm -rf '{}' \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "delete all the broken symbolic links from the folder /usr/ports/packages", "bash": "find -L /usr/ports/packages -type l -exec rm -- {} +", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Delete all directories in the TBD directory that were modified more than 1 day ago", "bash": "find /TBD -mtime +1 -type d | xargs rm -f -r", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Delete all files/directories with node number $inum under current directory tree", "bash": "find . -inum $inum -exec rm {} \\", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Delete all files in the TBD directory that were modified more than 1 day ago", "bash": "find /TBD/* -mtime +1 | xargs rm -rf", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Delete all files (files, directories, links, pipes...) named 'core' under current directory", "bash": "find . -name \"core\" -exec rm -f {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Delete all files with '.old' extension under current directory tree", "bash": "find . -name \u201c*.old\u201d -exec rm {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Delete all files with '.old' extension under current directory tree", "bash": "find . -name \u201c*.old\u201d -print | xargs rm", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "delete all the normal/regular files in the current folder", "bash": "find . -type f -print -delete", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Delete all regular files under current directory", "bash": "find . -type f -print0 | xargs -0 /bin/rm", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "delete all text files from current folder", "bash": "find . -type f ! -iname \"*.txt\" -delete", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Delete files under $LOCATION that match $REQUIRED_FILES in their names and were modified more than 1 day ago", "bash": "find $LOCATION -name $REQUIRED_FILES -type f -mtime +1 -delete", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Delete in the background all files in /var/tmp/stuff1 and below that have not been modified in over 90 days", "bash": "find /var/tmp/stuff1 -mtime +90 -delete &", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display the three largest files by size in current folder", "bash": "find . -type f -exec ls -s {} + | sort -n -r | head -3", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display the three smallest files by size in a folder.", "bash": "find /etc/ -type f -exec ls -s {} + | sort -n | head -3", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Display a binary file as a sequence of hex codes", "bash": "od -t x1 file|cut -c8-", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "dispaly a long listig of all the files in the current folder which are bigger than 100KB", "bash": "find . -size +100000 -ls", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display a long listing of all the log files in the current folder which are bigger than 1MB", "bash": "find . -size +1000k -name *.log -print0 | xargs -0 ls \u2013lSh", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the .sh scripts in the folder /usr", "bash": "find /usr -name '*.sh'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the .sh scripts in the folder /usr", "bash": "find /usr -name \\*.sh", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the directories in the current folder which are atleast one level deep", "bash": "find . -mindepth 1 -type d -print0", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the directories in the current folder which start with processor followed by digit and ends with .1 or .2", "bash": "find . -type d -regextype posix-egrep -regex '\\./processor[0-9]*/10\\.(1|2)'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the directories in the current folder which start with processor followed by digit and ends with .1 or .2", "bash": "find . -type d -regextype posix-egrep -regex '\\./processor[[:digit:]]*/10\\.(1|2)'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all directories in vim folder do not search in sub directories", "bash": "find .vim/ -maxdepth 1 -type d", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the files along with their group name in the folder /home which do not belong to the group test", "bash": "find /home ! -group test -printf \"%p:%g\\n\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all files  expect directories in the current folder", "bash": "find . ! \u2014 type d -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Display all files in a folder", "bash": "find /usr/X11/man/man5 -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Display all files in a folder", "bash": "find man5 -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all files in a folder", "bash": "find \"/proc/$pid/fd\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the files in the current folder excluding the file states_to_csv.pl and those that are present in the directories whose name starts with \".git\"", "bash": "find . \\! -path \"./.git*\" -a \\! -name states_to_csv.pl", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the files in the current folder excluding those that are present in the sub directory aa and display those files that start with the word \"file\"", "bash": "find . \\( -type d -name aa -prune \\) -o \\( -type f -name 'file*' -print \\)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the files in the current folder which have been modified in one hour ago", "bash": "find .  -newermt \"1 hour ago\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the files in the current folder which contains form feed (^L) and does not contain NULL", "bash": "find . | xargs grep -PL \"\\x00\" | xargs grep -Pl \"\\x0c\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all files in the entire file system excluding the directories /proc,/sys,/dev and those files which are writable and which are not symbolic links and which are not sockets and which do not have the sticky bit set", "bash": "find / -noleaf -wholename '/proc' -prune -o -wholename '/sys' -prune -o -wholename '/dev' -prune -o -perm -2 ! -type l  ! -type s ! \\( -type d -perm -1000 \\) -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all files in the entire file system excluding those that are in the transfer directory", "bash": "find / -name /transfer -prune -o -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the files in the folder /mp3-collection which are bigger than 10MB or which start with the name \"Metallica\"", "bash": "find /mp3-collection -name 'Metallica*' -or -size +10000k", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all files in the folder bar only in the path /foo/bar/myfile (no output is generated)", "bash": "find bar -path /foo/bar/myfile -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all file in the home folder except \".c\" files", "bash": "find $HOME -not -iname \"*.c\" -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all file in the home folder except \".c\" files", "bash": "find $HOME \\! -iname \"*.c\" print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the hidden directories in the directory \"/dir/to/search/\"", "bash": "find /dir/to/search -path '*/.*' -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the html files in the current folder excluding search in the paths ./foo, ./bar.", "bash": "find . -path \"./foo\" -prune -o -path \"./bar\" -prune -o -type f -name \"*.html\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the jars in the current folder", "bash": "find . -iname '*.jar'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all mp3 files in the file system which have not been accessed in the last 24 hours", "bash": "find / -name \u201c*.mp3\u201d -atime +01 -type f", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the php files in the current folder which do not have the permission 644", "bash": "find . -type f -name \"*.php\" ! -perm 644", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all php,xml and phtml files in current folder", "bash": "find . -name '*.php' -o -name '*.xml' -o -name '*.phtml'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the regular/normal files in the /root folder which are bigger than 500MB", "bash": "find /root -type f -size +500M -printf \"The %p file is greater than 500MB\\n\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the regular files in current folder excluding all the directories and all the sub directories having \"normal\" in their name", "bash": "find . \\( \\( -path \"\\.?.*\" -type d \\) -o -path \"*normal*\" \\) -prune -o \\( -type f \\) -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the regular files in the current folder which have the permission 777", "bash": "find . -type f -perm 777", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all regular files in current folder which have spaces in their name", "bash": "find -type f -name \"* *\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all regular files in the folder image-folder", "bash": "find image-folder/ -type f", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all regular/normal files in temp folder and display the filename along with file size", "bash": "find tmp -type f -printf \"f %s %p\\n\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all shell scripts in current folder", "bash": "find . -name \"*.sh\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all the text files and hidden files in the home folder", "bash": "find ~ -name \"*.txt\" \u2014 print -o -name \".*\" \u2014 print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display all text files in the folder /tmp/1", "bash": "find \"/tmp/1\" -iname \"*.txt\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display the count of all the normal/ regular files in the current directory", "bash": "find . -type f |wc -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Display differences between file1 and file2 side-by-side.", "bash": "diff -y file1 file2", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Display each line in file.txt backwards", "bash": "rev file.txt", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display files ending with \".ext\" in current folder excluding those that are present in the list list.txt", "bash": "find -type f -name '*.ext' | grep -vFf list.txt", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Displays information about all network interfaces in system, including inactive ones.", "bash": "ifconfig -a", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "(GNU specific) Display information about number of processes in various states.", "bash": "top -bn1 | grep zombie", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "display long listing of all the empty files in the current folder", "bash": "find . -empty -exec ls -l {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Display machine architecture, ie. x86_64", "bash": "uname -m", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Display only mimetype of myfile.txt, without the filename.", "bash": "file -bi myfile.txt", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Display standard input as a table with \"${tab}\" separators", "bash": "column -s\"${tab}\" -t", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "download content from \"http://example.com/textfile.txt\" and output to \"textfile.txt\"", "bash": "curl http://example.com/textfile.txt -o textfile.txt", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "download contents of a website \"http://example.com/\"", "bash": "curl http://example.com/", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "download file  \"https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh\" and execute it", "bash": "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Enables shell option 'direxpand'.", "bash": "shopt -s direxpand", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Enables shell option 'histappend'.", "bash": "shopt -s histappend", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "ERROR - need to add -a or -r for recursive copy", "bash": "rsync --exclude='B/' --exclude='C/' . anotherhost:/path/to/target/directory", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Execute `somecommand' on each file from the current directory tree with the environment variable f set to the filename", "bash": "find . -exec env f={} somecommand \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Execute all arguments to a shell script and write the output to console and \"$FILE\"", "bash": "$@ | tee $FILE", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Execute command \"$cmd_str\" on host \"$SERVER\" as user \"$USER\"", "bash": "ssh \"$USER@$SERVER\" \"$cmd_str\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Expand bash array \"myargs\" as arguments to \"mv\"", "bash": "mv \"${myargs[@]}\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Extract all gzip-compressed files from tar archives beginning with 'myfiles_split.tgz_*'", "bash": "cat myfiles_split.tgz_* | tar xz", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Extract any line in sorted file \"A\" that does not appear in \"B\", \"C\", or \"D\"", "bash": "cat B C D | sort | comm -2 -3 A -", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Filter out current date in current time zone from the GMT+30 and GMT+20 representations of current date and show the last one", "bash": "echo -e \"$(TZ=GMT+30 date +%Y-%m-%d)\\n$(TZ=GMT+20 date +%Y-%m-%d)\" | grep -v $(date +%Y-%m-%d) | tail -1", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Finds $a pattern in a $b string, and returns exit code 0 if found, suppressing any visible output.", "bash": "echo $b|grep -q $a", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find *.c and *.h files under the current directory tree skipping hidden directories and files", "bash": "find . \\( -path '*/.*' -prune -o ! -name '.*' \\) -a -name '*.[ch]'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find *.jpg screenshots that are bigger than 500k", "bash": "find ~/Images/Screenshots -size +500k -iname '*.jpg'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find .cpp files that differs in subdirectories PATH1 and PATH2.", "bash": "diff -rqx \"*.a\" -x \"*.o\" -x \"*.d\" ./PATH1 ./PATH2 | grep \"\\.cpp \" | grep \"^Files\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find a directory named 'project.images' case insensitively in the entire filesystem and show it in long listing format", "bash": "find  / -type d -iname \"project.images\" -ls", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the \".jpg\" files in current folder and display their count", "bash": "find ./ -name '*.jpg' -type f | wc -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all *.cgi (case insensitive) files/directories under current directory and change their permission to 755", "bash": "find . -iname '*.cgi' | xargs chmod 755", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all *.cgi files/directories under current directory and change their permission to 755", "bash": "find . -name '*.cgi' -print0 | xargs -0 chmod 755", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all *.epub, *.mobi, *.chm, *.rtf, *.lit and *.djvu files/directories under current directory", "bash": "find ./ -name '*.epub' -o -name '*.mobi' -o -name '*.chm' -o -name '*.rtf' -o -name '*.lit' -o -name '*.djvu'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all *.java files/directories under current directory", "bash": "find . -name  \"*.java\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all *.java files/directories under current directory", "bash": "find . -name  \\*.java", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all *.java files in the current directory tree", "bash": "find . -name  \\*.java", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all *.mp4 files under /foo/bar and move them to /some/path", "bash": "find /foo/bar -name '*.mp4' -print0 | xargs -I{} -0 mv -t /some/path {}", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all *.mp4 files under /foo/bar and move them to /some/path", "bash": "find /foot/bar/ -name '*.mp4' -exec mv -t /some/path {} +", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all *.ps files under $STARTDIR", "bash": "find $STARTDIR -name '*.ps' -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all *.rpm files/directories under current directory", "bash": "find . -name '*.rpm'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all *.txt files under the current directory whose names are not \"File.txt\"", "bash": "find . -maxdepth 1 -type f -name '*.txt' -not -name File.txt", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all *.txt files under the current directory whose names are not \"File.txt\"", "bash": "find . -maxdepth 1 -type f -regex '.*\\.txt' -not -name File.txt", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all *shp* directories under current directory and move their contents to ../shp_all/", "bash": "mv $(find . -name \"*shp*\" -printf \"%h\\n\" | uniq)/* ../shp_all/", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all .c and .C files in the current directory tree that contain \"main(\" and copy them to directory test1/", "bash": "find -iname \u201c*.c\u201d -exec grep -l \u2018main(\u2018 {} \\; -a -exec cp {} test1/ \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all .gz archives in the /path/to/dir directory tree", "bash": "find /path/to/dir -name \"*.gz\" -type f", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all .js files in the current directory tree that do not contain a whitespace", "bash": "find . -type f -name '*.js' \\( -exec grep -q '[[:space:]]' {} \\; -o -print \\)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all .mp3 files with more then 10MB and delete them from root directory .", "bash": "find /  -type f -name *.mp3 -size +10M -exec rm  {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all 777 permission files/directories under current directory tree", "bash": "find -perm 777", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all broken symlinks in maximum 1 level down the $path directory", "bash": "find -L $path -maxdepth 1 -type l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all directories in the current directory", "bash": "find . -type d -name \"*\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all directories in maximum 2 levels down the /tmp/test directory", "bash": "find /tmp/test/ -maxdepth 2 -mindepth 1 -type d", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all directories starting from / that have permissions 777", "bash": "find / -type d -perm 0777", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all directories that start with stat", "bash": "find . -type d \u2013iname stat*", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all directories under $x directory and set read-write-execute permission for owner and group and no permission for other for those directories", "bash": "find ${x} -type d -exec chmod ug=rwx,o= '{}' \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all directories under 'project' directory without going into subdirectories that do not match the POSIX egrep regex $PATTERN in their paths and are not empty", "bash": "find project -maxdepth 1 -mindepth 1 -regextype posix-egrep ! -iregex  $PATTERN  ! -empty -type d", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all directories under /directory-path and change their permission to 2755", "bash": "find /directory-path  -type d -exec sudo chmod 2775 {} +", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all directories under minimum 1 level down the current directory excluding  directories (along with their contents) that start with a . (dot) in their names", "bash": "find . -mindepth 1 -name '.*' -prune -o \\( -type d -print \\)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the empty directories in current folder and delete them", "bash": "find ./ -empty -type d -delete", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all empty directories in the current one and delete them", "bash": "find . -type d -maxdepth 1 -empty -delete", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all empty directories in the current one and delete them", "bash": "find . -type d -maxdepth 1 -empty -print0 | xargs -0 /bin/rmdir", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the empty in the current folder do not search in sub directories", "bash": "find . -maxdepth 1 -type d -empty", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all executable files under the current directory and below", "bash": "find . -perm /a=x", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories named 'photoA.jpg' under current directory tree", "bash": "find . -name photoA.jpg", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories named modules under current directory and list them twice", "bash": "find . -name modules \\! -exec sh -c 'find -name modules' \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories owned by user 'michel' under current directory", "bash": "find -user michel", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories that are not newer than Jul 01 by modification time", "bash": "find /file/path ! -newermt \"Jul 01\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories that are owned by user 'eric' under current directory tree", "bash": "find -user eric -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories under $1 which have at least execute permission for their owner and set execute permission for group for these files/directories", "bash": "find \"$1\" -perm -u+x -print0 | xargs chmod g+x", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories under $1 which have at least execute permission for their owner and set execute permission for group for these files/directories", "bash": "find $1 -perm -u+x -exec chmod g+x {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories under $1 which have at least read permission for their owner and set read permission for group for these files/directories", "bash": "find \"$1\" -perm -u+r -print0 | xargs chmod g+r", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories under $1 which have at least read permission for their owner and set read permission for group for these files/directories", "bash": "find $1 -perm -u+r -exec chmod g+r {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories under '/usr' directory tree that have been modified exactly 5 minutes ago", "bash": "find /usr -mmin 5", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories under '/usr/share/doc' directory tree whose name start with 'README'", "bash": "find /usr/share/doc -name README\\*", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories under /non-existent/directory directory with ~/bin/find", "bash": "~/bin/find /non-existent/directory -name '*.plist' -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories under /var/www/some/subset and change their owner and group to www-data", "bash": "sudo find /var/www/some/subset -print0 | xargs -0 chown www-data:www-data", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories under current directory and put the output into full_backup_dir variable", "bash": "full_backup_dir=\"`find . -depth -print0`\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories under current directory that are 10MB in size", "bash": "find . -size 10M", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories under current directory that were modified exactly 30 minutes ago", "bash": "find . -mmin 30", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories under current directory tree that belong to the group 'compta'", "bash": "find -group compta", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories under minimum 1 level down the $FOLDER directory and sort them", "bash": "find \"$FOLDER\" -mindepth 1 | sort", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories with '.pdf' extension excluding 'pdfs' directory and all of its contents", "bash": "find . -name \"*.pdf\" -print | grep -v \"^\\./pdfs/\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files/directories with user id 120 under current directory tree", "bash": "find . -uid 120 -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all files ending with \"js.compiled\" in current folder", "bash": "find . -type f -name \"*.js.compiled\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all files ending with \"js.compiled\" in current folder (print0 is used to handle files with newlines in their names)", "bash": "find ./js/ -name \"*.js.compiled\" -print0", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all files ending with \"js.compiled\" in current folder and rename them.", "bash": "find . -name \"*.js.compiled\" -exec rename -v 's/\\.compiled$//' {} +", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files from root folder which have nogroup or noname and dispaly their details.", "bash": "find / \\( -nogroup -o -noname \\) -ls", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files in /home/kos and below whose names end in \".tmp\"", "bash": "find /home/kos -name *.tmp -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files in /tmp whose names begin with the current user's name followed by \".\"", "bash": "find /tmp -maxdepth 1 -name \"$USER.*\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files in the /usr folder that have been modified after the file /usr/FirstFile.", "bash": "find /usr -newer /usr/FirstFile -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files in and below all subdirectories of the current directory", "bash": "find . -mindepth 2", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files in and below the home directory that have been modified in the last 90 minutes", "bash": "find ~ -mmin -90", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files in the current directory and search for the word \"pw0\" in them.", "bash": "find . -exec grep -i \"pw0\" {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files in the current directory recursively that were last modified more than 5 days ago", "bash": "find ./* -mtime +5", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files in the current directory recursively with \"linkin park\" in their names and copy them to /Users/tommye/Desktop/LP", "bash": "find . -type f -iname \"*linkin park*\" -exec cp -r {} /Users/tommye/Desktop/LP \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all files in the current directory that are less than 1 byte size", "bash": "find . -size -1c -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files in current directory that were modified less than 1 day ago excluding hidden files  and archive them and put the output into the variable file_changed", "bash": "file_changed=$(find . -depth \\( -wholename \\./\\.\\* \\) -prune -o -mtime -1 -print | cpio -oav)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files in the current directory that have the word \"lib\" in them", "bash": "find . -wholename '/lib*'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files in the current directory whose size is equal to exactly 126MB.", "bash": "find . -size 126M", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files in current folder ending with \"ini\" and search for a word in all these files", "bash": "find . -name *.ini -exec grep -w PROJECT_A {} \\; -print | grep ini", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files in the current folder that are modified after the modification date of a file", "bash": "find . -newer document -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all files in current folder which are more than 300MB", "bash": "find . -size +300M", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files in the current folder which are readable", "bash": "find . -readable", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all files in the current folder which have not been changed in the last 48 hours", "bash": "find ./ -daystart -ctime +2", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all files in the file system which are modified after the file /tmp/checkpoint", "bash": "find / -newer /tmp/checkpoint", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files in the file system which hae set uid enabled and save them to /root/suid.txt and those which have size greater than 100MB save them to /root/big.txt", "bash": "find /    \\( -perm -4000 -fprintf /root/suid.txt '%#m %u %p\\n' \\) , ( -size +100M -fprintf /root/big.txt '%-10s %p\\n' \\)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files in the folder /home which are exactly of size 10MB", "bash": "find /home -size 10M", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files in maximum 2 levels down the current directory", "bash": "find . -maxdepth 2  -type f", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Finds all files like \"mylog*.log\" newer than $2 and archives them with bzip2.", "bash": "find . -type f -ctime -$2 -name \"mylog*.log\" | xargs bzip2", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files name passwd in the root directory and all its sub-directories.", "bash": "find / -name passwd", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files starting with \"config\" in the folder Symfony", "bash": "find Symfony -name '*config*';", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files starting with \"config\" in the folder Symfony ( case insensitive search)", "bash": "find Symfony -iname '*config*';", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files that are modified in the last 1 day", "bash": "find  -mtime -1", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files that are modified in the last 1 day", "bash": "find -mtime +0 -mtime -1", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the files that have been changed today", "bash": "find . -ctime 0 -type f", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all files that have been used more than two days since their status was last changed", "bash": "find -used +2", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files that belongs to group Developer under /home directory", "bash": "find /home -group developer", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files that contain the case insensitive regex 'stringtofind' in maximum 1 level down the / directory without descending into other partitions", "bash": "find / -maxdepth 1 -xdev -type f -exec grep -Zli \"stringtofind\" {} +", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files that contain the case insensitive regex 'stringtofind' in maximum 1 level down the / directory without descending into other partitions", "bash": "find / -maxdepth 1 -xdev -type f -print -exec grep -i \"stringtofind\" -q {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files under $source_dir that match the regex .*\\.\\(avi\\|wmv\\|flv\\|mp4\\) in their paths and print them with null character as the delimiter", "bash": "find \"$source_dir\" -type f -regex \".*\\.\\(avi\\|wmv\\|flv\\|mp4\\)\" -print0", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files under ${searchpath} that match the regex '\"${string1}\".*\"${string2}\".*\"${string3}\"' (${string1} ... won't be expanded) in their contents", "bash": "find `echo \"${searchpath}\"` -type f -print0 | xargs -0 grep -l -E '\"${string1}\".*\"${string2}\".*\"${string3}\"'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files under and below the current working directory with the word California in the file (case insensitive), and count the number of lines in the output", "bash": "find . -type f -exec grep -i California {} \\; -print | wc -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files under and below the current working directory with the word California in the file, and count the number of lines in the output", "bash": "find . -type f -exec grep -n California {} \\; -print | wc -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files under and below the current working directory with the word California in the file, and count the number of lines in the output", "bash": "find . -type f -exec grep California {} \\; -print | wc -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files under current directory", "bash": "find \"`pwd`\" -type f", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files under current directory and set read-write permission for owner and group and no permission for other for those directories", "bash": "find . -type f -exec chmod ug=rw,o= {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files under the current directory whose filenames are not \"file.txt\", ignoring the case", "bash": "find . -maxdepth 1 -not -iname file.txt", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files under media/ directory and change their permission to 600", "bash": "find media/ -type f -exec chmod 600 {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files whose permission are 777", "bash": "find / -type f -perm 777", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files with '.conf' extension under '/etc' directory tree that have been modified in the last 30 minutes", "bash": "find /etc -name \"*.conf\" -mmin -30", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all files with '.txt' extension under '/home/my_dir' dirctory tree and display the number of lines in these files", "bash": "find /home/my_dir -name '*.txt' | xargs grep -c ^.*", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all fonts (in '/usr/local/fonts') that belong to the user 'warwick'", "bash": "find /usr/local/fonts -user warwick", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the jpg files in current folder and sort them", "bash": "find . -type f|grep -i \"\\.jpg$\" |sort", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all of the files that are readable", "bash": "find / -readable", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the ogg files in the current directory which have the word \"monfichier\" in their name", "bash": "find -name *monfichier*.ogg", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the perl files in /var/www", "bash": "find /var/www/ -type f -name \"*.pl\" -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the perl files in /var/www ( case insensitive search )", "bash": "find /var/www/ -type f -iname \"*.pl\" -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Finds all php processes running in system.", "bash": "pstree | grep php", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the png files in the current folder which begin with the word image", "bash": "find . -name \"image*.png\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all README's in /usr/share", "bash": "find /usr/share -name README", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all regular files in current directory and /home/www directory", "bash": "find * /home/www -type f", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all regular files in the current directory tree and count them", "bash": "find -type f -printf '.' | wc -c", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all regular files in the current directory tree and count them", "bash": "find -type f | wc -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all regular files named postgis-2.0.0 under current directory", "bash": "find . -type f -name \"postgis-2.0.0\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all regular files that reside in the current directory tree and were last modified more than 5 days ago", "bash": "find . -type f -mtime +5", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all regular files under ${S} directory", "bash": "find \"${S}\" -type f", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all regular files whose names contain a case insensitive pattern composed of space separated positional arguments and display a long listing of them", "bash": "find . -type f -iname '*'\"$*\"'*' -ls", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all SUID set files under current directory and show a few lines of output from the beginning", "bash": "find . -perm /u=s | head", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all text files in the current folder", "bash": "find -name \"*.txt\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the text files in the current folder", "bash": "find . -type f -name '*.txt' -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the text files in the current folder", "bash": "find . \u2014 name \"*.txt\" \u2014 print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all text files in current folder and delete all the files that have the word foo in their name", "bash": "find . -name \".txt\" | grep \"foo\" | xargs rm", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find all the text files that have modified in the last 2 days and not modified today", "bash": "find . -name \"*.txt\" -type f -daystart -mtime +0 -mtime -2", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find all TXT files that belong to user root", "bash": "find / -user root -iname \"*.txt\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find and delete all .zip files in the current directory tree", "bash": "find . -depth -name '*.zip' -exec rm {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find and remove the .rhosts file in the /home directory tree", "bash": "find /home -name .rhosts -print0 | xargs -0 rm", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "this find command Substitute space with underscore in the file name replaces space in all the *.mp3 files with _", "bash": "find . -type f -iname '*.mp3' -exec rename '/ /_/'  {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find directories in the folder /usr/spool/uucp", "bash": "find /usr/spool/uucp -type d -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find empty regular files in /dir and its subdirectories", "bash": "find /dir -type f -size 0 -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find every JavaScript file in the wordpress directory", "bash": "find wordpress -maxdepth 1 -name '*js'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find the file \"filename.txt\" in the usr folder", "bash": "find /usr -name filename.txt -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find files/directories named 'filename' in the entire filesystem", "bash": "find / -name filename -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find files/directories named 'photo.jpg' in the entire filesystem", "bash": "find / -name photo.jpg", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find files/directories named 'somename.txt' under current directory tree", "bash": "find ./ -name \"somename.txt\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find files in the current directory tree whose names begin with \"file\" and whose size is 0, and remove them", "bash": "find -name 'file*' -size 0 -delete", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find files in the current directory tree whose names begin with \"file\" and whose size is 0, and remove them", "bash": "find . -name 'file*' -size 0 -print0 | xargs -0 rm", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find files in the current directory tree whose permissions are 775", "bash": "find .  -perm 775", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find the file whose inode number is 1316256", "bash": "find . -inum 1316256", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find the file with the name \"file\" in the entire file system", "bash": "find / -name file", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find the first file/directory in ... directory and quit", "bash": "find ... -print -quit", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Finds the folder where temporary files would be written to, and save path to it in a 'TMPDIR' variable.", "bash": "TMPDIR=`dirname $(mktemp -u -t tmp.XXXXXXXXXX)`", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find out if there are any files on the system owned by user `account'", "bash": "find / -path /proc -prune -o -user account -ls", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find PHP files with abstract classes", "bash": "find . -type f -name \"*.php\" -exec grep --with-filename -c \"^abstract class \" {} \\; | grep \":[^0]\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Finds recursively all files in '/path/' excluding folders dir1, dir2 and all like *.dst, that contain 'pattern', and prints matched strings with string number and file name.", "bash": "grep --exclude-dir={dir1,dir2,*.dst} -rnw '/path/to/somewhere/' -e \"pattern\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find recursively all files matching pattern 'file??' in the xargstest/ directory and print a sorted list of them", "bash": "find xargstest/ -name 'file??' | sort", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find regular files in the current directory that are writable by at least somebody", "bash": "find -maxdepth 1 -type f -perm /222", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "find regular files in the current directory, without descending into sub-directories and display as a null separated list.", "bash": "find -maxdepth 1 -type f -printf '%f\\000'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Finds strings like \"texthere\" recursively in all files of a current folder regarding all symlinks.", "bash": "grep -R \"texthere\" *", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Finds strings with dot-separated sequence of numbers, and prints part of that sequence before the first dot.", "bash": "echo \"$f\" | grep -Eo '[0-9]+[.]+[0-9]+[.]?[0-9]?' | cut -d. -f1", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Finds strings with dot-separated sequence of numbers, and prints part of that sequence before the second and third dot.", "bash": "echo \"$f\" | grep -Eo '[0-9]+[.]+[0-9]+[.]?[0-9]?' | cut -d. -f3", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Finds strings with dot-separated sequence of numbers, and prints part of that sequence between the first and second dot.", "bash": "echo \"$f\" | grep -Eo '[0-9]+[.]+[0-9]+[.]?[0-9]?' | cut -d. -f2", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Find symlinks in the current directory tree", "bash": "find . -type l | xargs ls -ld", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Force create a symbolc link named \"softlink_name\" to \"source_file_or_directory_name\" without dereferencing \"softlink_name\"", "bash": "ln -sfn source_file_or_directory_name softlink_name", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Forcefully delete all files in the current directory", "bash": "find . -name '*' | xargs rm", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Format the contents of \"[file]\" in a neat table", "bash": "cat file | column -t", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Format the contents of \"[file]\" in a neat table", "bash": "column -t [file]", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Format time string @1267619929 according to default time format", "bash": "date -d @1267619929", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Forward port 16186 on hello.com to 8888 on localhost using private key \"privatekeystuffdis88s8dsf8h8hsd8fh8d\" for login", "bash": "ssh -N -i <(echo \"privatekeystuffdis88s8dsf8h8hsd8fh8d\") -R 16186:localhost:8888 hello.com", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Get domain \"$domain\" IP address", "bash": "dig +short \"$domain\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Get domain name of $ip and save it to the variable 'reverse'", "bash": "reverse=$(dig -x $ip +short)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Gets MAC address of p2p0 network interface.", "bash": "ifconfig p2p0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Get second line from text contained in variable $data.", "bash": "echo \"$data\" | cut -f2 -d$'\\n'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "get year-month-day hour:minute:second from date", "bash": "date +%Y-%m-%d:%H:%M:%S", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Go to directory /cygdrive/c/Program Files (x86) using backslashes to escape special characters", "bash": "cd /cygdrive/c/Program\\ Files\\ \\(x86\\)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Go to directory /cygdrive/c/Program Files (x86) using quotes to escape special characters", "bash": "cd \"/cygdrive/c/Program Files (x86)\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Interactively create a symbolic link in the current directory for \"$SCRIPT_DIR/$FILE\"", "bash": "ln --symbolic --interactive $SCRIPT_DIR/$FILE", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Isolate first comma-delimited field of each line in \"file\", discard consecutive duplicates, and search \"file\" for first matching occurrence of that field.", "bash": "cut -d, -f1 file | uniq | xargs -I{} grep -m 1 \"{}\" file", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Join columns in \"file1\" and \"file2\" if their first field matches and format the output as a table", "bash": "join file1 file2 | column -t", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Join comma-separated data in file1 and file2, including extra non-matching information in both files.", "bash": "join -t, -a1 -a2 <(sort file1) <(sort file2)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List .log files from the current directory tree", "bash": "find . -name \"*.log\" -exec echo {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List all .jpg files in the home directory tree", "bash": "find . -name \"*.jpg\" -exec ls {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List all .jpg files in the home directory tree", "bash": "find . -name \"*.jpg\" -print0 | xargs -0 ls", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List all .jpg files in the home directory tree in a fast way", "bash": "find . -name \"*.jpg\" -exec ls {} +", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List all .svn files/directories under current directory", "bash": "find . -name .svn -exec echo {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List all .svn files/directories under current directory", "bash": "find . -name .svn -exec ls {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List all files and directories in long list format with a time style of \"long-iso\" and sort from oldest modifed to newest modified", "bash": "ls -l --time-style=long-iso | sort -k6", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List all files/directories under current directory", "bash": "find . -ls", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List all files/directories under current directory with 'FooBar' in their names ensuring white space safety", "bash": "find . -name 'FooBar' -print0 | xargs -0", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List all files in the current directory tree larger than 1000 kb", "bash": "find . -size +1000k", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List all files under current directory with their sizes and paths", "bash": "find . -type f -printf '%s %p\\n'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List all IPV4 addresses found in all files under /etc directory", "bash": "find /etc -type f -exec cat '{}' \\; | tr -c '.[:digit:]' '\\n'  | grep '^[^.][^.]*\\.[^.][^.]*\\.[^.][^.]*\\.[^.][^.]*$'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List all regular files from the current directory tree that were modified less than 60 minutes ago", "bash": "find . -type f -mmin -60 -print0 | xargs -r0 ls -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List all regular files from the current directory tree that were modified less than 60 minutes ago", "bash": "find . -type f -mmin -60 | xargs -r ls -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List all SGID and SUID files in entire file system", "bash": "find / -type f \\( -perm -4000 -o -perm -2000 \\) -ls", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List files and directories recursively", "bash": "find . -print | xargs ls -gilds", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List files in \"dir1\" that are not in \"dir2\"", "bash": "comm -23 <(ls dir1 |sort) <(ls dir2|sort)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "List the full path of each directory in the current working directory", "bash": "tree -dfi -L 1 \"$(pwd)\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "list regular files ending in .mbox", "bash": "find . -type f -wholename \\*.mbox", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Locate all *.mov files in the current directory tree", "bash": "find . -name '*.mov'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Locate all files in the current directory and below that have \"testfile\" in their names", "bash": "find -name \"*testfile*\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "long list the detials of all the shell scripts in current directory", "bash": "find . -name \"*.sh\" -exec ls -ld {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "looks for all files larger than 10 megabytes (10485760 bytes) within /home", "bash": "find /home -type f -size +10485760c -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Make directory \"/tmp/foo\"", "bash": "mkdir /tmp/foo", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Make directories to \"directory{1..3}/subdirectory{1..3}/subsubdirectory{1..2}\" as needed", "bash": "mkdir -p directory{1..3}/subdirectory{1..3}/subsubdirectory{1..2}", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Merge lines from \"file_1\" and \"file_2\" and format the output as a table with tab separators", "bash": "paste file_1 file_2 | column -s $'\\t' -t", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Modify interval to 0.1 seconds for the watch command", "bash": "watch -n 0.1", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Mount \"nifs\" filesystem \"/dev/mapper/myldm\" on \"/mnt\" as read only", "bash": "mount -t ntfs -o ro /dev/mapper/myldm /mnt", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Mount partition with label \"WHITE\" on \"/mnt/WHITE\"", "bash": "mount -L WHITE /mnt/WHITE", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Mount partition with label \"WHITE\" on \"/mnt/WHITE\" with read and write permission and have it accessible by user and group \"test\"", "bash": "mount -L WHITE /mnt/WHITE -o rw,uid=test,gid=test", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Move all *.pdf.marker files and their corresponding *.pdf files under ${INPUT} to ${OUTPUT}", "bash": "find ${INPUT}/ -name \"*.pdf\" -exec mv '{}' '{}'.marker ${OUTPUT} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Move all files excluding hidden files in \"/path/subfolder/\" to \"/path/\"", "bash": "mv /path/subfolder/* /path/", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Move each of the directories in /path/to/folders/* to another directory whose name is constituted by appending .mbox to each directory name and create a directory named Messages in this directory then move all *.emlx files into this directory", "bash": "find /path/to/folders/* -type d  -exec mv {} {}.mbox \\; -exec mkdir {}.mbox/Messages \\; -exec sh -c \"mv {}.mbox/*.emlx {}.mbox/Messages\" \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Move files from $sourcePath to $destPath that have not been modified in the last 10 days", "bash": "find $sourcePath -type f -mtime +10 -name \"*.log\" -exec mv {} $destPath \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Numerically sort file \"file.dat\" by the second word of each line and output from greatest value to least value", "bash": "sort -nk 2,2 file.dat | tac", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Numerically sort file \"file.dat\" by the second word of each line and output from greatest value to least value", "bash": "sort -nrk 2,2 file.dat", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Open gcc info manual and select \"option index\" menu entry.", "bash": "info gcc \"option index\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Opens gcc info manual and selects \"option index\" menu entry.", "bash": "info gcc \"option index\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Perform case-insensitive search for file `TeSt123.txt' on the system", "bash": "find / -iname TeSt123.txt", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print \"deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main\" and append to file \"/etc/apt/sources.list\"", "bash": "echo \"deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main\" | tee -a /etc/apt/sources.list", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print 'file' content, formatting output as 29-symbol wide column", "bash": "cat file | fold -w29", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print 1 byte from \"/dev/urandom\" as a signed decimal value and no address radix", "bash": "od -A n -t d -N 1 /dev/urandom", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print a list of all *.code files from the current directory tree", "bash": "find . -name *.code", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print a list of regular files from directory tree sort_test/ sorted with LC_COLLATE=en_US.UTF-8", "bash": "find sort_test -type f | env -i LC_COLLATE=en_US.UTF-8 sort", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print a list of regular files from directory tree sort_test/ sorted with LC_COLLATE=en_US.utf8", "bash": "find sort_test/ -type f | env -i LC_COLLATE=en_US.utf8 sort", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print a list of unique users who are logged in", "bash": "who | cut -d' ' -f1 | sort | uniq", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print a randomly sorted list of numbers from 1 to 10 to file \"/tmp/lst\" and outputs \"-------\" followed by the reverse list to the screen", "bash": "seq 1 10 | sort -R | tee /tmp/lst |cat <(cat /tmp/lst) <(echo '-------') | tac", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print a space separated list of numbers from 1 to 10", "bash": "seq 10 | xargs", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print absolute path of \"PATH\"", "bash": "readlink -f PATH", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Prints all business days in a current month.", "bash": "cal -h | cut -c 4-17", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print common files of directory \"1\" and \"2\"", "bash": "comm -12  <(ls 1) <(ls 2)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the contents of \"order.txt\"", "bash": "cat order.txt", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print count of unique lines in all files like 'list_part*'", "bash": "cat list_part* | sort --unique | wc -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print current date as epoch seconds", "bash": "date +%s", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the current directory tree with the date of last modification for each file or directory", "bash": "tree -D", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print details for all files in the ./work directory tree with extension .sh that were modified less than 20 days ago", "bash": "find ./work/ -type f -name \"*.sh\" -mtime -20 | xargs -r ls -l", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print differences between the sorted content of file $1 and file $2, executing 'diff' with options from \"${@:3}\" array slice", "bash": "diff \"${@:3}\" <(sort \"$1\") <(sort \"$2\")", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print directories in the the current directory as a list with no report information", "bash": "tree -d -L 1 -i --noreport", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print each line in \"set1\" and \"set2\" that does not exist in the other", "bash": "sort set1 set2 | uniq", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the file content of command \"[whatever]\"", "bash": "cat `find [whatever]`", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print files created/modified in the last day", "bash": "find /directory -newermt $(date +%Y-%m-%d -d '1 day ago') -type f -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print first 11 characters from $line, print a tab, print the md5 sum of the file specified by the 13th and onward characters from $line and print a null character at end without a trailing new line", "bash": "echo -en \"${line:0:11}\" \"\\t\" $(md5sum \"${line:12}\") \"\\0\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print first field from semicolon-seprated line $string.", "bash": "echo $string | cut -d';' -f1", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print flow of random data, showing all non-printing characters", "bash": "cat -v /dev/urandom", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the full path of a file under the current working directory with inode number specified on standard input", "bash": "xargs -n 1 -I '{}' find \"$(pwd)\" -type f -inum '{}' -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the full path of executable \"lshw\"", "bash": "which lshw", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Prints full path to files with dot in name in a current folder.", "bash": "ls -d -1 $PWD/*.*", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the given file name's extensions.", "bash": "echo \"$NAME\" | cut -d'.' -f2-", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the largest 20 files under current directory", "bash": "find . -type f -printf '%k %p\\n' |sort -n |tail -n 20", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the largest 20 files under current directory", "bash": "find . -type f -printf '%s %p\\n' | sort -rn | head -20", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print last 10 commands in history", "bash": "history 10", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the last 10 commands in history", "bash": "history | tail", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the last 10 commands in history", "bash": "history | tail -10", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the last 10 commands in history", "bash": "history | tail -n 10", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print line number of each line in /etc/passwd file, where current user name is found", "bash": "cat /etc/passwd -n | grep `whoami` | cut -f1", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the list of files in the current directory tree excluding those whose paths contain \"exclude3\" or \"exclude4\"", "bash": "find . | egrep -v \"(exclude3|exclude4)\" | sort", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the list of regular files from the current directory tree that were modified less than 2 days ago", "bash": "find . -type f -mtime -2 -exec echo {} +", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Prints logged in users in sorted order.", "bash": "w | sort", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Prints long listing of the current directory and top-level directories within, sorted from oldest to newest, with appended indicators.", "bash": "$ ls -Fltr *", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Prints long listing of the current directory, sorted from oldest to newest, with appended indicators.", "bash": "$ ls -Fltr", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the most repeated line in \"list2.txt\" that exists in \"list1.txt\" prefixed by the number of occurrences", "bash": "grep -Ff list1.txt list2.txt | sort | uniq -c | sort -n | tail -n1", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the names of the directories from the paths expanded by the glob pattern /path/to/directory/*", "bash": "find  /path/to/directory/* -maxdepth 0 -type d -exec basename {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the names of the directories from the paths expanded by the glob pattern /path/to/directory/*", "bash": "find /path/to/directory/* -maxdepth 0 -type d -exec basename -a {} +", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the names of the directories from the paths expanded by the glob pattern /path/to/directory/*", "bash": "find /path/to/directory/* -maxdepth 0 -type d -printf '%f\\n'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print nothing because 'MYVAR' string doesn`t match with '/[^/]+:' pattern", "bash": "echo MYVAR | grep -oE '/[^/]+:' | cut -c2- | rev | cut -c2- | rev", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the number of lines for each *.txt file from the $DIR directory tree", "bash": "find $DIR -name \"*.txt\" -exec wc -l {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print only common strings in content of files 'file1.sorted' and 'file2.sorted'", "bash": "comm -1 -2 file1.sorted file2.sorted", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Prints only unique strings of those stored in variables $COMMANDS and $ALIASES.", "bash": "echo \"$COMMANDS\"$'\\n'\"$ALIASES\" | sort -u", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Prints sizes of all top-level folders in a current folder with human-readable format and descending order.", "bash": "du -h --max-depth=1 . | sort -n -r", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Prints string \"0 1 * * * /root/test.sh\" to the terminal, and append it to file '/var/spool/cron/root'", "bash": "echo \"0 1 * * * /root/test.sh\" | tee -a /var/spool/cron/root", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Prints strings with text \"texthere\" in all files recursively in a current folder.", "bash": "grep -r \"texthere\" .", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print the text file paths that match 'needle text' in their contents under 'my_folder' recursively", "bash": "grep -rl \"needle text\" my_folder | tr '\\n' '\\0' | xargs -r -0 file | grep -e ':[^:]*text[^:]*$' | grep -v -e 'executable'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print unique lines of sorted \"File 1\" compared with sorted \"File 2\"", "bash": "comm -23 \"File 1\" \"File 2\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print unique lines of sorted file \"A.txt\" compared to sorted file \"B.txt\"", "bash": "comm -2 -3 <(sort A.txt) <(sort B.txt)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print unique lines of sorted file \"A.txt\" compared to sorted file \"B.txt\"", "bash": "comm -23 <(sort -u A.txt) <(sort B.txt)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Prints what day it was 222 days ago", "bash": "date --date=\"222 days ago\" +\"%d\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print which files differ in \"/tmp/dir1\" and \"/tmp/dir2\" recursively", "bash": "diff -qr /tmp/dir1/ /tmp/dir2/", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Print your/dir if it's empty", "bash": "find \"your/dir\" -prune -empty", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Process each file beginning with \"file\" in the current directory as an argument to \"bash script.sh\"", "bash": "find -type f -maxdepth 1 -name 'file*' -print0 | sort -z | xargs -0 bash script.sh", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Puts the job 1 in the background.", "bash": "bg %1 [puts the job in the background]", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Read a line from standard input and save each word in the bash array variable \"arr\"", "bash": "read -a arr", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Read a line from standard input into variable \"message\" with escaped prompt \"Please Enter a Message: \\n\\b\"", "bash": "read -p \"$(echo -e 'Please Enter a Message: \\n\\b')\" message", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Read the first line of output from \"du -s $i\" into variable \"k\" in ksh", "bash": "du -s $i | read k", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Read standard input and replace any repeated characters except spaces with a single instance", "bash": "tr -cs '[:space:]'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Read standard input until a null character is found and save the result in variable \"f2\"", "bash": "read -r -d $'\\0' f2", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively changes group ownership of everything within a '/path/to/repo' to 'GROUP'.", "bash": "chgrp -R GROUP /path/to/repo", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively changes group ownership of everything within a current folder to 'admin'.", "bash": "chgrp -R admin *", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively change owner of all files in \"folder\" to \"user_name\"", "bash": "chown -R user_name folder", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively change the owner to \"$USER\" and group to \"$GROUP\" of \"/var/lib/cassandra\"", "bash": "sudo chown -R  $USER:$GROUP /var/lib/cassandra", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively change the owner to \"${JBOSS_USER}\" of \"$JBOSS_LOG_DIR\"", "bash": "chown -R ${JBOSS_USER}: $JBOSS_LOG_DIR", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively copy \"emptydir\" to \"destination/newdir\"", "bash": "rsync --recursive emptydir/ destination/newdir", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively copy /path/foo on host \"prod\" to local directory \"/home/user/Desktop\", connecting as ssh username corresponding to local username.", "bash": "scp -r prod:/path/foo /home/user/Desktop", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively copy all files with names ending with .txt from dir_1 to the same location within copy_of_dir_1", "bash": "rsync --recursive --prune-empty-dirs --include=\"*.txt\" --filter=\"-! */\" dir_1 copy_of_dir_1", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively copy local file/directory \"/copy/from/path\" to remote location \"/copy/to/path\" on host \"server\", connecting as ssh user \"user\" and using identity key file \"/path/to/your/.pemkey\" instead of the default in ~/.ssh/", "bash": "scp -i /path/to/your/.pemkey -r /copy/from/path user@server:/copy/to/path", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively from current folder searches only files that names match \".*xxx\" pattern, ignores binary files and prints file name before every string that contains \"my Text to grep\".", "bash": "grep --include=\"*.xxx\" -nRHI \"my Text to grep\" *", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "recursively look for files ending in either .py or .py.server", "bash": "find . -type f -regex \".*\\.\\(py\\|py\\.server\\)\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "recursively look for files ending in either .py or .py.server", "bash": "find . \\( -name \"*.py\" -o -name \"*.py.server\" \\)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively print all files and directories in the current directory tree including hidden files", "bash": "tree -a .", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively search current directory for all files with name ending with \".t1\", change this to .t2", "bash": "find . -name \"*.t1\" -exec rename 's/\\.t1$/.t2/' '{}' \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively search for everything under the current directory, displaying human-readable file type description for each entry.", "bash": "find . -exec file {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively set all permissions under \"../tools\" to 777", "bash": "chmod -R 777 ../tools", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Recursively set all permissions under \"/whatever/your/directory/is\" to 755", "bash": "sudo chmod 755 -R /whatever/your/directory/is", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Reformat date \"Sat Aug 09 13:37:14 2014 +1100\" according to format string \"%a %b %d %H:%M:%S %Y %z\"", "bash": "date -j -f \"%a %b %d %H:%M:%S %Y %z\" \"Sat Aug 09 13:37:14 2014 +1100\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "remote copy all text files from one location to another", "bash": "find .  -name '*.txt' -exec rsync -R {} path/to/dext \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remount \"/system\" with read and write permission", "bash": "mount -o remount,rw /system", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remount \"/system\" with read and write permission", "bash": "mount -o rw,remount /system", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remount \"yaffs2\" filesystem \"/dev/block/mtdblk4\" to \"/system\" as read and write only", "bash": "mount -o rw,remount -t yaffs2 /dev/block/mtdblk4 /system", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Removes '/var/lib/mongodb/mongod.lock' in 'sudo' mode.", "bash": "sudo rm /var/lib/mongodb/mongod.lock", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Removes 'foo' file.", "bash": "rm foo", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove all *.swp files under current directory ensuring white space safety", "bash": "find . -name \"*.swp\" -print0|xargs -0 rm", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove all .txt files from the /full/path/dir directory tree", "bash": "find /full/path/dir -name '*.txt' -exec /bin/rm {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove all .txt files from the /full/path/dir directory tree", "bash": "find /full/path/dir -name '*.txt' -print0 | xargs -0 rm", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove all directories in and below the current directory", "bash": "find \\! -name . -type d -print0 | xargs -0 rmdir", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Removes all empty folders under path '/foo/bar' and the path itself.", "bash": "find /foo/bar -type d -depth -exec rmdir -p {} +", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove all files and directories called \"test\" from the current directory tree", "bash": "find . -name test -delete", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove all files and directories called \"test\" from the current directory tree", "bash": "find . -name test -exec rm -R \"{}\" \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove all files and directories called \"test\" from the current directory tree", "bash": "find . -name test -exec rm {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Removes all files but $1 newest ones from current folder.", "bash": "ls -tp | grep -v '/' | tail -n +\"$1\" | xargs -I {} rm -- {}", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Removes all files from current folder but 3 newest ones", "bash": "ls -tQ | tail -n+4 | xargs rm", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove all files named `junk' and `dummy'", "bash": "find . \\( -name junk -o -name dummy \\) -exec rm '{}' \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove all files that end with 'prefs copy' in their names under '/mnt/zip' directory tree", "bash": "find /mnt/zip -name \"*prefs copy\" -print | xargs rm", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "remove all the log files which have not been modified in the last 5 days", "bash": "find /logs -type f -mtime +5 -exec rm {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove all regular files from the current directory tree that were modified a day ago", "bash": "find . -type f -mtime 1 -exec rm {} +", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove all vmware-*.log files/directories under current directory", "bash": "find . -name vmware-*.log | xargs -i rm -rf {}", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove duplicates in variable \"variable\" and preserve the order", "bash": "variable=$(echo \"$variable\" | tr ' ' '\\n' | nl | sort -u -k2 | sort -n | cut -f2-)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Removes empty folder 'symlink'.", "bash": "rm -d symlink", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove files in current directory according to the filenames found in ~/clang+llvm-3.3/bin/", "bash": "find ~/clang+llvm-3.3/bin/ -type f -exec basename {} \\; | xargs rm", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Removes files ~/.android/adbkey and ~/.android/adbkey.pub without prompting.", "bash": "rm -f ~/.android/adbkey ~/.android/adbkey.pub", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove the first 13 characters of each \".txt\" filename in the \"/tmp\" directory tree and number the output", "bash": "find /tmp -type f \\( -name '*.txt' \\) |cut -c14- | nl", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove the first 7 characters of every line in the output of \"history\"", "bash": "history | cut -c 8-", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove the last 3 characters from 987654321, keeping only 987654", "bash": "echo 987654321 | rev | cut -c 4- | rev", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Removes only lowest level subfolders from current directory tree (folders without files and another folders within).", "bash": "find . -type d | xargs rmdir", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove the passphrase from user's ssh key without prompting.", "bash": "echo | ssh-keygen -P ''", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove the regular files from the current directory tree that are newer than /tmp/date.start but not newer than /tmp/date.end", "bash": "find ./ -type f -newer /tmp/date.start ! -newer /tmp/date.end -exec rm {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Remove regular files in the current directory tree", "bash": "find . -type f -print0 | xargs -0 -n1 echo rm | sh -x", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Rename all .html files to .txt", "bash": "rename 's/\\.html$/\\.txt/' *.html", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Replace all sequence of 'blank' characters in file 'log' with a single occurence of such symbol and print space-separated fields of each string but first two fields", "bash": "cat log | tr -s [:blank:] |cut -d' ' -f 3-", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Reports count of characters in the value of ${FOO_NO_LEAD_SPACE} variable as follows: \"length(FOO_NO_LEAD_SPACE)==<counted number of characters>\"", "bash": "echo -e \"length(FOO_NO_LEAD_SPACE)==$(echo -ne \"${FOO_NO_LEAD_SPACE}\" | wc -m)\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Report file system containing path-to-file disk usage human-readable.", "bash": "df -h path-to-file", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Report root file system disk usage human-readable.", "bash": "df -h /", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Returns 0 if user $1 belongs to group $2.", "bash": "groups $1 | grep -q \"\\b$2\\b\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "return every file that does not have bar somewhere in its full pathname", "bash": "find . ! -path '*bar*' -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Run a shell with all environment variables specified in the file 'cronenv' in the user's home directory.", "bash": "env - `cat ~/cronenv` /bin/sh", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Save a nginx link to \"/path/to/file\" with the current user and system FQDN host name in variable \"path\"", "bash": "path=\"http://$(whoami).$(hostname -f)/path/to/file\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Save a space separated list of process ids of currently running jobs to variable 'bgxjobs'", "bash": "bgxjobs=\" $(jobs -pr | tr '\\n' ' ')\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Save absolute path of the script filename in variable \"MY_PATH\"", "bash": "MY_PATH=$(readlink -f \"$0\")", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Saves calendar of $month, $year in the 'cal' variable.", "bash": "cal=$(echo $(cal \"$month\" \"$year\"))", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Save the directory name of the current bash script to variable \"path\" if it is found in one of the directories specified by PATH.", "bash": "path=\"$( dirname \"$( which \"$0\" )\" )\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Saves listing of a current folder in 'var' variable.", "bash": "var=$(ls -l)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Saves list of logged in users in system together with 'USER' header in the 'b' variable.", "bash": "b=`w|cut -d' ' -f1`;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Saves number of lines of current directory listing in 'n_max' variable.", "bash": "n_max=`ls . | wc -l`", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the \"your/dir\" directory for empty subdirectories", "bash": "find your/dir -mindepth 1 -prune -empty", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the `images' directory tree for regular files", "bash": "find images/ -type f", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the /Path directory tree for files matching pattern \"file_name*\" and containing \"bar\" in their pathnames", "bash": "find /Path -name \"file_name*\" | grep \"bar\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the /path directory tree for files matching pattern '*.foo'", "bash": "find /path -name '*.foo'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search /usr/local recursively for directories whose names end with a number 0-9", "bash": "find /usr/local -type d -name '*[0-9]'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search all .java files residing in the current directory tree and modified at least 7 days ago for string \"swt\"", "bash": "find . -name '*.java' -mtime +7 -print0 | xargs -0 grep 'swt'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search  all directory from /usr downwards for files whose inode number is 1234 and print them .", "bash": "find /usr -inum 1234 -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search  all files & directoy from root directory which  are greater then 100M and delete them .", "bash": "find /  -size +100M -exec rm -rf {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search all files in the current directory tree that are named \"whatever\" for \"whatever\"", "bash": "find . -name whatever -print | xargs grep whatever", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search all files in the current directory tree whose names contain \".\" for \"SearchString\"", "bash": "find . -name '*.*' -exec grep 'SearchString' {} /dev/null \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "search all files in the current folder which match the regular expression", "bash": "find . -regex \".*/my.*p.$\" -a -not -regex \".*test.*\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "search all jpg images in current folder and rename them", "bash": "find . -type f -name \"*.jpg\" -print0 | xargs -0 rename \"s/Image_200x200_(\\d{3})/img/\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search all non-hidden files in the current directory and all non-hidden sub-directories for the file hi.dat.", "bash": "find *-name hi.dat", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the bla directory recursively for *.so files", "bash": "find bla -name \"*.so\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the current directory and all of its sub-directory for any PDF files being careful to prevent the shell from expanding anything in '*.pdf'  before it'ss passed to find.", "bash": "find . -name '*.pdf' -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the current directory recursively for files containing \"needle text\"", "bash": "find . -type f -exec grep -Iq . {} \\; -and -print0 | xargs -0 grep \"needle text\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the current directory recursively for files containing \"needle text\"", "bash": "find . -type f -print0 | xargs -0 grep -I \"needle text\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the current directory recursively for files containing \"needle text\"", "bash": "find . -type f -print0 | xargs -0 grep -IZl . | xargs -0 grep \"needle text\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the current directory recursively for files containing \"needle text\"", "bash": "find . -type f | xargs grep -I \"needle text\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the current directory recursively for regular files last modified more than 2 days ago", "bash": "find . type -f -mtime +2", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the current directory tree for all regular non-hidden files except *.o", "bash": "find ./ -type f -name \"*\" -not -name \"*.o\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the current directory tree for files whose names begin with \"my\" and end with \"p\" followed by any character, ignoring path names containing \"test\"", "bash": "find . -regex \".*/my.*p.$\" -a -not -regex \".*test.*\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the current directory tree for files whose name is \".note\", case insensitive", "bash": "find -type d -exec find {} -maxdepth 1 \\! -type d -iname '.note' \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the current directory tree for files whose name is \".note\", case insensitive", "bash": "find . -iname '.note'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the current directory tree for files whose name is \".note\", case insensitive", "bash": "find . -iname '.note' | sort", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the current directory tree for files whose names do not end in \".exe\" and \".dll\"", "bash": "find . -not -name \"*.exe\" -not -name \"*.dll\" -not -type d", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the current directory tree for files whose names do not end in \".exe\" and \".dll\"", "bash": "find . -not -name \"*.exe\" -not -name \"*.dll\" -type f", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the current directory tree for symbolic links named \"link1\"", "bash": "find . -type l -name link1", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search directory trees foo and bar for .java files", "bash": "find foo bar -name \"*.java\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the entire file hierarchy for files ending in '.old' and delete them.", "bash": "find / -name \"*.old\" -delete", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the entire file hierarchy for files ending in '.old' and delete them.", "bash": "find / -name \"*.old\" -exec /bin/rm {} \\", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the files from the current directory tree for \"foo\"", "bash": "find . -exec grep -l foo {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the files from the current directory tree for \"foo\"", "bash": "find . -exec grep foo {} +", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the files from the current directory tree for \"foo\"", "bash": "find . -exec grep foo {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search for 'Text To Find' in all regular files under current directory tree and show the matched files", "bash": "find ./ -type f -exec grep -l \"Text To Find\" {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search for 'birthday' (case insensitive) in all regular files under ~/Documents directory tree and show only the filenames", "bash": "find ~/Documents -type f -print0 | xargs -0 grep -il birthday", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search for 'foo' in all the java files under 'dir1', 'dir2' and 'dir3' directory tree and print only the names of the matched files", "bash": "find dir1 dir2 dir3 -type f -name \"*.java\" -exec grep -il 'foo' {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search for 'string-to-find' in all HTML files under current directory tree and show the matched lines with their filenames", "bash": "find . -name \\*.html -exec grep -H string-to-find {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search for 'stuff' in all *,txt files under current directory", "bash": "find . -name \"*.txt\" -print0 | xargs -0 egrep 'stuff'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search for .pdf files", "bash": "find / -name '*.pdf'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search for Subscription.java under current directory, and go to directory containing it.", "bash": "cd \"$(find . -name Subscription.java -printf '%h\\n')\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "search for all \"tif\" images in current folder", "bash": "find . -name '*.tif ' -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search for all .mp3 files in the /mnt/usb directory tree", "bash": "find /mnt/usb -name  \"*.mp3\" -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search for all files in the current directory recursively whose names contain \"linkin park\", ignoring the case", "bash": "find . -iname \"*linkin park*\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "search for all the files in the folder /data/images which have been modified after /tmp/start and before /tmp/end", "bash": "find /data/images -type f -newer /tmp/start -not -newer /tmp/end", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search for the case insensitive regex 'STRING_TO_SEARCH_FOR' in all files under current directory", "bash": "find . -type f -exec grep -n -i STRING_TO_SEARCH_FOR /dev/null {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "search for the file \"job.history\" in the folder /data/Spoolln and search for multiple patterns in the file and display the count of matched lines along with the pattern", "bash": "find /data/SpoolIn -name job.history | xargs grep -o -m 1 -h 'FAIL\\|ABOR' | sort | uniq -c", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "search for the file \"name_to_find\" in the home folder", "bash": "find ~ -name \"name_to_find\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "search for the file, filename.txt in the folder /home", "bash": "find /home -name filename.txt", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search for the regex $greppattern in all files with '.c' or '.h' extension under $searchpath with name pattern $filepat and show the matched line numbers, file names and matched lines", "bash": "find \"$searchpath\" -name \"$filepat.[ch]\" -exec grep --color -aHn \"$greppattern\" {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search for the string 'magic' in all regular files under current directory tree and display long listing of them", "bash": "find . -type f -exec grep \"magic\" {} \\; -ls", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "search for text files in the current folder which have write access to others", "bash": "find . -type f \\( -iname \"*.txt\" -and -perm -o=w \\)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "search for the word \"foo\" in all the regular/normal files in the directory \"/path/to/dir\"", "bash": "find /path/to/dir -type f -print0 | xargs -0 grep -l \"foo\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "search for the word \"foo\" in all the regular/normal files in the directory \"/path/to/dir\"", "bash": "find /path/to/dir -type f | xargs grep -l \"foo\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "search for the word \"foo\" in all the regular/normal files with the name \"file-pattern\" in the directory \"/path/to/dir\"", "bash": "find /path/to/dir/ -type f -name \"file-pattern\" -print0 | xargs -I {} -0 grep -l \"foo\" \"{}\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "search for the word text in all the python files in the current folder", "bash": "find . -iname '*py' -exec grep \"text\" {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "search in the current folder for the files that begin with \"myletter\"", "bash": "find . -name 'myletter*' -print", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Searches the manual page names and descriptions", "bash": "apropos", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the system for directories named \"needle\"", "bash": "find / -type d -name \"needle\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Search the system for the file \u201ctestfile.txt\u201d ignoring the case", "bash": "find / -iname \"testfile.txt\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Send 4 ping packets of size 2 to \"www.google.com\" on a Solaris machine", "bash": "ping -s www.google.com 2 4", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Set 644 permission to all regular files under current directory", "bash": "chmod 644 `find -type f`", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Set 644 permission to all regular files under current directory", "bash": "chmod 644 `find . -type f`", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "set a crontab to create or update the timestamp of \"washere2\" in the current directory every 30 minutes.", "bash": "echo \"30 * * * * touch $(pwd)/washere2\" | crontab", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Set the bash environmental variable \"PROMPT_COMMAND\" to save the output of the last executed command to variable \"LAST\" and file '/tmp/x\"", "bash": "PROMPT_COMMAND='LAST=\"`cat /tmp/x`\"; exec >/dev/tty; exec > >(tee /tmp/x)'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Set permissions to 600 for regular files under media/", "bash": "find media/ -type f -exec chmod 600 {} \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Set permissions to ug=rw,o= for files inside the ./default/files tree", "bash": "find ./default/files -type f -exec chmod ug=rw,o= '{}' \\;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Set the setup connection timeout to 3 seconds for connecting to \"user@ip\" via ssh", "bash": "ssh -o ConnectTimeout=3 user@ip", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Set timestamp of old_file.dat to specified timestamp.", "bash": "touch -t 200510071138 old_file.dat", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "(GNU specific) Set variable LINE to full process info of process currently taking the most CPU time, squeezing multiple consecutive spaces into one.", "bash": "LINE=$(top -b -n 1 | tail -n +8 | head -n 1 | tr -s ' ')", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Show the number of lines for each PHP file in the current directory tree", "bash": "find . -type f -name \"*.php\" -exec wc -l {} +;", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Silently read $char number of symbols from file descriptor 4, without backslash escaping, and store received input in 'line' variable", "bash": "read -u 4 -N $char -r -s line", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Sort all files/directories under current directory according to modification time and print only the recent 7 of them", "bash": "find -mindepth 1 -printf \"%T@ %P\\n\" | sort -n -r | cut -d' ' -f 2- | tail -n +7", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Sort and display the file name and creation month of top 11 files in the entire file system (Sort in the order of month )", "bash": "find / -type f -printf \"\\n%Ab %p\" | head -n 11 | sort -k1M", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Split \"domains.xml\" into files of at most 50000 lines each with a numeric suffix of length 4 and prefix of \"domains_\"", "bash": "split -a 4 -d -l 50000 domains.xml domains_", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Split \"file.txt\" into files of at most 1 MiB in size with a numeric suffix and prefix \"file\"", "bash": "split -b 1M -d  file.txt file", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Split \"filename\" into files of at most 200000 lines each", "bash": "split -l 200000 filename", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "split content all files file1..40000 into pieces per 1445 lines named as outputprefixNNN as digital prefix", "bash": "cat file1 file2 ... file40000 | split -n r/1445 -d - outputprefix", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "split file abc.txt into pieces per 1500000000 bytes named as \"abc.NNN\"", "bash": "split --bytes=1500000000 abc.txt abc", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "ssh into \"hostname\" as user \"buck\"", "bash": "ssh -l buck hostname", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "ssh into \"hostname\" as user \"buck\"", "bash": "ssh buck@hostname", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "SSH into \"hostname\" on port 22 as user \"myName\"", "bash": "ssh -l myName -p 22 hostname", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "SSH into \"hostname\" on port 22 as user \"myName\"", "bash": "ssh -p 22 myName@hostname", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "ssh into \"ssh.myhost.net\" as user \"myusername\" and run command \"mkdir -p $2\"", "bash": "ssh myusername@ssh.myhost.net \"mkdir -p $2\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "ssh into localhost on port 10022", "bash": "ssh -p 10022 localhost", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "SSH into user@server and run command ${SSH_COMMAND}", "bash": "ssh user@server \"${SSH_COMMAND}\"", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Strips last section from the path $pathname, and prints basename of the rest part.", "bash": "echo $(basename $(dirname $pathname))", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Test if \"file.tar.gz\" is corrupt", "bash": "gunzip -t file.tar.gz", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "Unzip file \"$empty_variable\"", "bash": "gunzip $empty_variable", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "(GNU specific) Use 'top' to monitor one process.", "bash": "top \u2013p $PID", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "use find command to search for .png and .jpg files", "bash": "find ./ -type f \\( -iname \\*.jpg -o -iname \\*.png \\)", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}
+{"nl": "when using vi-insert keymap bind command \"\\C-v{}\\ei\" to key \"{\"", "bash": "bind -m vi-insert '\"{\" \"\\C-v{}\\ei\"'", "ctxs": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}

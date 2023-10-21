@@ -1,0 +1,10 @@
+{"nl": "Print input \"your, text, here\" formatted to fit 70 characters per line breaking at spaces", "bash": "echo 'your, text, here' | fold -sw 70"}
+{"nl": "find all executable files in /home directory.", "bash": "find  /home -type f -perm /a=x"}
+{"nl": "Set variable 'file' to the base name of first argument to script or function, that is the part following the last slash.", "bash": "file=`basename \"$1\"`"}
+{"nl": "Find files that were modified more than 7 days ago and archive them", "bash": "find . -type f -mtime +7 | xargs tar -cvf `date '+%d%m%Y'_archive.tar`"}
+{"nl": "Connect to host \"$USER_AT_HOST\" in master mode in the background without executing any commands and set the ControlPath to \"$SSHSOCKET\"", "bash": "ssh -M -f -N -o ControlPath=\"$SSHSOCKET\" \"$USER_AT_HOST\""}
+{"nl": "Locate files that reside in the /u/bill directory tree and were last accessed between 2 and 6 minutes ago", "bash": "find /u/bill -amin +2 -amin -6"}
+{"nl": "Search the current directory tree for files whose names match regular expression '.*packet.*', ignoring the case", "bash": "find . -iregex \".*packet.*\""}
+{"nl": "Find all files under current directory whose status was changed less than 3 days ago and show last 5 lines of output", "bash": "find . -type f -ctime -3 | tail -n 5"}
+{"nl": "Recursively removes all files and folders named '.svn' in a current folder, handling content of removed folder before folder inself.", "bash": "find . -depth -name .svn -exec rm -fr {} \\;"}
+{"nl": "List all the emptry files in thecurrent directory only.", "bash": "find . -maxdepth 1 -empty"}

@@ -1,0 +1,10 @@
+{"question": "take 11 minutes off the timer", "logical_form": "[IN:SUBTRACT_TIME_TIMER [SL:DATE_TIME 11 minutes ] [SL:METHOD_TIMER timer ] ]"}
+{"question": "top news stories", "logical_form": "[IN:GET_STORIES_NEWS [SL:NEWS_REFERENCE top ] [SL:NEWS_TYPE news stories ] ]"}
+{"question": "Set the sleep timer for 10 minutes", "logical_form": "[IN:CREATE_TIMER [SL:TIMER_NAME sleep ] [SL:METHOD_TIMER timer ] [SL:DATE_TIME for 10 minutes ] ]"}
+{"question": "give me the news update for around the world.", "logical_form": "[IN:GET_STORIES_NEWS [SL:NEWS_TYPE news ] ]"}
+{"question": "i need to change my podiatrist appointment reminder to 5pm instead of 5:30", "logical_form": "[IN:UPDATE_REMINDER_DATE_TIME [SL:PERSON_REMINDED my ] [SL:TODO podiatrist appointment ] [SL:DATE_TIME to 5 pm ] [SL:DATE_TIME of 5 : 30 ] ]"}
+{"question": "should I bring the plants in tonight", "logical_form": "[IN:GET_WEATHER [SL:WEATHER_ATTRIBUTE plants ] [SL:DATE_TIME in tonight ] ]"}
+{"question": "Resume the timer in 10 seconds", "logical_form": "[IN:RESUME_TIMER [SL:METHOD_TIMER timer ] [SL:DATE_TIME in 10 seconds ] ]"}
+{"question": "Do I have a friend that works in Los Angeles?", "logical_form": "[IN:GET_CONTACT [SL:CONTACT_RELATED I ] [SL:TYPE_RELATION friend ] [SL:LOCATION Los Angeles ] ]"}
+{"question": "Every day my alarm is set for what time?", "logical_form": "[IN:GET_ALARM [SL:PERIOD Every day ] ]"}
+{"question": "Message Ben to see if he can come to my birthday party", "logical_form": "[IN:SEND_MESSAGE [SL:RECIPIENT Ben ] [SL:CONTENT_EXACT he can come to my birthday party ] ]"}

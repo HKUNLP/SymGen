@@ -1,0 +1,10 @@
+{"nl": "what is the longest river in the smallest state in the usa ?", "prolog": "answer(A,longest(A,(river(A),loc(A,B),smallest(B,(state(B),loc(B,C),const(C,countryid(usa)))))))"}
+{"nl": "which states have points that are higher than the highest point in texas ?", "prolog": "answer(A,(state(A),loc(B,A),higher(B,C),highest(C,(place(C),loc(C,D),const(D,stateid(texas))))))"}
+{"nl": "what is the biggest state in continental us ?", "prolog": "answer(A,largest(A,(state(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the longest river that flows through colorado ?", "prolog": "answer(A,longest(A,(river(A),traverse(A,B),const(B,stateid(colorado)))))"}
+{"nl": "what state has the largest urban population ?", "prolog": "answer(A,largest(B,(state(A),population(A,B))))"}
+{"nl": "name the rivers in arkansas .", "prolog": "answer(A,(river(A),loc(A,B),const(B,stateid(arkansas))))"}
+{"nl": "what is the capital of michigan ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(michigan))))"}
+{"nl": "what are the major cities in delaware ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid(delaware))))"}
+{"nl": "what is the population of montana ?", "prolog": "answer(A,(population(B,A),const(B,stateid(montana))))"}
+{"nl": "what state is the biggest ?", "prolog": "answer(A,largest(A,state(A)))"}

@@ -1,0 +1,10 @@
+{"question_text": "Give the name of the student in the History department with the most credits.", "decomposition": "return students ;return #1 in History department ;return credits of  #2 ;return number of #3 for each #2 ;return #2 where  #4 is  highest ;return name of  #5"}
+{"question_text": "If two seals are lying in the sand in the image on the right.", "decomposition": "return right image ;return seals in  #1 ;return sand in  #1 ;return #2 that are lying in  #3 ;return number of  #4 ;return if  #5 is equal to  two"}
+{"question_text": "What actor played in both the Trial of Michael Jackson and The Wiz?", "decomposition": "return Trial of Michael Jackson ;return The Wiz ;return actor of both #1 and  #2"}
+{"question_text": "who was the leader of the north during the vietnam war?", "decomposition": "return north vietnam ;return leader of #1 ;return the  vietnam war ;return #2 during #3"}
+{"question_text": "If both images show mainly similar-shaped orange-and-white striped fish swimming among anemone tendrils.", "decomposition": "return fish ;return #1 that are similar-shaped ;return #2 that are orange-and-white striped ;return anemone tendrils ;return #3 swimming among #4 ;return if  #5 are mainly in  both  images"}
+{"question_text": "If there are no less than five dogs", "decomposition": "return dogs ;return number of  #1 ;return if  #2 is at least five"}
+{"question_text": "If the right image shows a single dog sitting.", "decomposition": "return the  right image ;return dogs in  #1 ;return #2 that are sitting ;return number of  #3 ;return if  #4 is equal to  one"}
+{"question_text": "when did lil wayne first start singing?", "decomposition": "return lil wayne ;return date that #1 start singing"}
+{"question_text": "How many large metallic items are there?", "decomposition": "return items ;return #1 that  are large ;return #2 that  are metallic ;return number of #3"}
+{"question_text": "If the bed set in the left image has a pink canopy above it.", "decomposition": "return left image ;return bed set in  #1 ;return canopy in  #1 ;return #3 that is pink ;return #4 that is above #2 ;return number of  #5 ;return if  #6 is at least one"}

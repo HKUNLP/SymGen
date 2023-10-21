@@ -1,0 +1,12 @@
+transformers
+hydra-core
+datasets
+evaluate
+nltk
+faiss-gpu
+openai
+bashlex  # for bash parsing
+pyswip # for prolog exec
+sqlparse
+pandas
+rapidfuzz

@@ -1,0 +1,609 @@
+{"nl": "Add executable permission to \"pretty-print\"", "bash": "chmod +x pretty-print"}
+{"nl": "Add executable permission to \"rr.sh\"", "bash": "chmod +x rr.sh"}
+{"nl": "add read,write permissions to all the files in the current folder which have the permission 600", "bash": "find . -perm 600 -print | xargs chmod 666"}
+{"nl": "Answer \"n\" to any prompts in the interactive recursive removal of \"dir1\", \"dir2\", and \"dir3\"", "bash": "yes n | rm -ir dir1 dir2 dir3"}
+{"nl": "Answer \"y\" to all \"Are you sure?\" prompts from command \"cp * /tmp\"", "bash": "yes | cp * /tmp"}
+{"nl": "Append the current date to variable 'LBUFFER'", "bash": "LBUFFER+=\"$(date)\""}
+{"nl": "Append the last modification time of file $arg as the seconds since epoch with a preceding space to the variable 'KEY'", "bash": "KEY+=`date -r \"$arg\" +\\ %s`"}
+{"nl": "Archive \"/path/to/sfolder\" to \"name@remote.server:/path/to/remote/dfolder\" compressing the data during transmission", "bash": "rsync -avlzp /path/to/sfolder name@remote.server:/path/to/remote/dfolder"}
+{"nl": "Archive \"_vimrc\" to \"~/.vimrc\" suppressing non-error messages and compressing data during transmission", "bash": "rsync -aqz _vimrc ~/.vimrc"}
+{"nl": "Archive \"src/bar\" on host \"foo\" to local directory \"/data/tmp\"", "bash": "rsync -avz foo:src/bar /data/tmp"}
+{"nl": "Archive directory \"tata\" to directory \"tata2\", compressing data during copy.", "bash": "rsync -avz tata/ tata2/"}
+{"nl": "Backup all PHP files under the current directory tree", "bash": "find -name \"*.php\" \u2013exec cp {} {}.bak \\;"}
+{"nl": "bind word \"pwd\\n\" to key code \"\\e[24~\"", "bash": "bind '\"\\e[24~\":\"pwd\\n\"'"}
+{"nl": "Brings down network interface eth0.", "bash": "ifconfig eth0 down"}
+{"nl": "Calculate the md5 sum of all files in \"/your/dir\" including content and filenames", "bash": "grep -ar -e . /your/dir | md5sum | cut -c-32"}
+{"nl": "Change every directory under \"/var/www/html/\" to have permissions 775", "bash": "sudo  find /var/www/html/ -type d -exec chmod 775 {} \\;"}
+{"nl": "Change every file under \"/var/www/html/\" to have permissions 664", "bash": "sudo  find /var/www/html/ -type f -exec chmod 664 {} \\;"}
+{"nl": "Changes group ownership of 'myprogram' to ${USER} (the current user)", "bash": "chgrp \"${USER}\" myprogram"}
+{"nl": "Change owner to \"$user\" and group to \"$group\" of \"$file\"", "bash": "chown -- \"$user:$group\" \"$file\""}
+{"nl": "Change owner to \"bob\" and group to \"sftponly\" of \"/home/bob/writable\"", "bash": "sudo chown bob:sftponly /home/bob/writable"}
+{"nl": "Change the ownership of all files in the current directory tree from root to www-data", "bash": "find -user root -exec chown www-data {} \\;"}
+{"nl": "change the ownership of all regular/normal files in the current directory after users confirmation", "bash": "find . -type f -ok chown username {} \\;"}
+{"nl": "change the permissions of all the directories in the current folder, print0 is used for handling files with newlines in their file name", "bash": "find . -type d -print0 | xargs -0 chmod 2775"}
+{"nl": "Change permissions of all files ending in \".php\" under the current directory to 755 and print a '+' for each file", "bash": "find . -name '*.php' -exec chmod 755 {} \\; -exec echo '+' \\;"}
+{"nl": "Change permissions to 777 for all directories in the current directory tree", "bash": "find . -type d -exec chmod 777 {} \\;"}
+{"nl": "Check if \"$file\" contains DOS line endings", "bash": "od -t x2 -N 1000 $file | cut -c8- | egrep -m1 -q ' 0d| 0d|0d$'"}
+{"nl": "Check if current system is running in 64-bit addressing.", "bash": "uname -m | grep '64'"}
+{"nl": "concatenates file1.txt, file2.txt, and file3.txt with the filenames printed at the beginning of file contents", "bash": "head -n99999999 file1.txt file2.txt file3.txt"}
+{"nl": "Connect to host \"remotehost\" as ssh user \"user\" to copy remote file \"/location/KMST_DataFile_*.kms\" to current directory on local host.", "bash": "scp -v user@remotehost:/location/KMST_DataFile_*.kms"}
+{"nl": "Connect to host 'hostname' as user 'username' by forcing host key confirmation", "bash": "ssh -o UserKnownHostsFile=/dev/null username@hostname"}
+{"nl": "Connect via ssh to \"your.server.example.com\" and recursively copy directory \"/path/to/foo\" on this host to direcotry \"/home/user/Desktop\" on local host, using \"blowfish\" cipher algorithm.", "bash": "scp -c blowfish -r user@your.server.example.com:/path/to/foo /home/user/Desktop/"}
+{"nl": "Continuously answer \"y\" to any prompt from \"mv ...\"", "bash": "yes | mv ..."}
+{"nl": "convert epoch second timestamp to date", "bash": "date -d @1278999698 +'%Y-%m-%d %H:%M:%S'"}
+{"nl": "Convert the first 16 characters in \"/dev/random\" to a single hexadecimal value", "bash": "head /dev/random -c16 | od -tx1 -w16 | head -n1 | cut -d' ' -f2- | tr -d ' '"}
+{"nl": "Copy \"src/prog.js\" and \"images/icon.jpg\" to \"/tmp/package/\" keeping relative path names", "bash": "rsync -Rv src/prog.js images/icon.jpg /tmp/package/"}
+{"nl": "Copies '[MacVim_source_folder]/src/MacVim/mvim' to the  '/usr/local/bin', printing info message on each operation.", "bash": "cp -v [MacVim_source_folder]/src/MacVim/mvim /usr/local/bin"}
+{"nl": "Copy all \".xml\" files in the current directory tree to \"/new/parent/dir\" preserving the directory hierarchy", "bash": "find . -name \\*.xml -print0 | cpio -pamvd0 /new/parent/dir"}
+{"nl": "Copy all directories recursively from \"source/\" to \"destination/\" excluding all files", "bash": "rsync -a --include='*/' --exclude='*' source/ destination/"}
+{"nl": "Copy all directories recursively from \"source/\" to \"destination/\" excluding all files", "bash": "rsync -a -f\"+ */\" -f\"- *\" source/ destination/"}
+{"nl": "Copy all files in \"/mail\" to \"/home/username\" preserving the directory hierarchy and modification times", "bash": "find /mail -type f | cpio -pvdmB /home/username"}
+{"nl": "Copies defined file to the target folder without overwriting existing files.", "bash": "cp -n"}
+{"nl": "Copy the executable \"python2.7\" in $PATH to \"myenv/bin/python\"", "bash": "cp `which python2.7` myenv/bin/python"}
+{"nl": "Copy file linked to by \"bar.pdf\" to \"bar.pdf\"", "bash": "cp --remove-destination `readlink bar.pdf` bar.pdf"}
+{"nl": "Copy file linked to by \"file\" to \"file\"", "bash": "cp --remove-destination `readlink file` file"}
+{"nl": "Count all directories under current directory", "bash": "find . -type d -exec ls -dlrt {} \\; | wc --lines"}
+{"nl": "Count files in the current path by modification month", "bash": "find . -maxdepth 1 -type f -printf '%TY-%Tm\\n' | sort | uniq -c"}
+{"nl": "Count line numbers on files and record each count along with individual file name.", "bash": "find /home/my_dir -name '*.txt' | xargs grep -c ^.*"}
+{"nl": "count lines of C or C++ or Obj-C or Java code under the current directory", "bash": "find . \\( -name \"*.c\" -or -name \"*.cpp\" -or -name \"*.h\" -or -name \"*.m\" -or -name '*.java' \\) -print0 | xargs -0 wc"}
+{"nl": "Counts non-blank lines (lines with spaces are considered blank) in all *.py files in a current folder.", "bash": "grep -v '^\\s*$' *.py | wc"}
+{"nl": "Count the number of differing lines in \"file1\" and \"file2\" with 0 lines of unified context", "bash": "diff -U 0 file1 file2 | grep -v ^@ | wc -l"}
+{"nl": "Count the number of equal lines in \"file1.txt\" and \"file2.txt\"", "bash": "comm -12 <(sort file1.txt) <(sort file2.txt) | wc -l"}
+{"nl": "Count the number of files named 'job.history' under '/data/SpoolIn' directory tree that match 'FAIL' in their contents", "bash": "find /data/SpoolIn -name job.history -exec grep -l FAIL {} \\+ | wc -l"}
+{"nl": "Count the number of files named 'job.history' under '/data/SpoolIn' directory tree that match 'FAIL' in their contents", "bash": "find /data/SpoolIn -name job.history -exec grep -l FAIL {} \\; | wc -l"}
+{"nl": "Count the number of files named 'job.history' under '/data/SpoolIn' directory tree that match 'FAIL' in their contents", "bash": "find /data/SpoolIn -name job.history | xargs grep -l FAIL | wc -l"}
+{"nl": "create a gzip of all the files in the current folder excluding the already gzipped files", "bash": "gzip `find . \\! -name '*.gz' -print`"}
+{"nl": "create a gzip of all the files in the current folder excluding the already gzipped files.", "bash": "find . \\! -name \"*.gz\" -exec gzip {} \\;"}
+{"nl": "Create a symbolic link in the current directory for each hidden file or directory in \"git-stuff/home/\" excluding \".\" and \"..\"", "bash": "ln -s git-stuff/home/.[!.]* ."}
+{"nl": "Create a symbolic link named \"foo\" to \"/var/cache/apt/archives/bash_4.3-14ubuntu1_amd64.deb\"", "bash": "ln -s   /var/cache/apt/archives/bash_4.3-14ubuntu1_amd64.deb foo"}
+{"nl": "Create a symbolc link named \"latest\" to the last modified file or directory in \"target-directory\"", "bash": "ln -s target-directory/`ls -rt target-directory | tail -n1` latest"}
+{"nl": "create a symbolic link named \"test\" to file \".bashrc\"", "bash": "ln -s .bashrc test"}
+{"nl": "Create an empty file in each directory named \"mydir\" under current directory.", "bash": "find . -type d -name \"mydir\" -exec touch '{}/abc.txt' \\;"}
+{"nl": "create backup of all the text files  present in the current folder", "bash": "find -name \"*.txt\" cp {} {}.bkup \\;"}
+{"nl": "Create hard links of all files and directories matching \"test/icecream/cupcake/*\" or \"test/mtndew/livewire/*\" in \"test-keep\" preserving directory hierarchy", "bash": "find test -path 'test/icecream/cupcake/*' -o -path 'test/mtndew/livewire/*' | cpio -padluv test-keep"}
+{"nl": "Create intermediate directories as required directory{1..3} and subdirectory{1..3} and directories subsubdirectory1 and subsubdirectory2", "bash": "mkdir -p directory{1..3}/subdirectory{1..3}/subsubdirectory{1..2}"}
+{"nl": "Create new crontab set for user 'test' including $job and only jobs from current crontab of 'test' user that don`t contain $command", "bash": "cat <(fgrep -i -v \"$command\" <(crontab -u test -l)) <(echo \"$job\") | crontab -u test -"}
+{"nl": "Create symlinks to all  /home/folder1/*.txt files and 'folder1_' directory with the same name in a target directory named '+'", "bash": "find /home/folder1/*.txt -type f -exec ln -s {} \"folder1_\" +\\;"}
+{"nl": "Creates temporary file and saves path to it in 'fif2' variable.", "bash": "fif2=$(mktemp -u)"}
+{"nl": "Creates temporary file, replacing XXXXXXXXXXXXXXXXXXXXXXX with equal length suffix.", "bash": "mktemp /tmp/banana.XXXXXXXXXXXXXXXXXXXXXXX.mp3"}
+{"nl": "Creates temporary file with file name formatted like /tmp/gnuplot_cmd_$(basename \"${0}\").XXXXXX.gnuplot and saves path to it in a variable 'gnuplotscript'.", "bash": "gnuplotscript=$(mktemp /tmp/gnuplot_cmd_$(basename \"${0}\").XXXXXX.gnuplot)"}
+{"nl": "Creates temporary folder in a $temp_dir folder with name pattern defined by $template, and stores path to created folder in 'my_temp' variable.", "bash": "$ my_temp_dir=$(mktemp -d --tmpdir=$temp_dir -t $template)"}
+{"nl": "Cuts off last two parts from the path $dir, and deletes resulted folder if empty.", "bash": "rmdir \"$(dirname $(dirname $dir))\""}
+{"nl": "Decompress and extract 'libxml2-sources-2.7.7.tar.gz'", "bash": "gzip -dc libxml2-sources-2.7.7.tar.gz | tar xvf -"}
+{"nl": "delete all the \".doc\" files in the current folder", "bash": "find . -name '*.doc' -exec rm \"{}\" \\;"}
+{"nl": "delete all the \"wmv\" \"wma\" files in the currnet folder,", "bash": "find . \\( -name '*.wmv' -o -name '*.wma' \\) -exec rm {} \\;"}
+{"nl": "Delete all *.zip files under current directory that are older than 2 days", "bash": "find . -name \"*.zip\" -mtime +2 -print0 | xargs -0 -I {} rm {}"}
+{"nl": "Delete all *.zip files under current directory that are older than 2 days", "bash": "find . -name \"*.zip\" -mtime +2 orint0 | xargs -0 rm"}
+{"nl": "Delete all directories in the /myDir directory tree", "bash": "find /myDir -type d -delete"}
+{"nl": "Delete all empty directories in minimum 2 levels down the root directory", "bash": "find root -mindepth 2 -type d -empty -delete"}
+{"nl": "Delete all files/directories taken by the glob pattern * except the ones with the name 'b'", "bash": "find * -maxdepth 0 -name 'b' -prune -o -exec rm -rf '{}' ';'"}
+{"nl": "Delete all files/directories taken by the glob pattern * except the ones with the name 'b'", "bash": "find * -maxdepth 0 -name 'b' -prune -o -exec rm -rf {} \\;"}
+{"nl": "Delete all files in the \"${S}/bundled-libs\" folder except \"libbass.so\"", "bash": "find \"${S}/bundled-libs\" \\! -name 'libbass.so' -delete"}
+{"nl": "Delete all files in the /myDir directory tree that were last modfied 7 days ago", "bash": "find /myDir -mindepth 1 -mtime 7 -delete"}
+{"nl": "Delete all files in the /myDir directory tree that were last modfied 7 days ago", "bash": "find /myDir -mindepth 1 -mtime 7 -exec rm -rf {} \\;"}
+{"nl": "Delete all files in the /myDir directory tree that were last modified 7 days ago", "bash": "find /myDir -mtime 7 -exec rm -rf {} \\;"}
+{"nl": "Delete all files under $INTRANETDESTINATION/monthly directory tree that were modified more than 366 days ago", "bash": "find $INTRANETDESTINATION/monthly -mtime +366 -exec rm {} \\;"}
+{"nl": "Delete all hidden files/directories under $some_directory", "bash": "find \"$some_directory\" -name '.*' ! -name '.' ! -name '..' -delete"}
+{"nl": "delete all the regular files in the temp folder which have not been modified in the last 24 hours + at the end gives bulk input to the rm command", "bash": "find /tmp/ -type f -mtime +1 -exec rm {} +"}
+{"nl": "Delete all regular files with '.txt' extension that were modified in more than 25 minutes ago in maximum 1 level down the directory '/home/u20806/public_html'", "bash": "find /home/u20806/public_html -daystart -maxdepth 1 -mmin +25 -type f -name \"*.txt\" \\ -exec rm -f {} \\;"}
+{"nl": "Delete all regular files with '.txt' extension that were modified in more than 25 minutes ago in maximum 1 level down the directory '/home/u20806/public_html'", "bash": "find /home/u20806/public_html -maxdepth 1 -mmin +25 -type f -name \"*.txt\" -delete"}
+{"nl": "delete all the text files starting with the name \"oldStuff\" in the file system", "bash": "find / -name \"oldStuff*.txt\" -delete"}
+{"nl": "delete all the tmp files ( files with the extension tmp ) in the /tmp folder. Print0 is used to display all those files which have newline in their names or files whose name is only spaces.", "bash": "find /tmp -name \"*.tmp\" -print0 | xargs -0 rm   find /tmp -name \"*.tmp\" -print0 | xargs -0 rm"}
+{"nl": "Delete current cron job list, and use those in yourFile.text", "bash": "crontab yourFile.text"}
+{"nl": "Determine if user \"$USER\" is logged in", "bash": "who | grep $USER"}
+{"nl": "Display a list of files with sizes in decreasing order of size of all the regular files under $dir directory tree that are bigger than $size in size", "bash": "find $dir -type -f size +$size -print0 | xargs -0 ls -1hsS"}
+{"nl": "display a long list of all the directories which have files ending with \".todo\"", "bash": "find \"$STORAGEFOLDER\" -name .todo -printf '%h\\n' | uniq | xargs ls -l"}
+{"nl": "display a long list of all the directories which have files ending with \".todo\"", "bash": "find \"$STORAGEFOLDER\" -name .todo -printf '%h\\n' | xargs ls -l"}
+{"nl": "Display a long list of all the files/directories named \".todo\" under $STORAGEFOLDER directory tree", "bash": "find $STORAGEFOLDER -name .todo  -exec ls -l {} \\;"}
+{"nl": "display a long listing of all the files in the current directory", "bash": "find . -name  * -exec ls -a {} \\;"}
+{"nl": "display a long listing of all the files in the current folder which have been modified in the last 24 hours", "bash": "find . -mtime -1 -ls"}
+{"nl": "display a long listing of all the files in the current folder which have been modified in the last 24 hours", "bash": "find . -mtime -1 | xargs ls -ld"}
+{"nl": "display all the directories in the folder /var and do not go beyond 2 levels during search", "bash": "find /var -maxdepth 2 -type d;"}
+{"nl": "display all the doc files in the current folder ( files ending with \".doc\" )", "bash": "find . -name '*.doc'"}
+{"nl": "display all the files ending with .c in the current folder", "bash": "find . -name \\*.c -print0"}
+{"nl": "display all the files in the current directory excluding the paths \"targert\", \"tools\", \"git\"", "bash": "find . \\( ! -path \"*target*\" -a ! -path \"*tools*\" -a ! -path \"*.git*\" -print \\)"}
+{"nl": "display all files in the current folder ($@ contains the variables passed as argument to the function)", "bash": "find . -iname \"*$@*\" -or -iname \".*$@*\""}
+{"nl": "display all the files in the current folder", "bash": "find . | xargs echo"}
+{"nl": "display all the files in the current folder along with the hidden files with the depth", "bash": "find . \u2014 name \"*\" \u2014 print -\u043e -name \".*\" \u2014 print -depth"}
+{"nl": "display all files in current folder and follow the symbolic links and display the pointed file", "bash": "find -L ."}
+{"nl": "display all files in the current folder expect text files", "bash": "find . -name \"*.txt\" -prune -o -print"}
+{"nl": "display all the files in the current folder for the files which have not been accessed in the last 24 hours", "bash": "find . -type f -atime +1"}
+{"nl": "display all the files in the current folder that have been modified in the last 24 hours", "bash": "find  -mtime -1"}
+{"nl": "display all the files in the file system which belong to the group lighttpd", "bash": "find / -group lighttpd -print"}
+{"nl": "display all the files in the file system which belong to the user with the id 1005", "bash": "find / -uid 1005"}
+{"nl": "display all the files in the folder \"/Users/Me/Desktop\" which have read permission to them", "bash": "find /Users/Me/Desktop -readable"}
+{"nl": "display all the files in the home folder which belong to the suer \"bruno\" and end with \".sxw\" and have been accessed in the last 3*24 hours", "bash": "find /home -type f -name *.sxw -atime -3 -user bruno"}
+{"nl": "display all files which have been modified between two dates in current folder", "bash": "find . -type f -newermt \"2014-01-01\" ! -newermt \"2014-06-01\""}
+{"nl": "display all jpg files in the current folder", "bash": "find -iname \"*.jpg\""}
+{"nl": "(Linux-specific) Display all lines containing UTRACE in the current kernel's compile-time config file.", "bash": "grep UTRACE /boot/config-$(uname -r)"}
+{"nl": "display all the regular files in the current folder excluding those that are present in the path \"git\"", "bash": "find . -path \"*.git\" -prune -o -type f -print"}
+{"nl": "display all the regular files in the current folder excluding those that are present in the path \"git\"", "bash": "find . -path \"*.git*\" -prune -o -type f -print"}
+{"nl": "display all regular/normal files in the current folder that were accessed exactly 7*24 hours back", "bash": "find . -type f -atime 7"}
+{"nl": "display all the regular/normal files in the current folder which have been modified in the last 24 hours", "bash": "find . -mtime 0 -type f"}
+{"nl": "display all the regular files in the folder \"$(FOLDER)\" which are modified in the last $(RETENTION)*24 hours and excluding hidden files", "bash": "find ${FOLDER} -type f ! -name \\\".*\\\" -mtime -${RETENTION}"}
+{"nl": "display all symbolic links in current folder", "bash": "find . -lname \"*\""}
+{"nl": "display all text files in a folder", "bash": "find $target -type f -iname \"*.txt\""}
+{"nl": "display all the text files in a folder", "bash": "find $1 -type f -name '*'$n'.txt'"}
+{"nl": "display the amount of disk space used by all the log files in the folder /usr/local/apache/logs/", "bash": "find /usr/local/apache/logs/ -type f -name \"*_log\"|xargs du -csh"}
+{"nl": "display the base name(name without extension) of all the \".NEF\" files in the current folder", "bash": "find . -name \"*.NEF\" -exec basename \\{\\} .NEF \\;"}
+{"nl": "Display the differences between \"file1.cf\" and \"file2.cf\" side-by-side with a width of 150 characters", "bash": "diff -y -W 150 file1.cf file2.cf"}
+{"nl": "Display the host's ECDSA fingerprint using the md5 hasing algorithm.", "bash": "ssh-keygen -l -E md5 -f /etc/ssh/ssh_host_ecdsa_key.pub"}
+{"nl": "Display human-readable file type description of utf8.txt", "bash": "file utf8.txt"}
+{"nl": "Display kernel name, release, and version.", "bash": "uname -s -r -v"}
+{"nl": "display the long listing of all files in /var/log which were modified 60 days or more ago.", "bash": "find /var/log/ -mtime +60 -type f -exec ls -l {} \\;"}
+{"nl": "display long listing of all files in the current directory whose size is 24 or 25 bytes (doesnt display inode information) .", "bash": "find . -size -26c -size +23c -exec ls -l '{}' \\;"}
+{"nl": "display long listing of all files in the current directory whose size is 24 or 25 bytes.", "bash": "find . -size -26c -size +23c -ls"}
+{"nl": "Display the mimetype of \"filename\"", "bash": "file -i filename"}
+{"nl": "display the names without extensions of all the data files in current folder and do not search in sub folders and which have not been changed in the last 60 mins", "bash": "find . -maxdepth 1 -name '*.dat' -type f -cmin +60 -exec basename {} \\;"}
+{"nl": "Display operating system type, ie. GNU/Linux", "bash": "uname -o"}
+{"nl": "Display the output of \"ls\" for an 80 character wide display", "bash": "ls | column -c 80"}
+{"nl": "Display permissions, user, group, and full path for each file in the current directory tree", "bash": "tree -p -u -g -f"}
+{"nl": "Display total apparent size of a file", "bash": "du -sb"}
+{"nl": "Display what flags mount points are mounted with", "bash": "mount -l"}
+{"nl": "Dry run making directories in \"/TARGET_FOLDER_ROOT/\" for each \".mov\" file in the current directory tree", "bash": "find . -type f -iname \\*.mov -printf '%h\\n' | sort | uniq | xargs -n 1 -d '\\n' -I '{}' echo mkdir -vp \"/TARGET_FOLDER_ROOT/{}\""}
+{"nl": "Dump \"FILENAME\" as 2 byte wide hexadecimal numbers", "bash": "od -tx2 FILENAME"}
+{"nl": "Dump \"file\" as ASCII characters", "bash": "od -t c file"}
+{"nl": "Enables shell option 'lithist'.", "bash": "shopt -s lithist"}
+{"nl": "Enables shell option 'nocaseglob'.", "bash": "shopt -s nocaseglob"}
+{"nl": "Enables shell option 'nocasematch'.", "bash": "shopt -s nocasematch"}
+{"nl": "Enables shell option 'progcomp'.", "bash": "shopt -s progcomp"}
+{"nl": "Execute \"cat /tmp/iostat.running\" every 10 seconds", "bash": "watch -n10 cat /tmp/iostat.running"}
+{"nl": "Execute all commands in \"commands-to-execute-remotely.sh\" on server \"blah_server\"", "bash": "cat commands-to-execute-remotely.sh | ssh blah_server"}
+{"nl": "Extract host name part from URL.", "bash": "echo \"$url\" | cut -d'/' -f3"}
+{"nl": "files all files which expect directories and display count of them", "bash": "find /usr/share \\! -type d wc -l"}
+{"nl": "filter output of bind -p by regex", "bash": "bind -p | grep -a forward"}
+{"nl": "Find \"*.dat\" files recursively in the current directory, print the lines starting on line 5 to the console and save to \"concat.txt\"", "bash": "find . -type f \\( -name \"*.dat\" \\) -exec tail -n+5 -q \"$file\" {} + |tee concat.txt"}
+{"nl": "Find \"*201512*\" regular files in /home/myhome/data/ARCHIVE/ and move them to /home/myhome/ARCHIVE/TempFolder/", "bash": "find /home/myhome/data/ARCHIVE/. -name . -o -type d -prune -o -name '*201512*' -print | xargs -i mv {} /home/myhome/ARCHIVE/TempFolder/."}
+{"nl": "Find \"*prefs copy\" files in the /mnt/zip directory tree and remove them", "bash": "find /mnt/zip -name \"*prefs copy\" -print0 | xargs rm"}
+{"nl": "Find \"file.xml\" under the current directory and change directory to its parent", "bash": "cd `find . -name file.xml -exec dirname {} \\;`"}
+{"nl": "Find \"file.xml\" under the current directory and change directory to its parent", "bash": "cd `find . -name file.xml -printf %h`"}
+{"nl": "Find *.c files under $HOME and search for the string 'sprintf' in those files", "bash": "find $HOME -name '*.c' -print | xargs    grep -l sprintf"}
+{"nl": "Find *.css files in the current directory tree, skipping all directories that match pattern '*/lang/en.css'", "bash": "find . -path '*/lang/en.css' -prune -o -name '*.css' -print"}
+{"nl": "Find *.java files under current directory and compress them to myfile.tar", "bash": "find . -type f -name \"*.java\" | xargs    tar rvf myfile.tar"}
+{"nl": "Find *.java files under current directory and compress them to myfile.tar  (unsafe)", "bash": "find . -type f -name \"*.java\" | xargs    tar cvf myfile.tar"}
+{"nl": "Find .java files in the current directory tree that contain 'TODO', and print their pathnames", "bash": "find . -name \"*.java\" -exec grep -Hin TODO {} + | cut -d \":\" -f 1"}
+{"nl": "Find a size of only the target directory in MB format", "bash": "du -s --block-size=M /path/to/your/directory/"}
+{"nl": "Find all $tofind* files/directories under $parentdir", "bash": "find $parentdir -name $tofind*"}
+{"nl": "Find all *.$input_file_type files/directories under $source_dir", "bash": "find \"$source_dir\" -name *.$input_file_type"}
+{"nl": "Find all *.cls files/directories under current directory and print '{if(length($0) > L) { LINE=$0; L = length($0)}} END {print LINE\"L\"L}' for each of them where $0 is expanded to the file/directory path", "bash": "find . -iname \"*.cls\" -exec echo '{if(length($0) > L) { LINE=$0; L = length($0)}} END {print LINE\"L\"L}' {} \\;"}
+{"nl": "Find all *.jpg files/directories under current directory", "bash": "find . -name '*.jpg'"}
+{"nl": "Find all *.py (case insensitive) files/directories under dir directory ignoring .git path", "bash": "find dir -not -path '.git' -iname '*.py'"}
+{"nl": "Find all *.sql file that are not newer than  $oldest_to_keep excluding the  $oldest_to_keep file", "bash": "find . -name \\*.sql -not -samefile $oldest_to_keep -not -newer $oldest_to_keep"}
+{"nl": "Find all *.srt files under directory named 'working' and show the first one found", "bash": "find working -type f -name \"*.srt\" | head -1"}
+{"nl": "Find all *.txt files/directories in entire file system", "bash": "find / -name \"*.txt\""}
+{"nl": "Find all *.txt files under / and print their sizes and paths", "bash": "find / -name '*.txt' -exec du -hc {} \\;"}
+{"nl": "Find all *shp* files/directories under current directory", "bash": "find . -name '*shp*'"}
+{"nl": "Find all *text files/directories under current directory", "bash": "find -name \"*text\""}
+{"nl": "Find all the .c files in the current directory tree that contain the string \u2018stdlib.h\u2019", "bash": "find . -name \u2018*.c\u2019 | xargs egrep stdlib.h"}
+{"nl": "Find all .gz archives in the current directory tree", "bash": "find . -name '*.gz'"}
+{"nl": "Find all .java files starting from the current folder", "bash": "find * -name \"*.java\""}
+{"nl": "Find all .js files in the $d directory tree whose pathnames do not contain whitespaces", "bash": "find $d -name '*.js' | grep -v \" \""}
+{"nl": "Find all the .mp3 files in the music folder and pass to the ls command, -print0 is required if any filenames contain whitespace", "bash": "find ./music -name \"*.mp3\" -print0 | xargs -0 ls"}
+{"nl": "Find all the .mp3 files in the music folder recursively and pass them to the ls command", "bash": "find ./music -name \"*.mp3\" -print0 | xargs -0 ls"}
+{"nl": "Find all .py files in the current directory except \"setup.py\" and those beginning with \"test_\"", "bash": "find . -maxdepth 1 -mindepth 1 \\( -name '*.py' -not -name 'test_*' -not -name 'setup.py' \\)"}
+{"nl": "Find all 2*.data files/directories under jcho directory", "bash": "find jcho -name 2*.data"}
+{"nl": "Find all 400 permission files under /data directory and print 'Modifying ' appended with file path for each of them", "bash": "find /data -type f -perm 400 -exec echo Modifying {} \\;"}
+{"nl": "Find all 777 permission directories and use chmod command to set permissions to 755", "bash": "find / -type d -perm 777 -print -exec chmod 755 {} \\;"}
+{"nl": "Find all Subscription.java files/directories under current directory and enter into the parent directory of the first one found", "bash": "cd $(find . -name Subscription.java -printf '%h\\n')"}
+{"nl": "find all c, cpp files in current folder", "bash": "find -name \"*.cpp\" -o -name \"*.c\""}
+{"nl": "find all c, cpp files in current folder", "bash": "find -regex '.*\\.\\(c\\|cpp\\)'"}
+{"nl": "find all the directories in current folder and do not search in sub directories", "bash": "find . -maxdepth 1 -type d -print0"}
+{"nl": "Find all directories named \"D\" in the current directory tree", "bash": "find . -name \"D\" -type d"}
+{"nl": "Find all directories named \"D\" in the current directory tree", "bash": "find ./ -type d -name 'D'"}
+{"nl": "Find all directories named 'local' in entire file system", "bash": "find / -name local -type d"}
+{"nl": "find all the directories starting with the name \"someNamePrefix\" which have not been modified in the last 10 days and force delete them", "bash": "find /somePath -type d -name \u2018someNamePrefix*\u2019 -mtime +10 -print | xargs rm -rf ;"}
+{"nl": "Find all directories under 'test' directory tree that match the regex '[course*]' in their paths", "bash": "find test -regex \"[course*]\" -type d"}
+{"nl": "Find all directories under /home/me/target_dir_1", "bash": "find /home/me/target_dir_1 -type d"}
+{"nl": "Find all directories under /home/mywebsite/public_html/sites/all/modules and set their permission to 750", "bash": "find /home/mywebsite/public_html/sites/all/modules -type d -exec chmod 750 {} +"}
+{"nl": "Find all directories under current directory and set their permission to 775", "bash": "find -type d exec chmod 775 {} +"}
+{"nl": "Find all directories under current directory and set their permission to 775", "bash": "find -type d | xargs chmod 775"}
+{"nl": "Find all directories under foldername directory and set their permission to 755", "bash": "sudo find foldername -type d -exec chmod 755 {} \";\""}
+{"nl": "Find all duplicate \".jar\" files in the current directory tree", "bash": "find . -type f -printf \"%f\\n\" -name \"*.jar\" | sort -f | uniq -i -d"}
+{"nl": "Find all executable files under {} and reverse sort them", "bash": "find {} -type f -depth 1 -perm +0111 | sort -r"}
+{"nl": "Find all executable upvoter-* files/symlinks under maximum 1 level down the {} directory", "bash": "find {} -name 'upvoter-*' \\( -type f -or -type l \\) -maxdepth 1 -perm +111"}
+{"nl": "Find all files/directories case insensitively containing 'xt' in their names under '/etc' directory tree", "bash": "find /etc -iregex '.*xt.*'"}
+{"nl": "Find all files/directories in directories/files taken from the glob pattern '/tmp/test/*' that were modified within the last day (day counted from today)", "bash": "find /tmp/test/* -daystart -mtime -1"}
+{"nl": "Find all files/directories named '.todo' under $STORAGEFOLDER directory tree and print the parent directory names", "bash": "find \"$STORAGEFOLDER\" -name .todo  -exec dirname {} \\;"}
+{"nl": "Find all files/directories named 'photo.jpg' (case insensitive) under current directory tree", "bash": "find . -iname \"photo.jpg\""}
+{"nl": "Find all files/directories named 'photo.jpg' under current directory tree", "bash": "find -name photo.jpg"}
+{"nl": "Find all files/directories that contain the string literal '`$VERSION`' in their names under current directory tree", "bash": "find . -name '*`$VERSION`*'"}
+{"nl": "Find all files/directories that start with 'screen' (case insensitive) in their names under user's home directory tree", "bash": "find ~ -iname \"screen*\""}
+{"nl": "Find all files/directories under $something directory", "bash": "find $something"}
+{"nl": "Find all files/directories under '/etc' directory tree that are greater than 5MB and print their sizes and names", "bash": "find /etc -size +5M -exec ls -sh {} +"}
+{"nl": "Find all files/directories under '/etc' directory tree that have been modified after '/etc/motd'", "bash": "find /etc -newer /etc/motd"}
+{"nl": "Find all the files/directories under '/usr/local' directory tree which have been modified within the last day", "bash": "find /usr/local -mtime -1"}
+{"nl": "Find all files/directories  under  /eserver6 directory and follow symlinks if needed", "bash": "find /eserver6 -L"}
+{"nl": "Find all files/directories under current directory and print them", "bash": "find . -print0 | xargs -I{} -0 echo {}"}
+{"nl": "Find all files/directories under current directory tree that contain '1' or 'k' in their names", "bash": "find . -name \"*[1k]*\""}
+{"nl": "Find all files/directories under current directory tree whose names start with '(test)' followed by two digits and end with '.txt' extension", "bash": "find . -regex \".*/(test)[0-9][0-9]\\.txt\""}
+{"nl": "Find all files/directories under current directory tree whose paths match the pattern '*ACK*1'  (case insensitive)", "bash": "find . -iwholename \"*ACK*1\""}
+{"nl": "Find all files/directories with '.js' extension under current directory tree without descending into './directory'", "bash": "find . -path ./directory -prune -o -name '*.js' -print"}
+{"nl": "Find all files/directories with 777 permission under '/apps/audit' and strip write permission for 'other' from them", "bash": "find /apps/audit -perm -7 -print | xargs chmod o\u2011w"}
+{"nl": "Find all files/directories with space in their names under current directory and rename them by replacing all spaces with _", "bash": "find . -depth -name \"* *\" -execdir rename \"s/ /_/g\" \"{}\" \\;"}
+{"nl": "Find all files called \"file1.txt\" that reside under and below /home/wsuNID/", "bash": "find /home/wsuNID/ -name file1.txt"}
+{"nl": "find all the files ending with \".sh\" in the folder /dir excluding those wth the names foo and bar.", "bash": "find /dir \\( -name foo -prune \\) -o \\( -name bar -prune \\) -o -name \"*.sh\" -print"}
+{"nl": "Find all files excluding files ending with 'gz', 'tmp' and 'xftp' in their names in the current directory tree and compress them with gzip not preserving timestamp and original name", "bash": "find . -type f ! \\( -name \"*gz\" -o -name \"*tmp\" -o -name \"*xftp\" \\) -exec gzip -n '{}' \\;"}
+{"nl": "Find all files in the /home/myuser directory recursively that are older than 7 days", "bash": "find /home/myuser -mtime +7 -print"}
+{"nl": "Find all files in the current directory and its sub-directories that have not been assessed in more than 30 days.", "bash": "find . -atime +30 -print"}
+{"nl": "Find all files in current directory excluding hidden files, archive them and put the output into variable  full_backup_dir", "bash": "full_backup_dir=\"$(find . -depth \\( -wholename \\./\\.\\* \\) -prune -o -print | cpio -oav)\""}
+{"nl": "find all the files in current directory of size smaller than 10KB.", "bash": "find . -size -10k"}
+{"nl": "find all the files in the current folder and display them in the sorted order of their name", "bash": "find . | sort"}
+{"nl": "find all the files in the current folder and display those that are not present in the list \"file.lst\"", "bash": "find . | grep -vf file.lst"}
+{"nl": "find all files in current folder and display the total lines in them", "bash": "find . | xargs wc -l"}
+{"nl": "find all the files in the current folder which have been accessed in the last 24 hours", "bash": "find . -type f -atime 1"}
+{"nl": "find all files in the current folder which have not been accessed in the last 30 days in the current folder", "bash": "find . -atime +30 -print"}
+{"nl": "find all the files in the folder /opt which have been modified between 20 to 50 days ago", "bash": "find /opt -mtime +30 -mtime -50"}
+{"nl": "Find all files in your home directory and below that are exactly 100M.", "bash": "find ~ -size 100M"}
+{"nl": "find all files in home folder which have been modified exactly 1 day before", "bash": "find ~ -mtime 1 -daystart"}
+{"nl": "find all the files in the home folder which end with \".tex\"", "bash": "find ~ -iname '*.tex'"}
+{"nl": "Find all files named \"test2\" in the current directory", "bash": "find -name test2 -prune"}
+{"nl": "Find all files named 'aaa.txt' under current directory tree and display their contents", "bash": "cat `find . -name aaa.txt`"}
+{"nl": "Find all files on the system that are world writable", "bash": "find / -wholename  '/proc' -prune  -o  -type f -perm -0002 -exec ls -l {} \\;"}
+{"nl": "Find all files on your system that are world writable", "bash": "find / -wholename  '/proc' -prune  -o  -type f -perm -0002 -exec ls -l {} \\;"}
+{"nl": "Find all files on the system whose names are 'composer.json' and search them for \"drush\"", "bash": "find / -name composer.json -exec grep -n drush {} /dev/null \\;"}
+{"nl": "Find all files starting from the current directory which are owned by the user tommye", "bash": "find . -user tommye"}
+{"nl": "Find all files that belong to group developer", "bash": "find /home -group developer"}
+{"nl": "Find all files that belong to user root", "bash": "find / -user root"}
+{"nl": "find all files that names are dir-name-here", "bash": "find / -name \"dir-name-here\""}
+{"nl": "Find all files that were modified later than ordinary_file in the current directory and its sub-directories.", "bash": "find -newer ordinary_file"}
+{"nl": "Find all files that have wrong permission", "bash": "find / \\( -perm -006 -o -perm -007 \\) \\( ! -type -l \\) -ls"}
+{"nl": "Find all files throughout the entire file hierarchy with the optional constraints of \u043e\u043f\u0446\u0438\u044f_\u043f\u043e\u0438\u0441\u043a\u0430, \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 and/or \u043e\u043f\u0446\u0438\u044f_\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f.", "bash": "find / [\u043e\u043f\u0446\u0438\u044f_\u043f\u043e\u0438\u0441\u043a\u0430] [\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435] \t[\u043e\u043f\u0446\u0438\u044f_\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f]"}
+{"nl": "Find all files under $musicdir directory", "bash": "find \"$musicdir\" -type f -print"}
+{"nl": "Find all files under ./lib/app and redirect their sorted list to myFile", "bash": "find ./lib/app -type f | sort | tee myFile"}
+{"nl": "Find all files under /path and below writable by `group' and `other'", "bash": "find /path -perm -022"}
+{"nl": "Find all files under /path and below writable by `group' and `other'", "bash": "find /path -perm -g+w,o+w"}
+{"nl": "Find all files under /path and below writable by `group' and `other'", "bash": "find /path -perm -go+w"}
+{"nl": "Find all files under /path and calculate their md5sum", "bash": "find /path -type f -print0 | xargs -0 md5sum"}
+{"nl": "Find all files under /somefolder matching the extended regex '\\./(.*\\.error.*|second.*log|.*FFPC\\.log)$' in their paths", "bash": "find -E /somefolder -type f -regex '\\./(.*\\.error.*|second.*log|.*FFPC\\.log)$'"}
+{"nl": "Find all files under maximum 1 level down the ./subfolder and ./subfolder/*/  paths", "bash": "find ./subfolder ./subfolder/*/ -maxdepth 1 -type f"}
+{"nl": "Find all the files which were modified more than 50 days but less than 100 days ago", "bash": "find / -mtime +50 -mtime -100"}
+{"nl": "Find all files with the extension jpg regardless of case", "bash": "find . -type f -iname '*.jpg' -print0"}
+{"nl": "Find all files with name ending with .txt and display only the filenames without full paths", "bash": "find ./ -name \"*.txt\" | rev | cut -d '/' -f1 | rev"}
+{"nl": "find all gzip files in a folder", "bash": "find /home/foo -name \"*.gz\""}
+{"nl": "find all the header files in /usr/include which have been modified in the last 400 days", "bash": "find /usr/include -type f -mtime -400 -name \"*.h\""}
+{"nl": "Find all instances of first column with unique rest of line, and output a count for each first column that found in unique lines.", "bash": "sort file | uniq | cut -f1 -d' ' | uniq -c | rev"}
+{"nl": "Find all JPG files under the \"$SOURCE\" directory and below", "bash": "find \"$SOURCE\" -type f -iname '*.jpg'"}
+{"nl": "find all the php files", "bash": "find -name '*.php'"}
+{"nl": "find all php files in the folder  /var/www/", "bash": "find /var/www/ -type f -iname \"*.php\" -print"}
+{"nl": "find all posix-extended regex  \"[a-f0-9\\-]\\{36\\}\\.jpg\" files", "bash": "find . -regextype posix-extended -regex \"[a-f0-9\\-]\\{36\\}\\.jpg\""}
+{"nl": "find all readable files", "bash": "find / -readable"}
+{"nl": "Find all regular files in the current directory tree and print a command to move them to the current directory", "bash": "find . -type f -exec echo mv -t . {} +"}
+{"nl": "find all the regular/normal files in the current folder and rename them to html files", "bash": "find main-directory -type f -exec mv -v '{}' '{}'.html \\;"}
+{"nl": "find all the normal/regular files in the current folder which have been modified two days ago and display a long listing of them", "bash": "find . -type f -mtime 2 -mtime -3 -daystart -exec ls -l {} \\;"}
+{"nl": "find all the regular/normal files in the current folder which belong to the user \"sedlav\"", "bash": "find . -user sedlav -type f"}
+{"nl": "Find all regular files under $DIR directory tree with \".$TYPE\" extension (case insensitive) where $TYPE expands in the current shell", "bash": "find $DIR -type f -iname \"*.$TYPE\""}
+{"nl": "Find all regular files under $FILES_PATH directory tree and save the output to 'FILES' variable", "bash": "FILES=$(find $FILES_PATH -type f -name \"*\")"}
+{"nl": "Find all regular files under '/home/john' directory tree that start with 'landof' in their names", "bash": "find /home/john -name \"landof*\" -type f -print"}
+{"nl": "Find all regular files under current directory tree excluding files from './dir1' (except './dir1/subdir1/) and './dir2' directories", "bash": "find . \\( -not -path './dir1/*' -and -not -path './dir2/*' -or -path './dir1/subdir1/*' \\) -type f"}
+{"nl": "Find all socket files in the current directory and its sub-directories.", "bash": "find . -type s"}
+{"nl": "find all the text files in current folder and move all these to another folder appending \".bar\" at the end of these files", "bash": "find . -name \"*.txt\" | xargs -I '{}' mv '{}' /foo/'{}'.bar"}
+{"nl": "find all the text files in the file system and search only in the disk partition of the root.", "bash": "find / -mount -name \"*.txt\""}
+{"nl": "find all the text files in the file system and search only in the disk partition of the root.", "bash": "find / -xdev -name \"*.txt\""}
+{"nl": "Find all thumb.png files in the temps/ directory tree", "bash": "find temps/ -name \"thumb.png\""}
+{"nl": "find all the wav files in the current folder and do not search in the sub directories", "bash": "find . -name '*.wav' -maxdepth 1"}
+{"nl": "find all the xml files in the current folder which are present in the pattern text file", "bash": "find . -name \"*.xml\" -exec grep -HFf <(find . -name \"*.txt\" -printf \"%f\\n\") {} \\;"}
+{"nl": "find all the zip files in the current folder and create a tar ball of these zip files", "bash": "find . -type f -name '*.zip' -print0 | xargs -0 tar -xzf"}
+{"nl": "Find and delete all core files in the user's home directory and below.", "bash": "find ~/ -name 'core*' -exec rm {} \\"}
+{"nl": "Find and print all PDF files in the current directory and its sub-directories except for any found in the ./pdfs directory.", "bash": "find . -name \"*.pdf\" -print | grep -v \"^\\./pdfs/\""}
+{"nl": "Find and show all files in the current directory tree that are smaller than 500 kB", "bash": "find . -size -500k"}
+{"nl": "Find command will display top 5 small files from curent directory . most probably you will get ZERO  bytes files .", "bash": "find . -type f -exec ls -s {} \\; sort -n |head -5"}
+{"nl": "Find directories that are directly under $workspace_ts directory (no-subdirectories) and were modified less than 30 days ago", "bash": "find $workspace_ts -mindepth 1 -maxdepth 1 -type d -mtime -30"}
+{"nl": "Find the directories whose names contain \"New Parts\" at level 3 of the current directory tree and create symlinks to them in /cygdrive/c/Views", "bash": "find -mindepth 3 -maxdepth 3 -type d -name \"*New Parts*\" -exec ln -s -t /cygdrive/c/Views {} \\;"}
+{"nl": "Find the directory with least modification time under current directory", "bash": "find -type d -printf '%T+ %p\\n' | sort | head -1"}
+{"nl": "Find directories with permissions 777 and change them to 755 recursively", "bash": "find /home -type d -perm 777 -print -exec chmod 755 {} \\;"}
+{"nl": "Find every JavaScript file in the wordpress directory tree", "bash": "find wordpress -name '*js'"}
+{"nl": "find the file \"myfile.txt\" in the folder /home/user/myusername/", "bash": "find /home/user/myusername/ -name myfile.txt -print"}
+{"nl": "Find files/directories containing 'test' in their names and display the directory contents before the directories themselves", "bash": "find -name \"*test*\" -depth"}
+{"nl": "Find files/directories named 'sar' under directory trees whose path starts with '/u' or '/b' or '/s' or '/o'", "bash": "find `ls -d /[ubso]*` -name sar"}
+{"nl": "Find files/directories under /users/tom that matches both the pattern \"*.pl\" and  \"*.pm\"", "bash": "find /users/tom -name \"*.pl\" -name \"*.pm\""}
+{"nl": "Find files/directories writable by group and others under the /path directory", "bash": "find /path -perm -022"}
+{"nl": "Find files/directories writable by group and others under the /path directory", "bash": "find /path -perm -g+w,o+w"}
+{"nl": "Find files/directories writable by group and others under the /path directory", "bash": "find /path -perm -go+w"}
+{"nl": "find the file arrow.jpg in the entire file system", "bash": "find / -name arrow.jpg"}
+{"nl": "find files in the current directory and sub-directories, that were accessed within last hour", "bash": "find -amin -60"}
+{"nl": "Find files in the current directory tree that have one link", "bash": "find . -links 1"}
+{"nl": "Find files newer than main.css in ~/src", "bash": "find ~/src -newer main.css"}
+{"nl": "Find files on the system bigger than 50MB but smaller than 100MB", "bash": "find / -type f -size +50M -size -100M"}
+{"nl": "Find files that don\u2019t have 644 permissions", "bash": "find / -type f ! -perm 644"}
+{"nl": "Find files under /usr that are newer than the first file `FirstFile'", "bash": "find /usr -newer /usr/FirstFile -print"}
+{"nl": "find file which name like 'foo.*' in current directory.", "bash": "find . -name \"foo.*\""}
+{"nl": "Find files with 002 permission in entire file system with the null character as the delimiter", "bash": "find / -type f -perm -002 -print0"}
+{"nl": "Find files with inode number 199053", "bash": "find / -inum 199053"}
+{"nl": "Find the first file/directory under current directory and quit", "bash": "find . ... -print -quit"}
+{"nl": "Find grub.conf files in entire file system", "bash": "find / -name grub.conf"}
+{"nl": "Find image files and move them to the pictures directory", "bash": "find ~/Desktop -name \u201c*.jpg\u201d -o -name \u201c*.gif\u201d -o -name \u201c*.png\u201d -print0 | xargs -0 mv \u2013target-directory ~/Pictures"}
+{"nl": "Find the largest 10 directories under current directory", "bash": "find . -type d -print0 | xargs -0 du | sort -n | tail -10 | cut -f2 | xargs -I{} du -sh {}"}
+{"nl": "find md5sums of files named \"file*.txt\"", "bash": "md5sum file*.txt"}
+{"nl": "find not case sensitive all directories that names are 'project.images'", "bash": "find  / -type d -iname \"project.images\" -ls"}
+{"nl": "Find the password file between sub-directory level 2 and 4", "bash": "find -mindepth 3 -maxdepth 5 -name passwd"}
+{"nl": "Find the password file between sub-directory level 2 and 4.", "bash": "find -mindepth 3 -maxdepth 5 -name passw"}
+{"nl": "Find recursively all files under current directory tree that contain a colon in the filename", "bash": "find . -name \\*\\:\\*"}
+{"nl": "Find regular files named \"expression -or expression\" under and below /dir/to/search/", "bash": "find /dir/to/search/ -type f -name 'expression -or expression' -print"}
+{"nl": "Finds strings with text \"searched-string\" recursively in all files of current folder.", "bash": "grep -r \"searched-string\" ."}
+{"nl": "Force create a symbolic link in \"/usr/bin/\" for each file matching \"$javaUsrLib/jdk1*/bin/*\"", "bash": "sudo ln -f -s $javaUsrLib/jdk1*/bin/* /usr/bin/"}
+{"nl": "Force create a symbolc link named \"/usr/local/bin/fpdf\" to \"/usr/local/bin/findpdftext\"", "bash": "sudo ln -s -f \"/usr/local/bin/findpdftext\" \"/usr/local/bin/fpdf\""}
+{"nl": "Force create a symbolc link named \"new_dir\" to \"/other/dir\" without dereferencing \"new_dir\"", "bash": "ln -sfn /other/dir new_dir"}
+{"nl": "force delete all the files that have been modified in the last 3 days", "bash": "find . -mtime -3 -exec rm -rf {} \\;"}
+{"nl": "Forcibly removes files  '/tmp/stored_exception', '/tmp/stored_exception_line', '/tmp/stored_exception_source'", "bash": "rm -f /tmp/stored_exception /tmp/stored_exception_line /tmp/stored_exception_source"}
+{"nl": "Format output of \"mount\" as a table", "bash": "mount | column -t"}
+{"nl": "Format space separated fields in \"filename\" as a table", "bash": "column -t -s' ' filename"}
+{"nl": "Format time string @$TIMESTAMP according to default time format", "bash": "date -d @$TIMESTAMP"}
+{"nl": "Generate a random 32 ASCII character password from /dev/urandom and save it to variable 'pass'", "bash": "pass=$(LC_CTYPE=C < /dev/urandom tr -cd [:graph:] | tr -d '\\n' | fold -w 32 | head -n 1)"}
+{"nl": "Get from file 'File1.txt' strings starting with 'Q', extract only part of them following after '=' sign, and print which ones are not found in 'File2.txt'", "bash": "grep ^Q File1.txt | cut -d= -f2- | sort | comm -23 - <(sort File2.txt)"}
+{"nl": "Get the list of regular files in the current directory", "bash": "find . -mindepth 1 -maxdepth 1 -type f -print0 | xargs -0 -I {} echo \"{}\""}
+{"nl": "Get the sizes (and total size) of all files under dir1 directory", "bash": "find dir1 ! -type d |xargs wc -c"}
+{"nl": "List all files under and below the directory given as variable $FULFILLMENT", "bash": "find $FULFILLMENT -ls"}
+{"nl": "List all files under current directory matching the regex '.*\\(c\\|h\\|cpp\\)'", "bash": "find . -type f -regex '.*\\(c\\|h\\|cpp\\)' -exec ls {} \\;"}
+{"nl": "List all paths to files or directories under \"/data/\" that start with \"command-\" and end with \"-setup\", sort the result by the version number specified between \"command-\" and \"-setup\" (least to greatest)", "bash": "find /data/ -name 'command-*-setup' | sort -t - -V -k 2,2"}
+{"nl": "List all regular files in the current directory tree", "bash": "find . -type f -exec ls -l '{}' \\;"}
+{"nl": "list all samba files in /var/l* directory ( /var/lib or /var/log )", "bash": "find  /var -path */l??/samba*"}
+{"nl": "list all the sqlite files in the current folder", "bash": "find ./ -name \"*.sqlite\" -ls"}
+{"nl": "List all symlinks under current directory and search for targetfile.txt in this list", "bash": "find . -type l | xargs -I % ls -l % | grep targetfile.txt"}
+{"nl": "List all ~/bin/FilesDvorak/.* (non-recursive) and ~/.PAST_RC_files/.* (recursive) files/directories and take common entries between these two lists", "bash": "comm -12 <(find ~/bin/FilesDvorak/.* -maxdepth 0) <(find ~/.PAST_RC_files/.*)"}
+{"nl": "list complete path name to process associated with pid \"$1\"", "bash": "find /proc/$1/exe -printf '%l\\n'"}
+{"nl": "Lists content of all subfolder (without recursion) in a current folder.", "bash": "ls -d -1 $PWD/**/*"}
+{"nl": "List files and directories one level deep in the current directory tree", "bash": "tree -L 2"}
+{"nl": "List file contents of compressed file $i", "bash": "gzip -l $i"}
+{"nl": "List in detail the regular files from the /somelocation/log_output directory tree that were last changed more than 40 days ago", "bash": "find /somelocation/log_output -type f -ctime +40 -exec ls -l {} \\;"}
+{"nl": "list in long format all files from / whose filename ends in \"jbd\", not descending into directories that are not readable while searching.", "bash": "find / \\! -readable -prune -o -name '*.jbd' -ls"}
+{"nl": "List the largest file prefixed by its size in bytes of all files under the current directory", "bash": "find . -type f -name '*.gz' -printf '%s %p\\n'|sort -nr|head -n 1"}
+{"nl": "List the names of all files under current directory", "bash": "find . -type f -exec basename {} \\;"}
+{"nl": "list names of bind functions containing \"/\"", "bash": "bind -l | grep /"}
+{"nl": "list symbolic links under the directory \"$directory\" using contents of the $IFS variable between output of each one", "bash": "find $directory -type l -printf \"%p$IFS\""}
+{"nl": "Locate all \"copyright\" files under and below /usr/share/doc", "bash": "find /usr/share/doc -name \"copyright\""}
+{"nl": "Locate all passwd files on the system", "bash": "find / -name passwd"}
+{"nl": "long list all the files in the curent folder starting with \"Tes\"", "bash": "find . -type f -name \"Tes*\" -exec ls -l {} \\;"}
+{"nl": "Look for \"filename\" in the current directory and below", "bash": "find -name filename"}
+{"nl": "Make 3 directories named \"~/Labs/lab4a/folder\" followed by the number 1, 2, or 3", "bash": "mkdir ~/Labs/lab4a/folder{1,2,3}"}
+{"nl": "Make 3 directories named \"~/Labs/lab4a/folder\" followed by the number 1, 2, or 3", "bash": "mkdir ~/Labs/lab4a/folder{1..3}"}
+{"nl": "Make a directory in the current working directory with a random 32 alphanumeric character name", "bash": "cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1 | xargs mkdir"}
+{"nl": "Make a directory in the current working directory with a random 32 alphanumeric character name", "bash": "mkdir $(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)"}
+{"nl": "Make directories \"/tmp/A\", \"/tmp/B\", \"/tmp/C\", and \"/tmp/ dir with spaces\"", "bash": "mkdir /tmp/A /tmp/B /tmp/C \"/tmp/ dir with spaces\""}
+{"nl": "Make directory \"mybuild\"", "bash": "mkdir mybuild"}
+{"nl": "Merge colon-separated information from file1 and file2 where first field of both files matches", "bash": "join -t: <(sort file1) <(sort file2)"}
+{"nl": "Merge each line in \"file\" into a single comma separated line", "bash": "paste -d, -s file"}
+{"nl": "Mount a partition in \"$IMAGE\" with offset \"$OFFSET\" to \"media/$DEST\" as read only using a loop device", "bash": "mount -o ro,loop,offset=$OFFSET -t auto $IMAGE /media/$DEST"}
+{"nl": "Move all files and directories in the current directory to \"/foo\"", "bash": "mv * /foo"}
+{"nl": "Move all files and directories in the current directory to \"/foo\"", "bash": "mv `ls` /foo"}
+{"nl": "Move all files/directories under current directory to destDir", "bash": "find sourceDir -print0 | xargs -0 mv -t destDir"}
+{"nl": "Move all files from the `sourceDir' directory to the `destDir' directory", "bash": "find sourceDir -mindepth 1 -maxdepth 1 -exec mv --target-directory=destDir '{}' +"}
+{"nl": "Move all files from the `sourceDir' directory to the `destDir' directory", "bash": "find sourceDir -mindepth 1 -maxdepth 1 -print0 | xargs -0 mv --target-directory=destDir"}
+{"nl": "Move all regular files under current directory to ./newdir", "bash": "find ./ -type f -print | xargs    -i mv -f {} ./newdir"}
+{"nl": "Move all regular files under current directory to ./newdir", "bash": "find ./ -type f -print | xargs    -l56 -I {} mv -f {} ./newdir"}
+{"nl": "Moves file '$2' to the folder where '$1' file is located.", "bash": "mv \"$2\" \"`dirname $1`\""}
+{"nl": "move files accessed more than one day ago to directory TMP", "bash": "find . -atime +1 -type f -exec mv {} TMP \\; # mv files older then 1 day to dir TMP"}
+{"nl": "Open a ssh connection to user@host with X11 forwarding to run GUI programs", "bash": "ssh user@host -X"}
+{"nl": "Output all lines in 'file' comparing the first 12 characters and discarding any adjascent lines where these characters are duplicates.", "bash": "uniq -w12 -c file"}
+{"nl": "Output success.txt omitting lines whose first field appears in fail.txt - lines in fail.txt must appear in the same order as they do in success.txt.", "bash": "join -v1 success.txt fail.txt"}
+{"nl": "Perform a white space safe search for all files/directories under current directory", "bash": "find . -print0 | xargs -0"}
+{"nl": "Print \"This is a sentence.\" by replacing all consecutive space characters with a single newline character", "bash": "echo \"This is   a sentence.\" | tr -s \" \" \"\\012\""}
+{"nl": "Print a count of duplicate lines in \"filename\"", "bash": "sort filename | uniq -c"}
+{"nl": "Print a count of duplicate lines in \"filename\" sorted by most frequent", "bash": "sort filename | uniq -c | sort -nr"}
+{"nl": "Print a list of all duplicate case insensitive file paths in the current directory tree", "bash": "find . | sort -f | uniq -i -d"}
+{"nl": "Print a list of case insensitive duplicate filenames in the current directory", "bash": "ls | sort -f | uniq -i -d"}
+{"nl": "Print a minimal set of differences between files in directories \"teste1\" and \"teste2\", treat absent files as empty, ignore differences in whitespace, treat all files as text, and print 3 lines of unified context", "bash": "diff -burNad teste1 teste2"}
+{"nl": "Print A record for domain 'domain.' from 'some.other.ip.address' nameserver", "bash": "dig @some.other.ip.address domain. a"}
+{"nl": "Print a sorted list of all .jpg files in the current directory and below", "bash": "find -name '*.jpg' | sort -n"}
+{"nl": "Print appended data in \"/var/log/some.log\" that match \"foo\" and \"bar\"", "bash": "tail -f /var/log/some.log | grep --line-buffered foo | grep bar"}
+{"nl": "Print the base name of the current working directory", "bash": "basename \"`pwd`\""}
+{"nl": "Print the base name of the current working directory", "bash": "basename $(pwd)"}
+{"nl": "Print the base name of the current working directory", "bash": "basename `pwd`"}
+{"nl": "Print the base name of the current working directory", "bash": "echo \"$(basename $(pwd))\""}
+{"nl": "Print the base name of the current working directory", "bash": "pwd | xargs basename"}
+{"nl": "Print the base name via grep of the current working directory", "bash": "pwd | grep -o '[^/]*$'"}
+{"nl": "Print the basename from a colon separated path 'a:b:c:d:e'", "bash": "basename $(echo \"a:b:c:d:e\" | tr ':' '/')"}
+{"nl": "Print the calendar for February 1956", "bash": "cal 02 1956"}
+{"nl": "Print the commands that would execute \"myfile\" on all .ogv files from the current directory tree", "bash": "find ./ -name *.ogv -exec echo myfile {} \\;"}
+{"nl": "Print continuous characters '/' and '\\' randomly from /dev/urandom", "bash": "grep -ao \"[/\\\\]\" /dev/urandom|tr -d \\\\n"}
+{"nl": "Print the day at 1 day ago in 2 months from now", "bash": "date -d \"$(date -d \"2 months\" +%Y-%m-1) -1 day\" +%a"}
+{"nl": "Print the directory name of the physical current working directory", "bash": "dirname `pwd -P`"}
+{"nl": "Print each line that is found only once in \"file1\" and \"file2\" combined", "bash": "sort file1 file2 | uniq -u"}
+{"nl": "Print the empty files/directories among empty1, empty2 and not_empty", "bash": "find empty1 empty2 not_empty -prune -empty"}
+{"nl": "Print every 20 bytes of standard input as tab separated groups of bytes 1-3, 4-10, and 11-20", "bash": "fold -b -w 20 | cut --output-delimiter $'\\t' -b 1-3,4-10,11-20"}
+{"nl": "Print file system disk space usage in human readable format of the root filesystem", "bash": "df -h /"}
+{"nl": "Prints folder where current script is located", "bash": "echo \"dirname: `dirname \"$0\"`\""}
+{"nl": "Prints folder where current script is located", "bash": "echo \"dirname: `dirname $0`\""}
+{"nl": "Print fourth column of space-separated data from text file text.txt.", "bash": "cat text.txt | cut -d \" \" -f 4"}
+{"nl": "Print full date of yesterday", "bash": "echo `date -v-1d +%F`"}
+{"nl": "Prints full process tree with id number of each process.", "bash": "pstree -p"}
+{"nl": "Print help on 'cat' command usage", "bash": "cat --help"}
+{"nl": "Print information about all users who are logged in", "bash": "who -la"}
+{"nl": "Print the last 1000 lines of all files matching \"/var/spool/cron/*\"", "bash": "tail -n 1000 /var/spool/cron/*"}
+{"nl": "Print last four bytes of string '0a.00.1 usb controller some text device 4dc9'", "bash": "echo 0a.00.1 usb controller some text device 4dc9 | rev | cut -b1-4 | rev"}
+{"nl": "Print the last line of the alphabetically sorted lines in file \"set\"", "bash": "tail -1 <(sort set)"}
+{"nl": "Print lines 15967 to 16224 in file \"dump.txt\"", "bash": "cat dump.txt | head -16224 | tail -258"}
+{"nl": "Prints long listing of directories '/tmp', '/tnt' themselves.", "bash": "ls -ld /tmp /tnt"}
+{"nl": "Prints long listing of top ten most memory using processes in a system.", "bash": "ps -e -orss=,args= | sort -nr | head"}
+{"nl": "Print numbers from 1 to 10 with 2 values per line", "bash": "seq 10 | paste -sd\" \\n\" -"}
+{"nl": "Print output of script 'trap.sh'", "bash": "~ $ . trap.sh | cat"}
+{"nl": "Prints path to folder that contains target of the symbolic link ../../../../etc/passwd.", "bash": "$(dirname $(readlink -e ../../../../etc/passwd))"}
+{"nl": "Prints path to the folder that contains target of symbolic link ../../../../etc/passwd.", "bash": "$(dirname $(readlink -e ../../../../etc/passwd))"}
+{"nl": "Print pathname of a file that is connected to the standard output of the command \"yes\"", "bash": "echo <(yes)"}
+{"nl": "Print the physical current working directory", "bash": "echo \"`pwd -P`\""}
+{"nl": "Print process tree, adjusting output width with a screen size.", "bash": "pstree | cat"}
+{"nl": "Prints process tree of user 'user' processes.", "bash": "pstree -p user"}
+{"nl": "Print the second line of output of \"ls -l\"", "bash": "ls -l | head -2 | tail -1"}
+{"nl": "Print the second line of output of \"ls -l\"", "bash": "ls -l | tail -n +2 | head -n1"}
+{"nl": "Print second section of space-separated data coming from stdin.", "bash": "cut -d ' ' -f 2"}
+{"nl": "Print second section of space-separated data coming from stdin.", "bash": "cut -d\\  -f 2"}
+{"nl": "Print string \"123\" once with '1' replaced by 'a' and second time replaced by 'b'", "bash": "echo 123 | tee >(tr 1 a)  | tr 1 b"}
+{"nl": "Prints strings with MAC address configuration of each network interface in system.", "bash": "ifconfig | grep HW"}
+{"nl": "Print the terminal file of the users who are logged in with \"admin\" in their name", "bash": "who |grep -i admin |cut -c10-20"}
+{"nl": "Print timestamp as HH:MM:SS", "bash": "date +\"%T\""}
+{"nl": "Prints total count of lines of all *.php files in a current folder and subfolders.", "bash": "find . -name '*.php' -type f -exec cat -- {} + | wc -l"}
+{"nl": "Print true directory name of the current directory", "bash": "readlink `pwd`"}
+{"nl": "Print unique lines in sorted file \"A\" when compared to sorted files \"B\", \"C\", and \"D\"", "bash": "comm -2 -3 A B | comm -2 -3 - C | comm -2 -3 - D"}
+{"nl": "Print the user name of the current user", "bash": "echo `whoami`"}
+{"nl": "Print the user name of the current user", "bash": "whoami"}
+{"nl": "Print working directory separated by newlines instead of forward slashes", "bash": "pwd | tr '/' '\\n'"}
+{"nl": "Prompt user to type a list of cron jobs directly at the terminal, then use these replacing previously existing cron jobs.", "bash": "crontab"}
+{"nl": "prune all the files in the current directory, only current directory (.) is the output", "bash": "find . -prune"}
+{"nl": "Read two bytes from \"/dev/urandom\" and print them as an unsigned integer", "bash": "od -A n -N 2 -t u2 /dev/urandom"}
+{"nl": "Read a line from standard input into variable \"ENTERED_PASSWORD\" without echoing the input", "bash": "read -s ENTERED_PASSWORD"}
+{"nl": "Read a line from standard input into variable \"REPLY\" with prompt \"$*\"", "bash": "read -p \"$*\""}
+{"nl": "Read a line from standard input into variable \"SSHPASS\" with prompt \"Password: \" and without echoing the input", "bash": "read -p \"Password: \" -s SSHPASS"}
+{"nl": "Read a line from standard input into variable \"ans\" without backslash escapes", "bash": "read -r ans"}
+{"nl": "Read a line from standard input into variable \"message\" with the prompt \"Please Enter a Message: $cr\"", "bash": "read -p \"Please Enter a Message: $cr\" message"}
+{"nl": "Read a line from standard input with prompt \"Enter your age:\\n\"", "bash": "read -p $'Enter your age:\\n'"}
+{"nl": "Read a line of standard input with prompt \"Enter the path to the file: \" and suggestion \"/usr/local/etc/\" and save the response to variable \"FILEPATH\"", "bash": "read -e -p \"Enter the path to the file: \" -i \"/usr/local/etc/\" FILEPATH"}
+{"nl": "Read a line of standard input with prompt \"My prompt: \" and save it to variable \"varname\"", "bash": "read -e -p \"My prompt: \" varname"}
+{"nl": "Read one character from standard input into variable 'c'", "bash": "read -n 1 c"}
+{"nl": "Recursively change the owner group of \"/var/www\" of to \"www-data\"", "bash": "sudo chown -R www-data:www-data /var/www"}
+{"nl": "Recursively change owner to \"amzadm\" and group to \"root\" of all files in \"/usr/lib/python2.6/site-packages/awscli/\"", "bash": "chown amzadm.root -R /usr/lib/python2.6/site-packages/awscli/"}
+{"nl": "Recursively copies '$1' directory to '$2' directory.", "bash": "cp -r $1 $2"}
+{"nl": "Recursively copy all directories in \"/path/to/source\" to \"/path/to/dest/\" preserving directory hierarchy", "bash": "find /path/to/source -type d | cpio -pd /path/to/dest/"}
+{"nl": "Recursively finds all '*.pdf' files and folders in a current folder and removes them without prompting.", "bash": "find . -name \"*.pdf\" -print0 | xargs -0 rm -rf"}
+{"nl": "Recursively finds all '*.pdf' files in a current folder and removes them without prompting.", "bash": "find . -name '*.pdf' -exec rm -f {} \\;"}
+{"nl": "Recursively finds all files in a current folder excluding already compressed files and compresses them with level 9.", "bash": "find . -type f | egrep -v '\\.bz2' | xargs bzip2 -9 &"}
+{"nl": "Recursively finds all files with any cased text \"Text\" in a current folder, and precedes found string with its number in file.", "bash": "grep -inr \"Text\" folder/to/be/searched/"}
+{"nl": "Recursively lists all *.py and *.html files in a current folder.", "bash": "ls **/*.py **/*.html"}
+{"nl": "Recursively prints paths to all text file in folder (ignores binary files).", "bash": "grep -RIl \"\" ."}
+{"nl": "Recursively removes all files in a current folder but '*txt' files.", "bash": "find . -type f -not -name '*txt' | xargs rm"}
+{"nl": "Recursively removes all files like '*.pyc' in a current folder.", "bash": "find . -name \"*.pyc\" -exec rm -rf {} \\;"}
+{"nl": "Recursively removes all files like '*.pyc' in a current folder.", "bash": "find . -name \"*.pyc\"|xargs rm -rf"}
+{"nl": "Recursively removes all files like '*.pyc' in a current folder.", "bash": "find . -name '*.pyc' -print0 | xargs -0 rm"}
+{"nl": "Recursively removes all files like '*.pyc' in a current folder.", "bash": "rm **/*.pyc"}
+{"nl": "Recursively removes all files like '*.pyc' in a current folder.", "bash": "rm `find . -name \\*.pyc`"}
+{"nl": "Recursively removes all files like any-cased '*.pyc' in a current folder.", "bash": "find . -iname '*.pyc' -print0 | xargs -0 --no-run-if-empty  rm"}
+{"nl": "Recursively set all permissions under \"/directory\" to 755", "bash": "chmod -R 755 /directory"}
+{"nl": "Remount \"/dev/sda7\" partition as executable", "bash": "sudo mount -o remount -o exec /dev/sda7"}
+{"nl": "Remount \"/dev/shm\" with a maximum size of \"40G\"", "bash": "mount -o remount,size=40G /dev/shm"}
+{"nl": "Remove `core' files whose status was changed more than 4 days ago", "bash": "find `pwd` -name core -ctime +4 -execdir /bin/rm -f {} \\;"}
+{"nl": "Remove the .jpg files from the current directory whose names match regular expression \".+-[0-9]+x[0-9]+\\.jpg\"", "bash": "find . -type f -regex \".+-[0-9]+x[0-9]+\\.jpg\" -exec rm -rf {} \\;"}
+{"nl": "Remove the .jpg files from the current directory whose names match regular expression \".+-[0-9]+x[0-9]+\\.jpg\"", "bash": "find . -type f -regex \".+-[0-9]+x[0-9]+\\.jpg\" | xargs rm"}
+{"nl": "Remove all *.doc files from the current directory tree", "bash": "find . -name '*.doc' -exec rm \"{}\" \\;"}
+{"nl": "Remove all .sh files in the current directory tree whose names begin with \"new\"", "bash": "find . -name \"new*.sh\" -exec rm -f '{}' \\+"}
+{"nl": "Remove all .sh files in the current directory tree whose names begin with \"new\"", "bash": "find . -name \"new*.sh\" -exec rm -f '{}' \\;"}
+{"nl": "Remove all \\*~ files under dir", "bash": "find dir -name \\\\*~ -exec rm {} +"}
+{"nl": "remove all the core files from /usr folder which have not been accessed in the last 7*24 hours", "bash": "find /usr -name core -atime +7 -exec rm \"{}\" \\;"}
+{"nl": "Remove all files containing 'sample' (case insensitive) in their names under '/home/user/Series' directory tree", "bash": "/usr/bin/find /home/user/Series/ -iname \"*sample*\" -exec rm {} \\;"}
+{"nl": "Remove all files containing 'sample' (case insensitive) in their names under '/home/user/Series' directory tree", "bash": "find /home/user/Series/ -iname '*sample*' -exec rm {} \\;"}
+{"nl": "Remove all files that were older than 3 days", "bash": "find . -type f -mtime +3 \u2013exec rm \u2013f {} \\;"}
+{"nl": "Remove all files with names like \"vmware-*.log\" from the current directory tree", "bash": "find . -name vmware-*.log -print0 | xargs -0 rm"}
+{"nl": "Remove all files with names like \"vmware-*.log\" from the current directory tree", "bash": "find . -name vmware-*.log | xargs -i rm -rf {}"}
+{"nl": "Remove all libGLE* files from the current directory tree", "bash": "find . -name libGLE* | xargs rm -f"}
+{"nl": "Remove all non-hidden files in the current directory tree", "bash": "find -name \"*\" | xargs rm -f"}
+{"nl": "remove all the regular/normal files in the temp folder and do not delete in the sub folders", "bash": "find /tmp -maxdepth 1 -type f -delete"}
+{"nl": "Remove all vmware-*.log files under current directory ensuring white space safety in filename", "bash": "find . -name vmware-*.log -print0 | xargs -0 rm"}
+{"nl": "Removes any empty folder that matches pattern ed*.", "bash": "rmdir ed*"}
+{"nl": "Remove containing directories from variable 'path' ie. \"/some/specific/directory\" becomes \"directory\".", "bash": "path=$(basename $path)"}
+{"nl": "Remove empty directories from directory tree /srv/abc", "bash": "find /srv/abc/ -type d -empty -exec rmdir {} \\;"}
+{"nl": "Remove everything in the current directory except files matching regular expression \"exclude these\"", "bash": "find . -maxdepth 1 | grep -v \"exclude these\" | xargs rm -r"}
+{"nl": "Remove files modified at least five days ago in directory trees /path/to/files*", "bash": "find /path/to/files* -mtime +5 -exec rm {} \\;"}
+{"nl": "Remove files that are greater than 1MB in size under current directory", "bash": "find . -type f -size +1M -exec rm {} +"}
+{"nl": "Remove filetype suffix (last dot and following characters if any) from filename", "bash": "echo $filename | rev | cut -f 2- -d '.' | rev"}
+{"nl": "Remove the passphrase from ~/.ssh/id_rsa.", "bash": "ssh-keygen -f ~/.ssh/id_rsa -P \"\""}
+{"nl": "Rename \"file.txt\" in directories \"v_1\", \"v_2\", and \"v_3\" each to \"v_1.txt\", \"v_2.txt\", and \"v_3.txt\" respectively and print the conversion", "bash": "rename -v 's#/file##' v_{1,2,3}/file.txt"}
+{"nl": "Rename \"file001abc.txt\" to \"abc1.txt\"", "bash": "mv file001abc.txt abc1.txt"}
+{"nl": "Rename \"old\" to \"tmp\"", "bash": "mv old tmp"}
+{"nl": "Rename .jpg files to .jpeg in all level 2 subdirectories of the current directory", "bash": "find -maxdepth 3 -mindepth 3 -type f -iname '*.jpg' -exec rename -n 's/jpg$/jpeg/i' {} +"}
+{"nl": "Rename all files and directories under current directory tree by converting the names to small letters without descending into 'CVS' directory", "bash": "find . -name CVS -prune -o -exec mv '{}' `echo {} | tr '[A-Z]' '[a-z]'` \\; -print"}
+{"nl": "Rename file extension '.andnav' (case insensitive) to '.tile' for all files/directories under current directory tree", "bash": "find . -name \"*.andnav\" -exec rename -v 's/\\.andnav$/\\.tile/i' {} \\;"}
+{"nl": "Rename file extension '.andnav' to '.tile' for all files/directories under current directory tree", "bash": "find . -name \"*.andnav\" | rename \"s/\\.andnav$/.tile/\""}
+{"nl": "Repeat \"image.png\" 10 times on a single line", "bash": "echo $(yes image.png | head -n10)"}
+{"nl": "Repeat \"image.png\" 10 times on a single line", "bash": "yes image.png | head -n10 | xargs echo"}
+{"nl": "replace \"exp_to_find_for_replacement\" with \"exp_to_replace\" for all the files in the current folder", "bash": "find -name \u2018*exp_to_find_in_folders*\u2019 -exec rename \u201cs/exp_to_find_for_replacement/exp_to_replace/\u201d {} \\;"}
+{"nl": "Replace each non-blank line in \"YOURFILE\" preceded with \"pX=\" where \"X\" is the line number", "bash": "grep -v '^$' YOURFILE | nl -s= -w99 | tr -s ' ' p"}
+{"nl": "Reports count of characters in the value of ${FOO} variable as follows:  \"length(FOO)==<counted number of characters>\"", "bash": "echo -e \"length(FOO)==$(echo -ne \"${FOO}\" | wc -m)\""}
+{"nl": "Retrieve column number from column name \"Target\" in file \"table\"", "bash": "head -1 table | tr -s ' ' '\\n' | nl -nln |  grep \"Target\" | cut -f1"}
+{"nl": "Retrieve only build number of current kernel, ie. #104", "bash": "uname -v | grep -o '#[0-9]\\+'"}
+{"nl": "Reverse the space separated words in \"aaaa eeee bbbb ffff cccc\"", "bash": "echo \"aaaa eeee bbbb ffff cccc\"|tr ' ' '\\n'|tac|tr '\\n' ' '"}
+{"nl": "Run 'join' on file1 and file2, using a literal tab character as field separator.", "bash": "join -t $'\\t' file1 file2"}
+{"nl": "Run 'join' with the number-sorted output of file1 and file2, without modifying file1 or file2: for each line with a common first field in file1 and file2, output the common field followed by the extra fields in both files.", "bash": "join <(sort -n file1) <(sort -n file2)"}
+{"nl": "Run 'otherscript.sh' script with all environment variables specified in the file 'xxxx'", "bash": "env `cat xxxx` otherscript.sh"}
+{"nl": "Run script $2 on remote host $1 using interpreter $INTERPRETER with pseudo-terminal allocation", "bash": "cat $2 | grep -v \"#\" | ssh -t $1 $INTERPRETER"}
+{"nl": "Save absolute path of \"$path\" whose parents exist to variable \"abspath\"", "bash": "abspath=$(readlink -f $path)"}
+{"nl": "Save absolute path of the script filename in variable \"SCRIPT\"", "bash": "SCRIPT=\"$(readlink --canonicalize-existing \"$0\")\""}
+{"nl": "Save the canonical filename of the script in variable \"me\"", "bash": "me=$(readlink --canonicalize --no-newline $0)"}
+{"nl": "Save the contents of \"numbers.txt\" to variable \"f\"", "bash": "f=$(cat numbers.txt)"}
+{"nl": "Save full path of command \"cat\" to variable \"CAT\"", "bash": "CAT=`which cat`"}
+{"nl": "Save the full path of command \"f\" to variable \"full_f\"", "bash": "full_f=\"$(which f)\""}
+{"nl": "Save the greater version number of \"$1\" and \"$2\" into variable \"ver\"", "bash": "ver=`echo -ne \"$1\\n$2\" |sort -Vr |head -n1`"}
+{"nl": "Save IP addresses of the host name in variable \"ip\"", "bash": "ip=$(hostname -I)"}
+{"nl": "Save the last modified time of file 'file_name' to variable 'STAMP'", "bash": "STAMP=`date -r file_name`"}
+{"nl": "Save the md5 sum hash of \"$my_iso_file\" to variable \"md5\"", "bash": "md5=$(md5sum \"$my_iso_file\" | cut -d ' ' -f 1)"}
+{"nl": "Save the number of bytes in \"$file\" after decompression into variable \"size\"", "bash": "size=\"$(zcat \"$file\" | wc -c)\""}
+{"nl": "Save standard input to variable \"myVar\"", "bash": "myVar=$(tee)"}
+{"nl": "Search the \"test1\" directory recursively for regular files named \"textfile.txt\"", "bash": "find test1 -type f -name 'textfile.txt' -print"}
+{"nl": "Search the /mnt/raid/upload directory tree for files that have not been modified within the last 5 days", "bash": "find /mnt/raid/upload -mtime +5 -print"}
+{"nl": "Search the current directory and all of its sub-directory for any PDF files being careful to prevent the shell from expanding \"*\"  before it's passed to find.", "bash": "find . -name \\*.pdf -print"}
+{"nl": "Search the current directory for files whose names start with \"messages.\" ignoring SVN and CVS files", "bash": "find \\( -name 'messages.*' ! -path \"*/.svn/*\" ! -path \"*/CVS/*\" \\) -exec grep -Iw uint {} +"}
+{"nl": "Search the current directory recursively for text files containing at least one character", "bash": "find -type f -exec grep -Iq . {} \\; -and -print"}
+{"nl": "Search the current directory recursively for text files containing at least one character", "bash": "find . -type f -exec grep -Iq . {} \\; -and -print"}
+{"nl": "Search the current directory tree for .rb files ignoring .vendor directories", "bash": "find . -name .vendor -prune -o -name '*.rb' -print"}
+{"nl": "Search the current directory tree for all .java files newer than the file build.xml", "bash": "find . -name '*.java' -newer build.xml -print"}
+{"nl": "Search the current directory tree for files and directories with permissions 775", "bash": "find .  -perm 775 -print"}
+{"nl": "Search the current directory tree for regular files modified within the past 24 hours whose names do not end with \".DS_Store\"", "bash": "find . -mtime -1 ! -name '.DS_Store' -type f -exec basename {} \\;"}
+{"nl": "Search the current directory tree for regular files modified within the past 24 hours whose names do not end with \".DS_Store\"", "bash": "find . -mtime -1 ! -name '.DS_Store' -type f -printf '%f\\n'"}
+{"nl": "Search the current directory tree for regular files owned by user \"www\"", "bash": "find -type f -user www"}
+{"nl": "Search the current directory tree for regular files whose names end with \"keep.${SUFFIX}\", where $SUFFIX is a shell variable", "bash": "find . -type f -name \"*keep.${SUFFIX}\""}
+{"nl": "Search the current directory tree for regular files whose names match regular expression \".+-[0-9]+x[0-9]+\\.jpg\"", "bash": "find . -type f -regex \".+-[0-9]+x[0-9]+\\.jpg\""}
+{"nl": "Search the current directory tree for symbolic links to files matching pattern '*/test*'", "bash": "find -P . -lname '*/test*'"}
+{"nl": "Search the directory $path recursively for regular files with the given $extension", "bash": "find $path -type f -name \"*.$extension\""}
+{"nl": "Search the entire file hierarchy for all regular files owned by olduser and change their ownership to newuser.", "bash": "find / -user olduser  -type f  -exec chown newuser {} \\"}
+{"nl": "Search the entire file hierarchy for files named zsh that exist on ext3 file systems and print out detailed information about the file.", "bash": "find / -fstype ext3 -name zsh -ls"}
+{"nl": "search files in current folder using name patterns", "bash": "find . -name \"$pattern\""}
+{"nl": "Search the first 300 commands in history containing \"scp\" and ending in \"important\"", "bash": "history 300 | grep scp | grep important$"}
+{"nl": "Search for \" 840\" in history", "bash": "history | grep \" 840\""}
+{"nl": "Search for \"ifconfig\" in the output of \"history\" and print 5 lines that precede and follow", "bash": "history | grep -C 5 ifconfig"}
+{"nl": "Search for \"ifconfig\" in the output of \"history\" and print 5 lines that precede and follow", "bash": "history | grep ifconfig -A5 -B5"}
+{"nl": "Search for \"pattern\" in \"file\" and join each line by a space", "bash": "cat file | grep pattern | paste -sd' '"}
+{"nl": "Search for '\u201cfoobar\u201d' in all files starting with '\u2018' and ending with '\u2019' and contain '.' in their names in the entire filesystem and display only the matched files", "bash": "find / -name \u2018*.*\u2019 -exec grep -il \u201cfoobar\u201d {} \\;"}
+{"nl": "Search for 'example' in all regular files under current directory tree", "bash": "find . -type f -print | xargs grep \"example\""}
+{"nl": "Search for 'foo' in all regular files under 'sources' directory tree and show the matched lines with filenames", "bash": "find sources -type f -exec grep -H foo {} +"}
+{"nl": "Search for 'magic' in all regular files under current directory tree", "bash": "find . -type f | xargs grep \"magic\""}
+{"nl": "search for a file \"file\" in current folder and if the file is found quit !", "bash": "find -name file -quit"}
+{"nl": "search for all the files in the entire file system which have either suid or sgid bit enabled and find of diff of these files with the file \"files.secure\".", "bash": "find / \\( -perm 2000 -o -perm 4000 \\) -print | diff - files.secure"}
+{"nl": "search for all the log files in the folder /apps which have not been modified in the last 60 days and which are present in the same file system as that of /apps and delete them", "bash": "find /apps -xdev -name \"*.log\" -type f -mtime +60 | xargs rm"}
+{"nl": "search for all the perl files in the folder /nas/projects/mgmt/scripts/perl which have been modified 8-10 days ago.", "bash": "find /nas/projects/mgmt/scripts/perl -mtime 8 -mtime -10 -daystart -iname \"*.pl\""}
+{"nl": "search for all the regular files in the folder /home which have the permission 077", "bash": "find /home -type f -perm 0777 -print"}
+{"nl": "search for the directory with the name aa in the current folder", "bash": "find . -type d -name aa"}
+{"nl": "search for the file \".user.log\" in a folder", "bash": "find /nfs/office -name .user.log -print"}
+{"nl": "search for the file \"foobar.txt\" in the folder \"/home/mywebsite\"", "bash": "find /home/mywebsite -type f -name \"foobar.txt\""}
+{"nl": "Search for files/directories that are readable for everybody, have at least one write bit set but are not executable for anybody", "bash": "find . -perm -444 -perm /222 ! -perm /111"}
+{"nl": "Search for files/directories with the case insensitive pattern anaconda.* in var/log directory and create an archive (somefile.tar) of all the files found ensuring white space safety", "bash": "find var/log -print0 -iname 'anaconda.*' | tar -cvf somefile.tar -T -"}
+{"nl": "search for the file foo in  the current folder and display a long listing of it in sorted order of modification date", "bash": "find . -name foo | xargs ls -tl"}
+{"nl": "search for files having python in filename", "bash": "find / -iname '*python*'"}
+{"nl": "search for files having python in filename", "bash": "find / -name '*python*'"}
+{"nl": "search for files in current folder using name patterns", "bash": "find . -name \"S1A*1S*SAFE\""}
+{"nl": "Search for files in the current user's home directory and below for files that have not been accessed for more than 100 days and ask the user for permission to delete each file, one by one.", "bash": "find ~/ -atime +100 -exec rm -i {} \\;"}
+{"nl": "search for files that are readable for everybody, have at least on write bit set but are not executable for anybody", "bash": "find . -perm -444 -perm /222 ! -perm /111"}
+{"nl": "search for files that are readable for everybody, have at least on write bit set but are not executable for anybody", "bash": "find . -perm -a+r -perm /a+w ! -perm /a+x"}
+{"nl": "Search for the literal string 'v$process' in all files under current directory", "bash": "find . -print|xargs grep v\\$process"}
+{"nl": "Search for the string 'foo' in *.html files under /usr/src/linux directory", "bash": "grep foo `find /usr/src/linux -name \"*.html\"`"}
+{"nl": "Search for the string 'git' in all the files under current directory tree without traversing into '.git' folder and excluding files that have 'git' in their names", "bash": "find . -path ./.git -prune -o -not -name '*git*' -print |grep git"}
+{"nl": "search for the word \"nutshell\" or \"Nutshell\" in all the files in the folder book", "bash": "find /book -print | xargs grep '[Nn] utshell'"}
+{"nl": "search for the word echo all the bash files(files ending with .bash) in the current folder", "bash": "find . -name \"*.bash\" |xargs grep \"echo\""}
+{"nl": "search for the word foo in all the js files in the current folder", "bash": "find . -name \"*.js\" -exec grep -iH foo {} \\;"}
+{"nl": "search for the word foo in all the js files in the current folder", "bash": "grep -iH foo `find . -name \"*.js\"`"}
+{"nl": "Search my_folder recursively for text files containing \"needle text\"", "bash": "find my_folder -type f -exec grep -l \"needle text\" {} \\; -exec file {} \\; | grep text"}
+{"nl": "Search non-recursively directory tree `MyApp.app' for directories whose name is 'Headers' and delete them in an optimized way", "bash": "find MyApp.app -name Headers -type d -prune -exec rm -rf {} +"}
+{"nl": "Search the regular files of the current directory tree for string \"foo\"", "bash": "find . -type f -exec grep \"foo\" '{}' \\;"}
+{"nl": "Search the regular files of the current directory tree for string \"whatever\"", "bash": "find . -type f -exec grep -H whatever {} \\;"}
+{"nl": "Search the regular files of the current directory tree for string \"whatever\"", "bash": "find . -type f | xargs -L 100 grep whatever"}
+{"nl": "Search the regular files of the current directory tree for string \"whatever\"", "bash": "find . -type f | xargs grep whatever"}
+{"nl": "Search the system for files and directories owned by group `managers'", "bash": "find / -group managers -print"}
+{"nl": "Set 644 permission to all regular files under /home/my/special/folder directory", "bash": "chmod 644 `find /home/my/special/folder -type f`"}
+{"nl": "Set the modification timestamp of file 'filename' to specified date/time.", "bash": "touch -m --date=\"Wed Jun 12 14:00:00 IDT 2013\" filename"}
+{"nl": "Set the shell prompt to \"host:pwd>\"", "bash": "PS1=`hostname`':\\W> '"}
+{"nl": "Set trace prompt to print seconds, nnoseconds, script name, and line number", "bash": "PS4='+$(date \"+%s:%N\") %N:%i> '"}
+{"nl": "Setup a local SSH tunnel from port 1234 to \"remote2\" port 22 via connection to \"remote1\" as \"user1\" on port 45678", "bash": "ssh -L 1234:remote2:22 -p 45678 user1@remote1"}
+{"nl": "show all the files in the current folder which has the word \"ITM\"", "bash": "find . -name \u2018*ITM*\u2019"}
+{"nl": "Show current date in \"%Y-%m-%d\" format", "bash": "date \"+%Y-%m-%d\""}
+{"nl": "Show the list of directories in the /mnt/raid directory tree", "bash": "find /mnt/raid -type d -print"}
+{"nl": "Silently read a single character from standard input into variable \"REPLY\" without backslash escapes, with a timeout of 5 seconds, and using the prompt $'Press any key or wait 5 seconds to continue...\\n'", "bash": "read -rsp $'Press any key or wait 5 seconds to continue...\\n' -n 1 -t 5"}
+{"nl": "Silently read a single character into variable \"REPLY\"", "bash": "read -n1 -s"}
+{"nl": "simulate a full login of user builder", "bash": "su -l builder"}
+{"nl": "Sort content of files 'file1' and 'file2' by second of dot-separated fields.", "bash": "cat file1 file2 |sort -t. -k 2.1"}
+{"nl": "Split \"abc.txt\" into files with at most 1500000000 bytes each and use prefix \"abc\"", "bash": "split --bytes=1500000000 abc.txt abc"}
+{"nl": "Split \"file\" into 10 files of about equal size without splitting lines", "bash": "split -n l/10 file"}
+{"nl": "Split the contents of \"file1 file2 ... file40000\" into 1445 files in a round robin fashion with prefix \"outputprefix\" and numeric suffixes", "bash": "cat file1 file2 ... file40000 | split -n r/1445 -d - outputprefix"}
+{"nl": "SSH into $1 with login name 'pete'", "bash": "ssh \"$1\" -l pete"}
+{"nl": "SSH with trusted X11 forwarding into \"user@remoteToRemote_IP\" from SSH connection \"user@remote_IP\"", "bash": "ssh -XY -t user@remote_IP 'ssh -XY -t user@remoteToRemote_IP'"}
+{"nl": "Start program 'scriptname' with an empty environment.", "bash": "env - scriptname"}
+{"nl": "Unzip and untar \"tarball.tar.gz\"", "bash": "zcat tarball.tar.gz | tar x"}
+{"nl": "Update the history file in the current session", "bash": "history -w"}
+{"nl": "Update the timestamp of '/tmp/$$' to the current month and day", "bash": "touch -t `date +%m%d0000` /tmp/$$"}
+{"nl": "Variable PID contains a process ID, send SIGTERM to this process if it exists.", "bash": "kill $PID"}
+{"nl": "Verbosely compresses all files on second and third depth level keeping original files in place.", "bash": "bzip2 -kv */*"}
+{"nl": "Verbosely compresses all files on seventh and eighth depth level keeping original files in place.", "bash": "bzip2 -kv */*/*/*/*/*/*/*"}

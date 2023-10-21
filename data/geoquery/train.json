@@ -1,0 +1,600 @@
+{"nl": "can you tell me the capital of texas ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(texas))))"}
+{"nl": "could you tell me what is the highest point in the state of oregon ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),state(B),const(B,stateid(oregon)))))"}
+{"nl": "give me all the states of usa .", "prolog": "answer(A,(state(A),loc(A,B),const(B,countryid(usa))))"}
+{"nl": "give me the cities in texas .", "prolog": "answer(A,(city(A),loc(A,B),const(B,stateid(texas))))"}
+{"nl": "give me the cities in usa .", "prolog": "answer(A,(city(A),loc(A,B),const(B,countryid(usa))))"}
+{"nl": "give me the cities in virginia .", "prolog": "answer(A,(city(A),loc(A,B),const(B,stateid(virginia))))"}
+{"nl": "give me the cities in virginia .", "prolog": "answer(A,(city(A),loc(A,B),const(B,stateid(virginia))))"}
+{"nl": "give me the cities which are in texas .", "prolog": "answer(A,(city(A),loc(A,B),const(B,stateid(texas))))"}
+{"nl": "give me the lakes in california .", "prolog": "answer(A,(lake(A),loc(A,B),const(B,stateid(california))))"}
+{"nl": "give me the largest state .", "prolog": "answer(A,largest(A,state(A)))"}
+{"nl": "give me the longest river that passes through the us .", "prolog": "answer(A,longest(A,(river(A),traverse(A,B),const(B,countryid(usa)))))"}
+{"nl": "how big is alaska ?", "prolog": "answer(A,(size(B,A),const(B,stateid(alaska))))"}
+{"nl": "how big is massachusetts ?", "prolog": "answer(A,(size(B,A),const(B,stateid(massachusetts))))"}
+{"nl": "how big is new mexico ?", "prolog": "answer(A,(size(B,A),const(B,stateid('new mexico'))))"}
+{"nl": "how big is north dakota ?", "prolog": "answer(A,(size(B,A),const(B,stateid('north dakota'))))"}
+{"nl": "how big is texas ?", "prolog": "answer(A,(size(B,A),const(B,stateid(texas))))"}
+{"nl": "how big is the city of new york ?", "prolog": "answer(A,(size(B,A),const(B,cityid('new york',_))))"}
+{"nl": "how high are the highest points of all the states ?", "prolog": "answer(A,(elevation(B,A),highest(B,(place(B),loc(B,C),state(C)))))"}
+{"nl": "how high is guadalupe peak ?", "prolog": "answer(A,(elevation(B,A),const(B,placeid('guadalupe peak'))))"}
+{"nl": "how high is the highest point in montana ?", "prolog": "answer(A,(elevation(B,A),highest(B,(place(B),loc(B,C),const(C,stateid(montana))))))"}
+{"nl": "how high is the highest point in the largest state ?", "prolog": "answer(A,(elevation(B,A),highest(B,(place(B),loc(B,C),largest(C,state(C))))))"}
+{"nl": "how high is the highest point of delaware ?", "prolog": "answer(A,(elevation(B,A),highest(B,(place(B),loc(B,C),const(C,stateid(delaware))))))"}
+{"nl": "how high is the highest point of florida ?", "prolog": "answer(A,(elevation(B,A),highest(B,(place(B),loc(B,C),const(C,stateid(florida))))))"}
+{"nl": "how high is the highest point of louisiana ?", "prolog": "answer(A,(elevation(B,A),highest(B,(place(B),loc(B,C),const(C,stateid(louisiana))))))"}
+{"nl": "how large is the largest city in alaska ?", "prolog": "answer(A,(size(B,A),largest(B,(city(B),loc(B,C),const(C,stateid(alaska))))))"}
+{"nl": "how long is rio grande ?", "prolog": "answer(A,(len(B,A),const(B,riverid('rio grande'))))"}
+{"nl": "how long is the mississippi ?", "prolog": "answer(A,(len(B,A),const(B,riverid(mississippi))))"}
+{"nl": "how long is the mississippi river ?", "prolog": "answer(A,(len(B,A),const(B,riverid(mississippi)),river(B)))"}
+{"nl": "how long is the mississippi river in miles ?", "prolog": "answer(A,(len(B,A),const(B,riverid(mississippi)),river(B)))"}
+{"nl": "how long is the missouri river ?", "prolog": "answer(A,(len(B,A),const(B,riverid(missouri)),river(B)))"}
+{"nl": "how long is the rio grande river ?", "prolog": "answer(A,(len(B,A),const(B,riverid('rio grande')),river(B)))"}
+{"nl": "how long is the shortest river in the usa ?", "prolog": "answer(A,(len(B,A),shortest(B,(river(B),loc(B,C),const(C,countryid(usa))))))"}
+{"nl": "how many big cities are in pennsylvania ?", "prolog": "answer(A,count(B,(major(B),city(B),loc(B,C),const(C,stateid(pennsylvania))),A))"}
+{"nl": "how many cities are in louisiana ?", "prolog": "answer(A,count(B,(city(B),loc(B,C),const(C,stateid(louisiana))),A))"}
+{"nl": "how many cities are in montana ?", "prolog": "answer(A,count(B,(city(B),loc(B,C),const(C,stateid(montana))),A))"}
+{"nl": "how many cities are there in the us ?", "prolog": "answer(A,count(B,(city(B),loc(B,C),const(C,countryid(usa))),A))"}
+{"nl": "how many cities are there in us ?", "prolog": "answer(A,count(B,(city(B),loc(B,C),const(C,countryid(usa))),A))"}
+{"nl": "how many cities are there in usa ?", "prolog": "answer(A,count(B,(city(B),loc(B,C),const(C,countryid(usa))),A))"}
+{"nl": "how many cities does texas have ?", "prolog": "answer(A,count(B,(city(B),const(C,stateid(texas)),loc(B,C)),A))"}
+{"nl": "how many cities does the usa have ?", "prolog": "answer(A,count(B,(city(B),const(C,countryid(usa)),loc(B,C)),A))"}
+{"nl": "how many cities named austin are there in the usa ?", "prolog": "answer(A,count(B,(city(B),const(B,cityid(austin,_)),loc(B,C),const(C,countryid(usa))),A))"}
+{"nl": "how many citizens in alabama ?", "prolog": "answer(A,(population(B,A),const(B,stateid(alabama))))"}
+{"nl": "how many citizens in boulder ?", "prolog": "answer(A,(population(B,A),const(B,cityid(boulder,_))))"}
+{"nl": "how many citizens live in california ?", "prolog": "answer(A,(population(B,A),const(B,stateid(california))))"}
+{"nl": "how many inhabitants does montgomery have ?", "prolog": "answer(A,(population(B,A),const(B,cityid(montgomery,_))))"}
+{"nl": "how many major cities are in arizona ?", "prolog": "answer(A,count(B,(major(B),city(B),loc(B,C),const(C,stateid(arizona))),A))"}
+{"nl": "how many major cities are in florida ?", "prolog": "answer(A,count(B,(major(B),city(B),loc(B,C),const(C,stateid(florida))),A))"}
+{"nl": "how many major cities are in states bordering nebraska ?", "prolog": "answer(A,count(B,(major(B),city(B),loc(B,C),state(C),next_to(C,D),const(D,stateid(nebraska))),A))"}
+{"nl": "how many major cities are in states bordering utah ?", "prolog": "answer(A,count(B,(major(B),city(B),loc(B,C),state(C),next_to(C,D),const(D,stateid(utah))),A))"}
+{"nl": "how many major cities are in texas ?", "prolog": "answer(A,count(B,(major(B),city(B),loc(B,C),const(C,stateid(texas))),A))"}
+{"nl": "how many major cities are there ?", "prolog": "answer(A,count(B,(major(B),city(B)),A))"}
+{"nl": "how many major cities are there in oregon ?", "prolog": "answer(A,count(B,(major(B),city(B),loc(B,C),const(C,stateid(oregon))),A))"}
+{"nl": "how many major rivers cross ohio ?", "prolog": "answer(A,count(B,(major(B),river(B),traverse(B,C),const(C,stateid(ohio))),A))"}
+{"nl": "how many people are in the state of nevada ?", "prolog": "answer(A,(population(B,A),const(B,stateid(nevada))))"}
+{"nl": "how many people are there in iowa ?", "prolog": "answer(A,(population(B,A),const(B,stateid(iowa))))"}
+{"nl": "how many people are there in new york ?", "prolog": "answer(A,(population(B,A),const(B,stateid('new york'))))"}
+{"nl": "how many people in boulder ?", "prolog": "answer(A,(population(B,A),const(B,cityid(boulder,_))))"}
+{"nl": "how many people live in austin ?", "prolog": "answer(A,(population(B,A),const(B,cityid(austin,_))))"}
+{"nl": "how many people live in austin texas ?", "prolog": "answer(A,(population(B,A),const(B,cityid(austin,tx))))"}
+{"nl": "how many people live in california ?", "prolog": "answer(A,(population(B,A),const(B,stateid(california))))"}
+{"nl": "how many people live in chicago ?", "prolog": "answer(A,(population(B,A),const(B,cityid(chicago,_))))"}
+{"nl": "how many people live in hawaii ?", "prolog": "answer(A,(population(B,A),const(B,stateid(hawaii))))"}
+{"nl": "how many people live in kalamazoo ?", "prolog": "answer(A,(population(B,A),const(B,cityid(kalamazoo,_))))"}
+{"nl": "how many people live in kansas ?", "prolog": "answer(A,(population(B,A),const(B,stateid(kansas))))"}
+{"nl": "how many people live in montana ?", "prolog": "answer(A,(population(B,A),const(B,stateid(montana))))"}
+{"nl": "how many people live in new hampshire ?", "prolog": "answer(A,(population(B,A),const(B,stateid('new hampshire'))))"}
+{"nl": "how many people live in new mexico ?", "prolog": "answer(A,(population(B,A),const(B,stateid('new mexico'))))"}
+{"nl": "how many people live in new york ?", "prolog": "answer(A,(population(B,A),const(B,stateid('new york'))))"}
+{"nl": "how many people live in riverside ?", "prolog": "answer(A,(population(B,A),const(B,cityid(riverside,_))))"}
+{"nl": "how many people live in san francisco ?", "prolog": "answer(A,(population(B,A),const(B,cityid('san francisco',_))))"}
+{"nl": "how many people live in south dakota ?", "prolog": "answer(A,(population(B,A),const(B,stateid('south dakota'))))"}
+{"nl": "how many people live in spokane washington ?", "prolog": "answer(A,(population(B,A),const(B,cityid(spokane,wa))))"}
+{"nl": "how many people live in texas ?", "prolog": "answer(A,(population(B,A),const(B,stateid(texas))))"}
+{"nl": "how many people live in the capital of georgia ?", "prolog": "answer(A,(population(B,A),capital(B),loc(B,C),const(C,stateid(georgia))))"}
+{"nl": "how many people live in the smallest state bordering wyoming ?", "prolog": "answer(A,(population(B,A),smallest(B,(state(B),next_to(B,C),const(C,stateid(wyoming))))))"}
+{"nl": "how many people live in the state with the largest population density ?", "prolog": "answer(A,(population(B,A),largest(C,(state(B),density(B,C)))))"}
+{"nl": "how many people live in washington ?", "prolog": "answer(A,(population(B,A),const(B,stateid(washington))))"}
+{"nl": "how many people live in washington dc ?", "prolog": "answer(A,(population(B,A),const(B,cityid(washington,dc))))"}
+{"nl": "how many people stay in utah ?", "prolog": "answer(A,(population(B,A),const(B,stateid(utah))))"}
+{"nl": "how many rivers are called colorado ?", "prolog": "answer(A,count(B,(river(B),const(B,riverid(colorado))),A))"}
+{"nl": "how many rivers are found in colorado ?", "prolog": "answer(A,count(B,(river(B),loc(B,C),const(C,stateid(colorado))),A))"}
+{"nl": "how many rivers are in colorado ?", "prolog": "answer(A,count(B,(river(B),loc(B,C),const(C,stateid(colorado))),A))"}
+{"nl": "how many rivers are in missouri ?", "prolog": "answer(A,count(B,(river(B),loc(B,C),const(C,stateid(missouri))),A))"}
+{"nl": "how many rivers are in new york ?", "prolog": "answer(A,count(B,(river(B),loc(B,C),const(C,stateid('new york'))),A))"}
+{"nl": "how many rivers are in the state with the highest point ?", "prolog": "answer(A,count(B,(river(B),loc(B,C),state(C),loc(D,C),highest(D,place(D))),A))"}
+{"nl": "how many rivers are in the state with the largest population ?", "prolog": "answer(A,count(B,(river(B),loc(B,C),largest(D,(state(C),population(C,D)))),A))"}
+{"nl": "how many rivers are there in idaho ?", "prolog": "answer(A,count(B,(river(B),loc(B,C),const(C,stateid(idaho))),A))"}
+{"nl": "how many rivers are there in texas ?", "prolog": "answer(A,count(B,(river(B),loc(B,C),const(C,stateid(texas))),A))"}
+{"nl": "how many rivers are there in us ?", "prolog": "answer(A,count(B,(river(B),loc(B,C),const(C,countryid(usa))),A))"}
+{"nl": "how many rivers do not traverse the state with the capital albany ?", "prolog": "answer(A,count(B,(river(B),not((traverse(B,C),state(C),loc(D,C),capital(D),const(D,cityid(albany,_))))),A))"}
+{"nl": "how many rivers does alaska have ?", "prolog": "answer(A,count(B,(river(B),const(C,stateid(alaska)),loc(B,C)),A))"}
+{"nl": "how many rivers in texas are longer than the red ?", "prolog": "answer(A,count(B,(river(B),loc(B,C),const(C,stateid(texas)),longer(B,D),const(D,riverid(red))),A))"}
+{"nl": "how many rivers in washington ?", "prolog": "answer(A,count(B,(river(B),loc(B,C),const(C,stateid(washington))),A))"}
+{"nl": "how many rivers run through texas ?", "prolog": "answer(A,count(B,(river(B),traverse(B,C),const(C,stateid(texas))),A))"}
+{"nl": "how many rivers run through the states bordering colorado ?", "prolog": "answer(A,count(B,(river(B),traverse(B,C),state(C),next_to(C,D),const(D,stateid(colorado))),A))"}
+{"nl": "how many square kilometers in the us ?", "prolog": "answer(A,(area(B,A),const(B,countryid(usa))))"}
+{"nl": "how many states are in the united states ?", "prolog": "answer(A,count(B,(state(B),loc(B,C),const(C,countryid(usa))),A))"}
+{"nl": "how many states are next to major rivers ?", "prolog": "answer(A,count(B,(state(B),next_to(B,C),major(C),river(C)),A))"}
+{"nl": "how many states are there in united states ?", "prolog": "answer(A,count(B,(state(B),loc(B,C),const(C,countryid(usa))),A))"}
+{"nl": "how many states border alaska ?", "prolog": "answer(A,count(B,(state(B),next_to(B,C),const(C,stateid(alaska))),A))"}
+{"nl": "how many states border at least one other state ?", "prolog": "answer(A,count(B,(state(B),next_to(B,C),state(C)),A))"}
+{"nl": "how many states border colorado and border new mexico ?", "prolog": "answer(A,count(B,(state(B),next_to(B,C),const(C,stateid(colorado)),next_to(B,D),const(D,stateid('new mexico'))),A))"}
+{"nl": "how many states border hawaii ?", "prolog": "answer(A,count(B,(state(B),next_to(B,C),const(C,stateid(hawaii))),A))"}
+{"nl": "how many states border on the state whose capital is boston ?", "prolog": "answer(A,count(B,(state(B),next_to(B,C),state(C),loc(D,C),capital(D),const(D,cityid(boston,_))),A))"}
+{"nl": "how many states border tennessee ?", "prolog": "answer(A,count(B,(state(B),next_to(B,C),const(C,stateid(tennessee))),A))"}
+{"nl": "how many states border texas ?", "prolog": "answer(A,count(B,(state(B),next_to(B,C),const(C,stateid(texas))),A))"}
+{"nl": "how many states border the largest state ?", "prolog": "answer(A,count(B,(state(B),next_to(B,C),largest(C,state(C))),A))"}
+{"nl": "how many states border the mississippi river ?", "prolog": "answer(A,count(B,(state(B),next_to(B,C),const(C,riverid(mississippi)),river(C)),A))"}
+{"nl": "how many states border the state that borders the most states ?", "prolog": "answer(A,count(B,(state(B),next_to(B,C),most(C,D,(state(C),next_to(C,D),state(D)))),A))"}
+{"nl": "how many states does iowa border ?", "prolog": "answer(A,count(B,(state(B),const(C,stateid(iowa)),next_to(C,B)),A))"}
+{"nl": "how many states does missouri border ?", "prolog": "answer(A,count(B,(state(B),const(C,stateid(missouri)),next_to(C,B)),A))"}
+{"nl": "how many states does the colorado river flow through ?", "prolog": "answer(A,count(B,(state(B),const(C,riverid(colorado)),river(C),traverse(C,B)),A))"}
+{"nl": "how many states does the colorado river run through ?", "prolog": "answer(A,count(B,(state(B),const(C,riverid(colorado)),river(C),traverse(C,B)),A))"}
+{"nl": "how many states does the mississippi river run through ?", "prolog": "answer(A,count(B,(state(B),const(C,riverid(mississippi)),river(C),traverse(C,B)),A))"}
+{"nl": "how many states does the mississippi run through ?", "prolog": "answer(A,count(B,(state(B),const(C,riverid(mississippi)),traverse(C,B)),A))"}
+{"nl": "how many states does the missouri river run through ?", "prolog": "answer(A,count(B,(state(B),const(C,riverid(missouri)),river(C),traverse(C,B)),A))"}
+{"nl": "how many states have a city called rochester ?", "prolog": "answer(A,count(B,(state(B),loc(C,B),const(C,cityid(rochester,_))),A))"}
+{"nl": "how many states have a city named springfield ?", "prolog": "answer(A,count(B,(state(B),loc(C,B),const(C,cityid(springfield,_))),A))"}
+{"nl": "how many states have cities named austin ?", "prolog": "answer(A,count(B,(state(B),loc(C,B),city(C),const(C,cityid(austin,_))),A))"}
+{"nl": "how many states have cities or towns named springfield ?", "prolog": "answer(A,count(B,(state(B),loc(C,B),city(C),const(C,cityid(springfield,_))),A))"}
+{"nl": "how many states have major rivers ?", "prolog": "answer(A,count(B,(state(B),loc(C,B),major(C),river(C)),A))"}
+{"nl": "how many states in the us does the shortest river run through ?", "prolog": "answer(A,count(B,(state(B),loc(B,C),const(C,countryid(usa)),shortest(D,river(D)),traverse(D,B)),A))"}
+{"nl": "in what state is mount mckinley ?", "prolog": "answer(A,(loc(B,A),state(A),const(B,placeid('mount mckinley'))))"}
+{"nl": "in which state does the highest point in usa exist ?", "prolog": "answer(A,(loc(B,A),state(A),highest(B,(place(B),loc(B,C),const(C,countryid(usa))))))"}
+{"nl": "in which state is rochester ?", "prolog": "answer(A,(loc(B,A),state(A),const(B,cityid(rochester,_))))"}
+{"nl": "list the states .", "prolog": "answer(A,state(A))"}
+{"nl": "name all the lakes of us .", "prolog": "answer(A,(lake(A),loc(A,B),const(B,countryid(usa))))"}
+{"nl": "name all the rivers in colorado .", "prolog": "answer(A,(river(A),loc(A,B),const(B,stateid(colorado))))"}
+{"nl": "name the 50 capitals in the usa .", "prolog": "answer(A,(capital(A),loc(A,B),const(B,countryid(usa))))"}
+{"nl": "name the longest river in us .", "prolog": "answer(A,longest(A,(river(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "name the major lakes in michigan .", "prolog": "answer(A,(major(A),lake(A),loc(A,B),const(B,stateid(michigan))))"}
+{"nl": "name the rivers in arkansas .", "prolog": "answer(A,(river(A),loc(A,B),const(B,stateid(arkansas))))"}
+{"nl": "name the rivers in arkansas .", "prolog": "answer(A,(river(A),loc(A,B),const(B,stateid(arkansas))))"}
+{"nl": "name the states which have no surrounding states .", "prolog": "answer(A,(state(A),not((next_to(A,B),state(B)))))"}
+{"nl": "number of citizens in boulder ?", "prolog": "answer(A,(population(B,A),const(B,cityid(boulder,_))))"}
+{"nl": "of the states washed by the mississippi river which has the lowest point ?", "prolog": "answer(D,(state(D),loc(B,D),lowest(B,(state(A),traverse(C,A),const(C,riverid(mississippi)),loc(B,A),place(B)))))"}
+{"nl": "people in boulder ?", "prolog": "answer(A,(population(B,A),const(B,cityid(boulder,_))))"}
+{"nl": "population of boulder ?", "prolog": "answer(A,(population(B,A),const(B,cityid(boulder,_))))"}
+{"nl": "sacramento is the capital of which state ?", "prolog": "answer(A,(const(B,cityid(sacramento,_)),capital(B),loc(B,A),state(A)))"}
+{"nl": "show major cities in colorado .", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid(colorado))))"}
+{"nl": "show me all the major lakes in the us .", "prolog": "answer(A,(major(A),lake(A),loc(A,B),const(B,countryid(usa))))"}
+{"nl": "state the state with the largest area .", "prolog": "answer(A,largest(B,(state(A),area(A,B))))"}
+{"nl": "states bordering iowa ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(iowa))))"}
+{"nl": "through which states does the mississippi flow ?", "prolog": "answer(A,(state(A),const(B,riverid(mississippi)),traverse(B,A)))"}
+{"nl": "through which states does the mississippi run ?", "prolog": "answer(A,(state(A),const(B,riverid(mississippi)),traverse(B,A)))"}
+{"nl": "what 's the largest city ?", "prolog": "answer(A,largest(A,city(A)))"}
+{"nl": "what are major rivers in texas ?", "prolog": "answer(A,(major(A),river(A),loc(A,B),const(B,stateid(texas))))"}
+{"nl": "what are the biggest rivers in texas ?", "prolog": "answer(A,longest(A,(river(A),loc(A,B),const(B,stateid(texas)))))"}
+{"nl": "what are the capital cities of the states which border texas ?", "prolog": "answer(A,(capital(A),city(A),loc(A,B),state(B),next_to(B,C),const(C,stateid(texas))))"}
+{"nl": "what are the capitals of the states that border texas ?", "prolog": "answer(A,(capital(A),loc(A,B),state(B),next_to(B,C),const(C,stateid(texas))))"}
+{"nl": "what are the cities in california ?", "prolog": "answer(A,(city(A),loc(A,B),const(B,stateid(california))))"}
+{"nl": "what are the high points of states surrounding mississippi ?", "prolog": "answer(A,(high_point(B,A),state(B),next_to(B,C),const(C,stateid(mississippi))))"}
+{"nl": "what are the highest points of states surrounding mississippi ?", "prolog": "answer(A,(highest(A,(place(A),loc(A,B),state(B),next_to(B,C),const(C,stateid(mississippi))))))"}
+{"nl": "what are the lakes in states bordering texas ?", "prolog": "answer(A,(lake(A),loc(A,B),state(B),next_to(B,C),const(C,stateid(texas))))"}
+{"nl": "what are the largest cities in the states that border the largest state ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),state(B),next_to(B,C),largest(C,state(C)))))"}
+{"nl": "what are the major cities in california ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid(california))))"}
+{"nl": "what are the major cities in delaware ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid(delaware))))"}
+{"nl": "what are the major cities in kansas ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid(kansas))))"}
+{"nl": "what are the major cities in missouri ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid(missouri))))"}
+{"nl": "what are the major cities in new mexico ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid('new mexico'))))"}
+{"nl": "what are the major cities in north carolina ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid('north carolina'))))"}
+{"nl": "what are the major cities in ohio ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid(ohio))))"}
+{"nl": "what are the major cities in oklahoma ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid(oklahoma))))"}
+{"nl": "what are the major cities in rhode island ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid('rhode island'))))"}
+{"nl": "what are the major cities in texas ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid(texas))))"}
+{"nl": "what are the major cities in the largest state ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),largest(B,state(B))))"}
+{"nl": "what are the major cities in the smallest state in the us ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),smallest(B,(state(B),loc(B,C),const(C,countryid(usa))))))"}
+{"nl": "what are the major cities in the states through which the major river in virginia runs ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),state(B),major(C),river(C),loc(C,D),const(D,stateid(virginia)),traverse(C,B)))"}
+{"nl": "what are the major cities in wyoming ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid(wyoming))))"}
+{"nl": "what are the major cities of texas ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid(texas))))"}
+{"nl": "what are the major cities of the united states ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,countryid(usa))))"}
+{"nl": "what are the major cities of the us ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,countryid(usa))))"}
+{"nl": "what are the major lakes in united states ?", "prolog": "answer(A,(major(A),lake(A),loc(A,B),const(B,countryid(usa))))"}
+{"nl": "what are the major rivers in the us ?", "prolog": "answer(A,(major(A),river(A),loc(A,B),const(B,countryid(usa))))"}
+{"nl": "what are the names of the major cities in illinois ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid(illinois))))"}
+{"nl": "what are the neighboring states for michigan ?", "prolog": "answer(A,(next_to(A,B),state(A),const(B,stateid(michigan))))"}
+{"nl": "what are the populations of all the major cities in montana ?", "prolog": "answer(A,(population(B,A),major(B),city(B),loc(B,C),const(C,stateid(montana))))"}
+{"nl": "what are the populations of states through which the mississippi river runs ?", "prolog": "answer(A,(population(B,A),state(B),const(C,riverid(mississippi)),river(C),traverse(C,B)))"}
+{"nl": "what are the populations of states through which the mississippi runs ?", "prolog": "answer(A,(population(B,A),state(B),const(C,riverid(mississippi)),traverse(C,B)))"}
+{"nl": "what are the populations of the states through which the mississippi river runs ?", "prolog": "answer(A,(population(B,A),state(B),const(C,riverid(mississippi)),river(C),traverse(C,B)))"}
+{"nl": "what are the populations of the states through which the mississippi river runs ?", "prolog": "answer(A,(population(B,A),state(B),const(C,riverid(mississippi)),river(C),traverse(C,B)))"}
+{"nl": "what are the populations of the states through which the mississippi runs ?", "prolog": "answer(A,(population(B,A),state(B),const(C,riverid(mississippi)),traverse(C,B)))"}
+{"nl": "what are the populations of the states through which the mississippi runs ?", "prolog": "answer(A,(population(B,A),state(B),const(C,riverid(mississippi)),traverse(C,B)))"}
+{"nl": "what are the rivers in the state of indiana ?", "prolog": "answer(A,(river(A),loc(A,B),state(B),const(B,stateid(indiana))))"}
+{"nl": "what are the rivers in the state of texas ?", "prolog": "answer(A,(river(A),loc(A,B),state(B),const(B,stateid(texas))))"}
+{"nl": "what are the rivers of montana ?", "prolog": "answer(A,(river(A),loc(A,B),const(B,stateid(montana))))"}
+{"nl": "what are the states ?", "prolog": "answer(A,state(A))"}
+{"nl": "what are the states that border the state with the greatest population ?", "prolog": "answer(A,(state(A),next_to(B,A),largest(C,(state(B),population(B,C)))))"}
+{"nl": "what are the states that the potomac runs through ?", "prolog": "answer(A,(state(A),const(B,riverid(potomac)),traverse(B,A)))"}
+{"nl": "what are the states through which the longest river runs ?", "prolog": "answer(A,(state(A),traverse(B,A),longest(B,(river(B)))))"}
+{"nl": "what can you tell me about the population of missouri ?", "prolog": "answer(A,(population(B,A),const(B,stateid(missouri))))"}
+{"nl": "what capital has the largest population ?", "prolog": "answer(A,largest(B,(capital(A),population(A,B))))"}
+{"nl": "what capital is the largest in the us ?", "prolog": "answer(A,largest(A,(capital(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what cities are located in pennsylvania ?", "prolog": "answer(A,(city(A),loc(A,B),const(B,stateid(pennsylvania))))"}
+{"nl": "what cities in california ?", "prolog": "answer(A,(city(A),loc(A,B),const(B,stateid(california))))"}
+{"nl": "what cities in texas have the highest number of citizens ?", "prolog": "answer(A,largest(B,(city(A),loc(A,C),const(C,stateid(texas)),population(A,B))))"}
+{"nl": "what cities in texas have the highest populations ?", "prolog": "answer(A,largest(B,(city(A),loc(A,C),const(C,stateid(texas)),population(A,B))))"}
+{"nl": "what city has the largest population ?", "prolog": "answer(A,largest(B,(city(A),population(A,B))))"}
+{"nl": "what city has the least population ?", "prolog": "answer(A,smallest(B,(city(A),population(A,B))))"}
+{"nl": "what is capital of iowa ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(iowa))))"}
+{"nl": "what is largest capital ?", "prolog": "answer(A,largest(A,capital(A)))"}
+{"nl": "what is the adjacent state of california ?", "prolog": "answer(A,(next_to(A,B),state(A),const(B,stateid(california))))"}
+{"nl": "what is the area of alaska ?", "prolog": "answer(A,(area(B,A),const(B,stateid(alaska))))"}
+{"nl": "what is the area of all the states combined ?", "prolog": "answer(A,sum(B,(area(C,B),state(C)),A))"}
+{"nl": "what is the area of california ?", "prolog": "answer(A,(area(B,A),const(B,stateid(california))))"}
+{"nl": "what is the area of idaho ?", "prolog": "answer(A,(area(B,A),const(B,stateid(idaho))))"}
+{"nl": "what is the area of maine ?", "prolog": "answer(A,(area(B,A),const(B,stateid(maine))))"}
+{"nl": "what is the area of maryland in square kilometers ?", "prolog": "answer(A,(area(B,A),const(B,stateid(maryland))))"}
+{"nl": "what is the area of new mexico ?", "prolog": "answer(A,(area(B,A),const(B,stateid('new mexico'))))"}
+{"nl": "what is the area of seattle ?", "prolog": "answer(A,(area(B,A),const(B,cityid(seattle,_))))"}
+{"nl": "what is the area of south carolina ?", "prolog": "answer(A,(area(B,A),const(B,stateid('south carolina'))))"}
+{"nl": "what is the area of texas ?", "prolog": "answer(A,(area(B,A),const(B,stateid(texas))))"}
+{"nl": "what is the area of the largest state ?", "prolog": "answer(A,(area(B,A),largest(B,state(B))))"}
+{"nl": "what is the area of the smallest state ?", "prolog": "answer(A,(area(B,A),smallest(B,state(B))))"}
+{"nl": "what is the area of the state with the capital albany ?", "prolog": "answer(A,(area(B,A),state(B),loc(C,B),capital(C),const(C,cityid(albany,_))))"}
+{"nl": "what is the area of the state with the smallest population density ?", "prolog": "answer(A,(area(B,A),smallest(C,(state(B),density(B,C)))))"}
+{"nl": "what is the area of the states ?", "prolog": "answer(A,(area(B,A),state(B)))"}
+{"nl": "what is the average population of the us by state ?", "prolog": "answer(A,(density(B,A),const(B,countryid(usa))))"}
+{"nl": "what is the average population per square km in pennsylvania ?", "prolog": "answer(A,(density(B,A),const(B,stateid(pennsylvania))))"}
+{"nl": "what is the average population per square km in the us ?", "prolog": "answer(A,(density(B,A),const(B,countryid(usa))))"}
+{"nl": "what is the biggest city in arizona ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,stateid(arizona)))))"}
+{"nl": "what is the biggest city in georgia ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,stateid(georgia)))))"}
+{"nl": "what is the biggest city in nebraska ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,stateid(nebraska)))))"}
+{"nl": "what is the biggest city in oregon ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,stateid(oregon)))))"}
+{"nl": "what is the biggest city in texas ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,stateid(texas)))))"}
+{"nl": "what is the biggest city in the smallest state ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),smallest(B,state(B)))))"}
+{"nl": "what is the biggest city in the us ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the biggest city in the usa ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the biggest city in usa ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the biggest city in wyoming ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,stateid(wyoming)))))"}
+{"nl": "what is the biggest river in illinois ?", "prolog": "answer(A,largest(A,(river(A),loc(A,B),const(B,stateid(illinois)))))"}
+{"nl": "what is the biggest state ?", "prolog": "answer(A,largest(A,state(A)))"}
+{"nl": "what is the biggest state in continental us ?", "prolog": "answer(A,largest(A,(state(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the biggest state in the usa ?", "prolog": "answer(A,largest(A,(state(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the capital city of the largest state in the us ?", "prolog": "answer(A,(capital(A),city(A),loc(A,B),largest(B,(state(B),loc(B,C),const(C,countryid(usa))))))"}
+{"nl": "what is the capital of georgia ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(georgia))))"}
+{"nl": "what is the capital of hawaii ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(hawaii))))"}
+{"nl": "what is the capital of indiana ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(indiana))))"}
+{"nl": "what is the capital of maine ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(maine))))"}
+{"nl": "what is the capital of maryland ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(maryland))))"}
+{"nl": "what is the capital of michigan ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(michigan))))"}
+{"nl": "what is the capital of new hampshire ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid('new hampshire'))))"}
+{"nl": "what is the capital of pennsylvania ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(pennsylvania))))"}
+{"nl": "what is the capital of texas ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(texas))))"}
+{"nl": "what is the capital of the alabama state ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(alabama)),state(B)))"}
+{"nl": "what is the capital of the largest state ?", "prolog": "answer(A,(capital(A),loc(A,B),largest(B,state(B))))"}
+{"nl": "what is the capital of the state texas ?", "prolog": "answer(A,(capital(A),loc(A,B),state(B),const(B,stateid(texas))))"}
+{"nl": "what is the capital of the state that borders the most states ?", "prolog": "answer(A,(capital(A),loc(A,B),most(B,C,(state(B),next_to(B,C),state(C)))))"}
+{"nl": "what is the capital of the state that borders the state that borders texas ?", "prolog": "answer(A,(capital(A),loc(A,B),state(B),next_to(B,C),state(C),next_to(C,D),const(D,stateid(texas))))"}
+{"nl": "what is the capital of the state with the highest elevation ?", "prolog": "answer(A,(capital(A),loc(A,B),state(B),loc(C,B),highest(C,place(C))))"}
+{"nl": "what is the capital of the state with the highest point ?", "prolog": "answer(A,(capital(A),loc(A,B),state(B),loc(C,B),highest(C,(place(C)))))"}
+{"nl": "what is the capital of utah ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(utah))))"}
+{"nl": "what is the capital of vermont ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(vermont))))"}
+{"nl": "what is the capital of washington ?", "prolog": "answer(A,(capital(A),loc(A,B),const(B,stateid(washington))))"}
+{"nl": "what is the city in texas with the largest population ?", "prolog": "answer(A,largest(B,(city(A),loc(A,C),const(C,stateid(texas)),population(A,B))))"}
+{"nl": "what is the city with the smallest population ?", "prolog": "answer(A,smallest(B,(city(A),population(A,B))))"}
+{"nl": "what is the combined population of all 50 states ?", "prolog": "answer(A,sum(B,(population(C,B),state(C)),A))"}
+{"nl": "what is the density of texas ?", "prolog": "answer(A,(density(B,A),const(B,stateid(texas))))"}
+{"nl": "what is the elevation of death valley ?", "prolog": "answer(A,(elevation(B,A),const(B,placeid('death valley'))))"}
+{"nl": "what is the elevation of the highest point in the usa ?", "prolog": "answer(A,(elevation(B,A),highest(B,(place(B),loc(B,C),const(C,countryid(usa))))))"}
+{"nl": "what is the height of mount mckinley ?", "prolog": "answer(A,(elevation(B,A),const(B,placeid('mount mckinley'))))"}
+{"nl": "what is the height of the highest mountain in texas ?", "prolog": "answer(A,(elevation(B,A),highest(B,(mountain(B),loc(B,C),const(C,stateid(texas))))))"}
+{"nl": "what is the height of the highest point in the usa ?", "prolog": "answer(A,(elevation(B,A),highest(B,(place(B),loc(B,C),const(C,countryid(usa))))))"}
+{"nl": "what is the highest elevation in new mexico ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),const(B,stateid('new mexico')))))"}
+{"nl": "what is the highest elevation in south carolina ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),const(B,stateid('south carolina')))))"}
+{"nl": "what is the highest mountain in alaska ?", "prolog": "answer(A,highest(A,(mountain(A),loc(A,B),const(B,stateid(alaska)))))"}
+{"nl": "what is the highest mountain in texas ?", "prolog": "answer(A,highest(A,(mountain(A),loc(A,B),const(B,stateid(texas)))))"}
+{"nl": "what is the highest point in colorado ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),const(B,stateid(colorado)))))"}
+{"nl": "what is the highest point in each state whose lowest point is sea level ?", "prolog": "answer(A,(highest(A,(place(A),loc(A,B),state(B))),lowest(C,(loc(C,B),place(C))),elevation(C,0)))"}
+{"nl": "what is the highest point in florida ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),const(B,stateid(florida)))))"}
+{"nl": "what is the highest point in kansas ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),const(B,stateid(kansas)))))"}
+{"nl": "what is the highest point in new mexico ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),const(B,stateid('new mexico')))))"}
+{"nl": "what is the highest point in ohio ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),const(B,stateid(ohio)))))"}
+{"nl": "what is the highest point in rhode island ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),const(B,stateid('rhode island')))))"}
+{"nl": "what is the highest point in texas ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),const(B,stateid(texas)))))"}
+{"nl": "what is the highest point in the country ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the highest point in the smallest state ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),smallest(B,state(B)))))"}
+{"nl": "what is the highest point in the state with capital des moines ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),state(B),loc(C,B),capital(C),const(C,cityid('des moines',_)))))"}
+{"nl": "what is the highest point in the state with the capital des moines ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),state(B),loc(C,B),capital(C),const(C,cityid('des moines',_)))))"}
+{"nl": "what is the highest point in the state with the most rivers ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),most(B,C,(state(B),traverse(C,B),river(C))))))"}
+{"nl": "what is the highest point in the state with the smallest population ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),smallest(C,(state(B),population(B,C))))))"}
+{"nl": "what is the highest point in the united states ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the highest point in the us ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the highest point in wyoming ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),const(B,stateid(wyoming)))))"}
+{"nl": "what is the highest point of the state with the largest area ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),largest(C,(state(B),area(B,C))))))"}
+{"nl": "what is the largest capital ?", "prolog": "answer(A,largest(A,capital(A)))"}
+{"nl": "what is the largest city in a state that borders texas ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),state(B),next_to(B,C),const(C,stateid(texas)))))"}
+{"nl": "what is the largest city in alabama ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,stateid(alabama)))))"}
+{"nl": "what is the largest city in michigan ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,stateid(michigan)))))"}
+{"nl": "what is the largest city in minnesota by population ?", "prolog": "answer(A,largest(B,(city(A),loc(A,C),const(C,stateid(minnesota)),population(A,B))))"}
+{"nl": "what is the largest city in missouri ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,stateid(missouri)))))"}
+{"nl": "what is the largest city in states that border california ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),state(B),next_to(B,C),const(C,stateid(california)))))"}
+{"nl": "what is the largest city in texas ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,stateid(texas)))))"}
+{"nl": "what is the largest city in wisconsin ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,stateid(wisconsin)))))"}
+{"nl": "what is the largest city of kansas ?", "prolog": "answer(A,largest(A,(city(A),loc(A,B),const(B,stateid(kansas)))))"}
+{"nl": "what is the largest of the states that the rio grande runs through ?", "prolog": "answer(A,largest(A,(state(A),const(B,riverid('rio grande')),traverse(B,A))))"}
+{"nl": "what is the largest state ?", "prolog": "answer(A,largest(A,state(A)))"}
+{"nl": "what is the largest state bordering texas ?", "prolog": "answer(A,largest(A,(state(A),next_to(A,B),const(B,stateid(texas)))))"}
+{"nl": "what is the largest state capital in population ?", "prolog": "answer(A,largest(B,(state(C),capital(C,A),population(A,B))))"}
+{"nl": "what is the largest state in the us ?", "prolog": "answer(A,largest(A,(state(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the largest state in usa ?", "prolog": "answer(A,largest(A,(state(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the largest state that borders california ?", "prolog": "answer(A,largest(A,(state(A),next_to(A,B),const(B,stateid(california)))))"}
+{"nl": "what is the largest state that borders the state with the highest population ?", "prolog": "answer(A,largest(A,(state(A),next_to(A,B),largest(C,(state(B),population(B,C))))))"}
+{"nl": "what is the largest state that borders the state with the lowest point in the usa ?", "prolog": "answer(A,largest(A,(state(A),next_to(A,B),state(B),loc(C,B),lowest(C,(place(C),loc(C,D),const(D,countryid(usa)))))))"}
+{"nl": "what is the largest state traversed by the mississippi river ?", "prolog": "answer(A,largest(A,(state(A),traverse(B,A),const(B,riverid(mississippi)))))"}
+{"nl": "what is the length of the colorado river in texas ?", "prolog": "answer(A,(len(B,A),const(B,riverid(colorado)),river(B),loc(B,C),const(C,stateid(texas))))"}
+{"nl": "what is the length of the longest river in the usa ?", "prolog": "answer(A,(len(B,A),longest(B,(river(B),loc(B,C),const(C,countryid(usa))))))"}
+{"nl": "what is the length of the river that runs through the most number of states ?", "prolog": "answer(A,(len(B,A),most(B,C,(river(B),traverse(B,C),state(C)))))"}
+{"nl": "what is the length of the river that traverses the most states ?", "prolog": "answer(A,(len(B,A),most(B,C,(river(B),traverse(B,C),state(C)))))"}
+{"nl": "what is the longest river ?", "prolog": "answer(A,longest(A,river(A)))"}
+{"nl": "what is the longest river flowing through new york ?", "prolog": "answer(A,longest(A,(river(A),traverse(A,B),const(B,stateid('new york')))))"}
+{"nl": "what is the longest river in america ?", "prolog": "answer(A,longest(A,(river(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the longest river in california ?", "prolog": "answer(A,longest(A,(river(A),loc(A,B),const(B,stateid(california)))))"}
+{"nl": "what is the longest river in mississippi ?", "prolog": "answer(A,longest(A,(river(A),loc(A,B),const(B,stateid(mississippi)))))"}
+{"nl": "what is the longest river in new york ?", "prolog": "answer(A,longest(A,(river(A),loc(A,B),const(B,stateid('new york')))))"}
+{"nl": "what is the longest river in pennsylvania ?", "prolog": "answer(A,longest(A,(river(A),loc(A,B),const(B,stateid(pennsylvania)))))"}
+{"nl": "what is the longest river in texas ?", "prolog": "answer(A,longest(A,(river(A),loc(A,B),const(B,stateid(texas)))))"}
+{"nl": "what is the longest river in the smallest state in the usa ?", "prolog": "answer(A,longest(A,(river(A),loc(A,B),smallest(B,(state(B),loc(B,C),const(C,countryid(usa)))))))"}
+{"nl": "what is the longest river in the state with the highest point ?", "prolog": "answer(A,longest(A,(river(A),loc(A,B),state(B),loc(C,B),highest(C,place(C)))))"}
+{"nl": "what is the longest river in the united states ?", "prolog": "answer(A,longest(A,(river(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the longest river in the us ?", "prolog": "answer(A,longest(A,(river(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the longest river that does not run through texas ?", "prolog": "answer(A,longest(A,(river(A),not((traverse(A,B),const(B,stateid(texas)))))))"}
+{"nl": "what is the longest river that flows through colorado ?", "prolog": "answer(A,longest(A,(river(A),traverse(A,B),const(B,stateid(colorado)))))"}
+{"nl": "what is the longest river that passes the states that border the state that borders the most states ?", "prolog": "answer(A,longest(A,(river(A),traverse(A,B),state(B),next_to(B,C),most(C,D,(state(C),next_to(C,D),state(D))))))"}
+{"nl": "what is the longest river that runs through a state that borders tennessee ?", "prolog": "answer(A,longest(A,(river(A),traverse(A,B),state(B),next_to(B,C),const(C,stateid(tennessee)))))"}
+{"nl": "what is the lowest elevation in pennsylvania ?", "prolog": "answer(A,lowest(A,(place(A),loc(A,B),const(B,stateid(pennsylvania)))))"}
+{"nl": "what is the lowest point in california ?", "prolog": "answer(A,lowest(A,(place(A),loc(A,B),const(B,stateid(california)))))"}
+{"nl": "what is the lowest point in louisiana ?", "prolog": "answer(A,lowest(A,(place(A),loc(A,B),const(B,stateid(louisiana)))))"}
+{"nl": "what is the lowest point in oregon ?", "prolog": "answer(A,lowest(A,(place(A),loc(A,B),const(B,stateid(oregon)))))"}
+{"nl": "what is the lowest point in texas ?", "prolog": "answer(A,lowest(A,(place(A),loc(A,B),const(B,stateid(texas)))))"}
+{"nl": "what is the lowest point in the state of texas ?", "prolog": "answer(A,lowest(A,(place(A),loc(A,B),state(B),const(B,stateid(texas)))))"}
+{"nl": "what is the lowest point in the united states ?", "prolog": "answer(A,lowest(A,(place(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the lowest point in wisconsin ?", "prolog": "answer(A,lowest(A,(place(A),loc(A,B),const(B,stateid(wisconsin)))))"}
+{"nl": "what is the lowest point of colorado ?", "prolog": "answer(A,lowest(A,(place(A),loc(A,B),const(B,stateid(colorado)))))"}
+{"nl": "what is the lowest point of the state with the largest area ?", "prolog": "answer(A,lowest(A,(place(A),loc(A,B),largest(C,(state(B),area(B,C))))))"}
+{"nl": "what is the lowest point of the us ?", "prolog": "answer(A,lowest(A,(place(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the major cities in montana ?", "prolog": "answer(A,(major(A),city(A),loc(A,B),const(B,stateid(montana))))"}
+{"nl": "what is the most populated capital in the usa ?", "prolog": "answer(A,largest(B,(population(A,B),capital(A),loc(A,C),const(C,countryid(usa)))))"}
+{"nl": "what is the most populated state bordering oklahoma ?", "prolog": "answer(A,largest(B,(population(A,B),state(A),next_to(A,C),const(C,stateid(oklahoma)))))"}
+{"nl": "what is the most populous city in texas ?", "prolog": "answer(B,largest(A,(population(B,A),city(B),loc(B,C),const(C,stateid(texas)))))"}
+{"nl": "what is the most populous city in wyoming ?", "prolog": "answer(A,largest(B,(population(A,B),city(A),loc(A,C),const(C,stateid(wyoming)))))"}
+{"nl": "what is the most populous state in the us ?", "prolog": "answer(A,largest(B,(population(A,B),state(A),loc(A,C),const(C,countryid(usa)))))"}
+{"nl": "what is the name of the state with the lowest point ?", "prolog": "answer(A,(state(A),loc(B,A),lowest(B,place(B))))"}
+{"nl": "what is the number of neighboring states for kentucky ?", "prolog": "answer(A,count(B,(state(B),next_to(B,C),const(C,stateid(kentucky))),A))"}
+{"nl": "what is the population density in the state with capital austin ?", "prolog": "answer(A,(density(B,A),state(B),loc(C,B),capital(C),const(C,cityid(austin,_))))"}
+{"nl": "what is the population density of south dakota ?", "prolog": "answer(A,(density(B,A),const(B,stateid('south dakota'))))"}
+{"nl": "what is the population density of texas ?", "prolog": "answer(A,(density(B,A),const(B,stateid(texas))))"}
+{"nl": "what is the population density of the smallest state ?", "prolog": "answer(A,(density(B,A),smallest(B,state(B))))"}
+{"nl": "what is the population density of the state with the smallest area ?", "prolog": "answer(A,(density(B,A),smallest(C,(state(B),area(B,C)))))"}
+{"nl": "what is the population density of the state with the smallest population ?", "prolog": "answer(A,(density(B,A),smallest(C,(state(B),population(B,C)))))"}
+{"nl": "what is the population density of wyoming ?", "prolog": "answer(A,(density(B,A),const(B,stateid(wyoming))))"}
+{"nl": "what is the population in boston ?", "prolog": "answer(A,(population(B,A),const(B,cityid(boston,_))))"}
+{"nl": "what is the population of arizona ?", "prolog": "answer(A,(population(B,A),const(B,stateid(arizona))))"}
+{"nl": "what is the population of atlanta ?", "prolog": "answer(A,(population(B,A),const(B,cityid(atlanta,_))))"}
+{"nl": "what is the population of atlanta ga ?", "prolog": "answer(A,(population(B,A),const(B,cityid(atlanta,_))))"}
+{"nl": "what is the population of austin ?", "prolog": "answer(A,(population(B,A),const(B,cityid(austin,_))))"}
+{"nl": "what is the population of austin texas ?", "prolog": "answer(A,(population(B,A),const(B,cityid(austin,tx))))"}
+{"nl": "what is the population of boston massachusetts ?", "prolog": "answer(A,(population(B,A),const(B,cityid(boston,ma))))"}
+{"nl": "what is the population of california ?", "prolog": "answer(A,(population(B,A),const(B,stateid(california))))"}
+{"nl": "what is the population of dallas ?", "prolog": "answer(A,(population(B,A),const(B,cityid(dallas,_))))"}
+{"nl": "what is the population of denver ?", "prolog": "answer(A,(population(B,A),const(B,cityid(denver,_))))"}
+{"nl": "what is the population of idaho ?", "prolog": "answer(A,(population(B,A),const(B,stateid(idaho))))"}
+{"nl": "what is the population of illinois ?", "prolog": "answer(A,(population(B,A),const(B,stateid(illinois))))"}
+{"nl": "what is the population of maine ?", "prolog": "answer(A,(population(B,A),const(B,stateid(maine))))"}
+{"nl": "what is the population of minnesota ?", "prolog": "answer(A,(population(B,A),const(B,stateid(minnesota))))"}
+{"nl": "what is the population of montana ?", "prolog": "answer(A,(population(B,A),const(B,stateid(montana))))"}
+{"nl": "what is the population of new york ?", "prolog": "answer(A,(population(B,A),const(B,stateid('new york'))))"}
+{"nl": "what is the population of oregon ?", "prolog": "answer(A,(population(B,A),const(B,stateid(oregon))))"}
+{"nl": "what is the population of portland maine ?", "prolog": "answer(A,(population(B,A),const(B,cityid(portland,me))))"}
+{"nl": "what is the population of rhode island ?", "prolog": "answer(A,(population(B,A),const(B,stateid('rhode island'))))"}
+{"nl": "what is the population of sacramento ?", "prolog": "answer(A,(population(B,A),const(B,cityid(sacramento,_))))"}
+{"nl": "what is the population of seattle ?", "prolog": "answer(A,(population(B,A),const(B,cityid(seattle,_))))"}
+{"nl": "what is the population of seattle washington ?", "prolog": "answer(A,(population(B,A),const(B,cityid(seattle,wa))))"}
+{"nl": "what is the population of south dakota ?", "prolog": "answer(A,(population(B,A),const(B,stateid('south dakota'))))"}
+{"nl": "what is the population of springfield missouri ?", "prolog": "answer(A,(population(B,A),const(B,cityid(springfield,mo))))"}
+{"nl": "what is the population of springfield south dakota ?", "prolog": "answer(A,(population(B,A),const(B,cityid(springfield,sd))))"}
+{"nl": "what is the population of texas ?", "prolog": "answer(A,(population(B,A),const(B,stateid(texas))))"}
+{"nl": "what is the population of the capital of the largest state ?", "prolog": "answer(A,(population(B,A),capital(B),loc(B,C),largest(C,state(C))))"}
+{"nl": "what is the population of the capital of the largest state through which the mississippi runs ?", "prolog": "answer(A,(population(B,A),capital(B),loc(B,C),largest(C,(state(C),const(D,riverid(mississippi)),traverse(D,C)))))"}
+{"nl": "what is the population of the capital of the smallest state ?", "prolog": "answer(A,(population(B,A),capital(B),loc(B,C),smallest(C,state(C))))"}
+{"nl": "what is the population of the largest state ?", "prolog": "answer(A,(population(B,A),largest(B,state(B))))"}
+{"nl": "what is the population of the largest state that borders texas ?", "prolog": "answer(A,(population(B,A),largest(B,(state(B),next_to(B,C),const(C,stateid(texas))))))"}
+{"nl": "what is the population of the major cities in wisconsin ?", "prolog": "answer(A,(population(B,A),major(B),city(B),loc(B,C),const(C,stateid(wisconsin))))"}
+{"nl": "what is the population of the state with the largest area ?", "prolog": "answer(A,(population(B,A),largest(C,(state(B),area(B,C)))))"}
+{"nl": "what is the population of washington dc ?", "prolog": "answer(A,(population(B,A),const(B,cityid(washington,dc))))"}
+{"nl": "what is the river that cross over ohio ?", "prolog": "answer(A,(river(A),traverse(A,B),const(B,stateid(ohio))))"}
+{"nl": "what is the shortest river ?", "prolog": "answer(A,shortest(A,river(A)))"}
+{"nl": "what is the shortest river in alaska ?", "prolog": "answer(A,shortest(A,(river(A),loc(A,B),const(B,stateid(alaska)))))"}
+{"nl": "what is the shortest river in iowa ?", "prolog": "answer(A,shortest(A,(river(A),loc(A,B),const(B,stateid(iowa)))))"}
+{"nl": "what is the shortest river in nebraska ?", "prolog": "answer(A,shortest(A,(river(A),loc(A,B),const(B,stateid(nebraska)))))"}
+{"nl": "what is the shortest river in texas ?", "prolog": "answer(A,shortest(A,(river(A),loc(A,B),const(B,stateid(texas)))))"}
+{"nl": "what is the shortest river in the united states ?", "prolog": "answer(A,shortest(A,(river(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the shortest river in the us ?", "prolog": "answer(A,shortest(A,(river(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the shortest river in the usa ?", "prolog": "answer(A,shortest(A,(river(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the size of california ?", "prolog": "answer(A,(size(B,A),const(B,stateid(california))))"}
+{"nl": "what is the size of florida ?", "prolog": "answer(A,(size(B,A),const(B,stateid(florida))))"}
+{"nl": "what is the size of texas ?", "prolog": "answer(A,(size(B,A),const(B,stateid(texas))))"}
+{"nl": "what is the size of the capital of texas ?", "prolog": "answer(A,(size(B,A),capital(B),loc(B,C),const(C,stateid(texas))))"}
+{"nl": "what is the size of the largest state in the usa ?", "prolog": "answer(A,(size(B,A),largest(B,(state(B),loc(B,C),const(C,countryid(usa))))))"}
+{"nl": "what is the smallest city in alaska ?", "prolog": "answer(A,smallest(A,(city(A),loc(A,B),const(B,stateid(alaska)))))"}
+{"nl": "what is the smallest city in arkansas ?", "prolog": "answer(A,smallest(A,(city(A),loc(A,B),const(B,stateid(arkansas)))))"}
+{"nl": "what is the smallest city in hawaii ?", "prolog": "answer(A,smallest(A,(city(A),loc(A,B),const(B,stateid(hawaii)))))"}
+{"nl": "what is the smallest city in the largest state ?", "prolog": "answer(A,smallest(A,(city(A),loc(A,B),largest(B,state(B)))))"}
+{"nl": "what is the smallest city in washington ?", "prolog": "answer(A,smallest(A,(city(A),loc(A,B),const(B,stateid(washington)))))"}
+{"nl": "what is the smallest city of the smallest state in the us ?", "prolog": "answer(A,smallest(A,(city(A),loc(A,B),smallest(B,(state(B),loc(B,C),const(C,countryid(usa)))))))"}
+{"nl": "what is the smallest state bordering ohio ?", "prolog": "answer(A,smallest(A,(state(A),next_to(A,B),const(B,stateid(ohio)))))"}
+{"nl": "what is the smallest state by area ?", "prolog": "answer(A,smallest(B,(state(A),area(A,B))))"}
+{"nl": "what is the smallest state in the usa ?", "prolog": "answer(A,smallest(A,(state(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the smallest state that borders texas ?", "prolog": "answer(A,smallest(A,(state(A),next_to(A,B),const(B,stateid(texas)))))"}
+{"nl": "what is the smallest state through which the longest river runs ?", "prolog": "answer(A,smallest(A,(state(A),longest(B,river(B)),traverse(B,A))))"}
+{"nl": "what is the state that contains the highest point ?", "prolog": "answer(A,(state(A),loc(B,A),highest(B,place(B))))"}
+{"nl": "what is the state with the highest elevation in the united states ?", "prolog": "answer(A,(state(A),loc(B,A),highest(B,(place(B),loc(B,C),const(C,countryid(usa))))))"}
+{"nl": "what is the state with the largest density in usa ?", "prolog": "answer(A,largest(B,(state(A),density(A,B),loc(A,C),const(C,countryid(usa)))))"}
+{"nl": "what is the state with the largest population density ?", "prolog": "answer(A,largest(B,(state(A),density(A,B))))"}
+{"nl": "what is the state with the lowest point ?", "prolog": "answer(A,(state(A),loc(B,A),lowest(B,place(B))))"}
+{"nl": "what is the state with the lowest population ?", "prolog": "answer(A,smallest(B,(state(A),population(A,B))))"}
+{"nl": "what is the state with the lowest population density ?", "prolog": "answer(A,smallest(B,(state(A),density(A,B))))"}
+{"nl": "what is the tallest mountain in america ?", "prolog": "answer(A,highest(A,(mountain(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the tallest mountain in the united states ?", "prolog": "answer(A,highest(A,(mountain(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what is the total area of the usa ?", "prolog": "answer(A,(area(B,A),const(B,countryid(usa))))"}
+{"nl": "what is the total population of the states that border texas ?", "prolog": "answer(A,sum(B,(population(C,B),state(C),next_to(D,C),const(D,stateid(texas))),A))"}
+{"nl": "what major rivers run through illinois ?", "prolog": "answer(A,(major(A),river(A),traverse(A,B),const(B,stateid(illinois))))"}
+{"nl": "what mountains are in alaska ?", "prolog": "answer(A,(mountain(A),loc(A,B),const(B,stateid(alaska))))"}
+{"nl": "what river flows through kansas ?", "prolog": "answer(A,(river(A),traverse(A,B),const(B,stateid(kansas))))"}
+{"nl": "what river flows through texas ?", "prolog": "answer(A,(river(A),traverse(A,B),const(B,stateid(texas))))"}
+{"nl": "what river is the longest one in the united states ?", "prolog": "answer(A,longest(A,(river(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "what river runs through illinois ?", "prolog": "answer(A,(river(A),traverse(A,B),const(B,stateid(illinois))))"}
+{"nl": "what river runs through the most states ?", "prolog": "answer(A,most(A,B,(river(A),traverse(A,B),state(B))))"}
+{"nl": "what river runs through virginia ?", "prolog": "answer(A,(river(A),traverse(A,B),const(B,stateid(virginia))))"}
+{"nl": "what river traverses the most states ?", "prolog": "answer(A,most(A,B,(river(A),traverse(A,B),state(B))))"}
+{"nl": "what rivers are in nevada ?", "prolog": "answer(A,(river(A),loc(A,B),const(B,stateid(nevada))))"}
+{"nl": "what rivers are in new mexico ?", "prolog": "answer(A,(river(A),loc(A,B),const(B,stateid('new mexico'))))"}
+{"nl": "what rivers are in oregon ?", "prolog": "answer(A,(river(A),loc(A,B),const(B,stateid(oregon))))"}
+{"nl": "what rivers are in utah ?", "prolog": "answer(A,(river(A),loc(A,B),const(B,stateid(utah))))"}
+{"nl": "what rivers do not run through tennessee ?", "prolog": "answer(A,(river(A),not((traverse(A,B),const(B,stateid(tennessee))))))"}
+{"nl": "what rivers flow through colorado ?", "prolog": "answer(A,(river(A),traverse(A,B),const(B,stateid(colorado))))"}
+{"nl": "what rivers flow through missouri ?", "prolog": "answer(A,(river(A),traverse(A,B),const(B,stateid(missouri))))"}
+{"nl": "what rivers flow through states that alabama borders ?", "prolog": "answer(A,(river(A),traverse(A,B),state(B),const(C,stateid(alabama)),next_to(C,B)))"}
+{"nl": "what rivers flow through states that border the state with the largest population ?", "prolog": "answer(A,(river(A),traverse(A,B),state(B),next_to(B,C),largest(D,(state(C),population(C,D)))))"}
+{"nl": "what rivers flow through the largest state ?", "prolog": "answer(A,(river(A),traverse(A,B),largest(B,state(B))))"}
+{"nl": "what rivers flow through the state with the largest population ?", "prolog": "answer(A,(river(A),traverse(A,B),largest(C,(state(B),population(B,C)))))"}
+{"nl": "what rivers run through arizona ?", "prolog": "answer(A,(river(A),traverse(A,B),const(B,stateid(arizona))))"}
+{"nl": "what rivers run through austin texas ?", "prolog": "answer(A,(river(A),traverse(A,B),const(B,cityid(austin,tx))))"}
+{"nl": "what rivers run through colorado ?", "prolog": "answer(A,(river(A),traverse(A,B),const(B,stateid(colorado))))"}
+{"nl": "what rivers run through louisiana ?", "prolog": "answer(A,(river(A),traverse(A,B),const(B,stateid(louisiana))))"}
+{"nl": "what rivers run through maine ?", "prolog": "answer(A,(river(A),traverse(A,B),const(B,stateid(maine))))"}
+{"nl": "what rivers run through the state with the lowest point in the usa ?", "prolog": "answer(A,(river(A),traverse(A,B),state(B),loc(C,B),lowest(C,(place(C),loc(C,D),const(D,countryid(usa))))))"}
+{"nl": "what rivers run through the states that border the state with the capital atlanta ?", "prolog": "answer(A,(river(A),traverse(A,B),state(B),next_to(B,C),state(C),loc(D,C),capital(D),const(D,cityid(atlanta,_))))"}
+{"nl": "what rivers run through west virginia ?", "prolog": "answer(A,(river(A),traverse(A,B),const(B,stateid('west virginia'))))"}
+{"nl": "what state 's capital is dover ?", "prolog": "answer(A,(state(A),capital(A,B),const(B,cityid(dover,_))))"}
+{"nl": "what state 's high point is higher than that of colorado ?", "prolog": "answer(A,(state(A),high_point(A,B),higher(B,C),high_point(D,C),const(D,stateid(colorado))))"}
+{"nl": "what state borders michigan ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(michigan))))"}
+{"nl": "what state borders most other states ?", "prolog": "answer(A,most(A,B,(state(A),next_to(A,B),state(B))))"}
+{"nl": "what state borders the least states ?", "prolog": "answer(A,fewest(A,B,(state(A),next_to(A,B),state(B))))"}
+{"nl": "what state borders the least states excluding alaska and excluding hawaii ?", "prolog": "answer(A,fewest(A,B,(state(A),next_to(A,B),state(B),not((const(A,stateid(alaska)))),not((const(A,stateid(hawaii)))))))"}
+{"nl": "what state borders the state with the smallest population ?", "prolog": "answer(A,(state(A),next_to(A,B),smallest(C,(state(B),population(B,C)))))"}
+{"nl": "what state contains the highest point in the us ?", "prolog": "answer(A,(state(A),loc(B,A),highest(B,(place(B),loc(B,C),const(C,countryid(usa))))))"}
+{"nl": "what state has highest elevation ?", "prolog": "answer(A,(state(A),loc(B,A),highest(B,place(B))))"}
+{"nl": "what state has no rivers ?", "prolog": "answer(A,(state(A),not((loc(B,A),river(B)))))"}
+{"nl": "what state has the capital salem ?", "prolog": "answer(A,(state(A),loc(B,A),capital(B),const(B,cityid(salem,_))))"}
+{"nl": "what state has the city flint ?", "prolog": "answer(A,(state(A),loc(B,A),city(B),const(B,cityid(flint,_))))"}
+{"nl": "what state has the city with the largest population ?", "prolog": "answer(A,(state(A),loc(B,A),largest(C,(city(B),population(B,C)))))"}
+{"nl": "what state has the city with the most population ?", "prolog": "answer(A,(state(A),loc(B,A),largest(C,(city(B),population(B,C)))))"}
+{"nl": "what state has the greatest population density ?", "prolog": "answer(A,largest(B,(state(A),density(A,B))))"}
+{"nl": "what state has the highest elevation ?", "prolog": "answer(A,(state(A),loc(B,A),highest(B,(place(B)))))"}
+{"nl": "what state has the highest population ?", "prolog": "answer(A,largest(B,(state(A),population(A,B))))"}
+{"nl": "what state has the highest population density ?", "prolog": "answer(A,largest(B,(state(A),density(A,B))))"}
+{"nl": "what state has the largest city ?", "prolog": "answer(A,(state(A),loc(B,A),largest(B,(city(B)))))"}
+{"nl": "what state has the largest population ?", "prolog": "answer(A,largest(B,(state(A),population(A,B))))"}
+{"nl": "what state has the largest population density ?", "prolog": "answer(A,largest(B,(state(A),density(A,B))))"}
+{"nl": "what state has the largest urban population ?", "prolog": "answer(A,largest(B,(state(A),population(A,B))))"}
+{"nl": "what state has the least population density ?", "prolog": "answer(A,smallest(B,(state(A),density(A,B))))"}
+{"nl": "what state has the most cities ?", "prolog": "answer(A,most(A,B,(state(A),loc(B,A),city(B))))"}
+{"nl": "what state has the most major rivers running through it ?", "prolog": "answer(A,most(A,B,(state(A),major(B),river(B),traverse(B,A))))"}
+{"nl": "what state has the most people ?", "prolog": "answer(A,largest(B,(state(A),population(A,B))))"}
+{"nl": "what state has the most rivers running through it ?", "prolog": "answer(A,most(A,B,(state(A),river(B),traverse(B,A))))"}
+{"nl": "what state has the shortest river ?", "prolog": "answer(A,(state(A),loc(B,A),shortest(B,river(B))))"}
+{"nl": "what state has the smallest area ?", "prolog": "answer(A,smallest(B,(state(A),area(A,B))))"}
+{"nl": "what state has the smallest capital ?", "prolog": "answer(A,(state(A),loc(B,A),smallest(B,capital(B))))"}
+{"nl": "what state has the smallest population ?", "prolog": "answer(A,smallest(B,(state(A),population(A,B))))"}
+{"nl": "what state has the smallest population density ?", "prolog": "answer(A,smallest(B,(state(A),density(A,B))))"}
+{"nl": "what state has the sparsest population density ?", "prolog": "answer(A,smallest(B,(state(A),density(A,B))))"}
+{"nl": "what state is austin the capital of ?", "prolog": "answer(A,(state(A),const(B,cityid(austin,_)),capital(B),loc(B,A)))"}
+{"nl": "what state is boston in ?", "prolog": "answer(A,(state(A),const(B,cityid(boston,_)),loc(B,A)))"}
+{"nl": "what state is columbus the capital of ?", "prolog": "answer(A,(state(A),const(B,cityid(columbus,_)),capital(B),loc(B,A)))"}
+{"nl": "what state is dallas in ?", "prolog": "answer(A,(state(A),const(B,cityid(dallas,_)),loc(B,A)))"}
+{"nl": "what state is des moines located in ?", "prolog": "answer(A,(state(A),const(B,cityid('des moines',_)),loc(B,A)))"}
+{"nl": "what state is pittsburgh in ?", "prolog": "answer(A,(state(A),const(B,cityid(pittsburgh,_)),loc(B,A)))"}
+{"nl": "what state is the biggest ?", "prolog": "answer(A,largest(A,state(A)))"}
+{"nl": "what state is the state with the most rivers ?", "prolog": "answer(A,(state(A),most(A,B,(state(A),loc(B,A),river(B)))))"}
+{"nl": "what state that borders texas has the highest population ?", "prolog": "answer(A,largest(B,(state(A),next_to(A,C),const(C,stateid(texas)),population(A,B))))"}
+{"nl": "what state that borders texas is the largest ?", "prolog": "answer(A,largest(A,(state(A),next_to(A,B),const(B,stateid(texas)))))"}
+{"nl": "what state which the mississippi runs through has the largest population ?", "prolog": "answer(A,largest(B,(state(A),const(C,riverid(mississippi)),traverse(C,A),population(A,B))))"}
+{"nl": "what states are next to texas ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(texas))))"}
+{"nl": "what states are next to the mississippi ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(mississippi))))"}
+{"nl": "what states border alaska ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(alaska))))"}
+{"nl": "what states border arkansas ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(arkansas))))"}
+{"nl": "what states border delaware ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(delaware))))"}
+{"nl": "what states border georgia ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(georgia))))"}
+{"nl": "what states border hawaii ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(hawaii))))"}
+{"nl": "what states border kentucky ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(kentucky))))"}
+{"nl": "what states border missouri ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(missouri))))"}
+{"nl": "what states border new hampshire ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid('new hampshire'))))"}
+{"nl": "what states border ohio ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(ohio))))"}
+{"nl": "what states border rhode island ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid('rhode island'))))"}
+{"nl": "what states border states that border colorado ?", "prolog": "answer(A,(state(A),next_to(A,B),state(B),next_to(B,C),const(C,stateid(colorado))))"}
+{"nl": "what states border states that border states that border florida ?", "prolog": "answer(A,(state(A),next_to(A,B),state(B),next_to(B,C),state(C),next_to(C,D),const(D,stateid(florida))))"}
+{"nl": "what states border states that border states that border states that border texas ?", "prolog": "answer(A,(state(A),next_to(A,B),state(B),next_to(B,C),state(C),next_to(C,D),state(D),next_to(D,E),const(E,stateid(texas))))"}
+{"nl": "what states border states that border the state with the largest population ?", "prolog": "answer(A,(state(A),next_to(A,B),state(B),next_to(B,C),largest(D,(state(C),population(C,D)))))"}
+{"nl": "what states border states that the mississippi runs through ?", "prolog": "answer(A,(state(A),next_to(A,B),state(B),const(C,riverid(mississippi)),traverse(C,B)))"}
+{"nl": "what states border states which the mississippi runs through ?", "prolog": "answer(A,(state(A),next_to(A,B),state(B),const(C,riverid(mississippi)),traverse(C,B)))"}
+{"nl": "what states border texas ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(texas))))"}
+{"nl": "what states border the mississippi river ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,riverid(mississippi)),river(B)))"}
+{"nl": "what states border the states with the most cities ?", "prolog": "answer(A,(state(A),next_to(A,B),most(B,C,(state(B),loc(C,B),city(C)))))"}
+{"nl": "what states border wisconsin ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(wisconsin))))"}
+{"nl": "what states does the colorado river run through ?", "prolog": "answer(A,(state(A),const(B,riverid(colorado)),river(B),traverse(B,A)))"}
+{"nl": "what states does the mississippi run through ?", "prolog": "answer(A,(state(A),const(B,riverid(mississippi)),traverse(B,A)))"}
+{"nl": "what states does the missouri river run through ?", "prolog": "answer(A,(state(A),const(B,riverid(missouri)),river(B),traverse(B,A)))"}
+{"nl": "what states does the ohio river go through ?", "prolog": "answer(A,(state(A),const(B,riverid(ohio)),river(B),traverse(B,A)))"}
+{"nl": "what states does the shortest river run through ?", "prolog": "answer(A,(state(A),shortest(B,river(B)),traverse(B,A)))"}
+{"nl": "what states have a capital that is the highest point in the state ?", "prolog": "answer(A,(state(A),loc(B,A),capital(B),highest(B,(place(B)))))"}
+{"nl": "what states have a city named austin ?", "prolog": "answer(A,(state(A),loc(B,A),const(B,cityid(austin,_))))"}
+{"nl": "what states have cities named austin ?", "prolog": "answer(A,(state(A),loc(B,A),city(B),const(B,cityid(austin,_))))"}
+{"nl": "what states have no bordering state ?", "prolog": "answer(A,(state(A),not((next_to(A,B),state(B)))))"}
+{"nl": "what states have rivers named colorado ?", "prolog": "answer(A,(state(A),loc(B,A),const(B,riverid(colorado))))"}
+{"nl": "what states have rivers running through them ?", "prolog": "answer(A,(state(A),river(B),traverse(B,A)))"}
+{"nl": "what states have towns named springfield ?", "prolog": "answer(A,(state(A),loc(B,A),const(B,cityid(springfield,_))))"}
+{"nl": "what states in the united states have a city of springfield ?", "prolog": "answer(A,(state(A),loc(A,B),const(B,countryid(usa)),loc(C,A),const(C,cityid(springfield,_))))"}
+{"nl": "what states neighbor maine ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(maine))))"}
+{"nl": "what texas city has the largest population ?", "prolog": "answer(A,largest(B,(const(C,stateid(texas)),city(A),loc(A,C),population(A,B))))"}
+{"nl": "where is austin ?", "prolog": "answer(A,(loc(B,A),const(B,cityid(austin,_))))"}
+{"nl": "where is baton rouge ?", "prolog": "answer(A,(loc(B,A),const(B,cityid('baton rouge',_))))"}
+{"nl": "where is fort wayne ?", "prolog": "answer(A,(loc(B,A),const(B,cityid('fort wayne',_))))"}
+{"nl": "where is houston ?", "prolog": "answer(A,(loc(B,A),const(B,cityid(houston,_))))"}
+{"nl": "where is indianapolis ?", "prolog": "answer(A,(loc(B,A),const(B,cityid(indianapolis,_))))"}
+{"nl": "where is massachusetts ?", "prolog": "answer(A,(loc(B,A),const(B,stateid(massachusetts))))"}
+{"nl": "where is mount whitney ?", "prolog": "answer(A,(loc(B,A),const(B,placeid('mount whitney'))))"}
+{"nl": "where is mount whitney located ?", "prolog": "answer(A,(loc(B,A),const(B,placeid('mount whitney'))))"}
+{"nl": "where is new hampshire ?", "prolog": "answer(A,(loc(B,A),const(B,stateid('new hampshire'))))"}
+{"nl": "where is new orleans ?", "prolog": "answer(A,(loc(B,A),const(B,cityid('new orleans',_))))"}
+{"nl": "where is san diego ?", "prolog": "answer(A,(loc(B,A),const(B,cityid('san diego',_))))"}
+{"nl": "where is san jose ?", "prolog": "answer(A,(loc(B,A),const(B,cityid('san jose',_))))"}
+{"nl": "where is scotts valley ?", "prolog": "answer(A,(loc(B,A),const(B,cityid('scotts valley',_))))"}
+{"nl": "where is springfield ?", "prolog": "answer(A,(loc(B,A),const(B,cityid(springfield,_))))"}
+{"nl": "where is the highest point in montana ?", "prolog": "answer(A,highest(A,(place(A),loc(A,B),const(B,stateid(montana)))))"}
+{"nl": "where is the lowest point in the us ?", "prolog": "answer(A,lowest(A,(place(A),loc(A,B),const(B,countryid(usa)))))"}
+{"nl": "where is the lowest spot in iowa ?", "prolog": "answer(A,lowest(A,(place(A),loc(A,B),const(B,stateid(iowa)))))"}
+{"nl": "which capitals are in the states that border texas ?", "prolog": "answer(A,(capital(A),loc(A,B),state(B),next_to(B,C),const(C,stateid(texas))))"}
+{"nl": "which capitals are not major cities ?", "prolog": "answer(A,(capital(A),not((major(A),city(A)))))"}
+{"nl": "which is the lowest point of the states that the mississippi runs through ?", "prolog": "answer(B,lowest(B,(place(B),loc(B,A),state(A),const(C,riverid(mississippi)),traverse(C,A))))"}
+{"nl": "which is the shortest river ?", "prolog": "answer(A,shortest(A,river(A)))"}
+{"nl": "which river runs through the most states ?", "prolog": "answer(A,most(A,B,(river(A),traverse(A,B),state(B))))"}
+{"nl": "which rivers are in alaska ?", "prolog": "answer(A,(river(A),loc(A,B),const(B,stateid(alaska))))"}
+{"nl": "which rivers flow through alaska ?", "prolog": "answer(A,(river(A),traverse(A,B),const(B,stateid(alaska))))"}
+{"nl": "which rivers run through states bordering new mexico ?", "prolog": "answer(A,(river(A),traverse(A,B),state(B),next_to(B,C),const(C,stateid('new mexico'))))"}
+{"nl": "which rivers run through the state with the largest city in the us ?", "prolog": "answer(A,(river(A),traverse(A,B),state(B),loc(C,B),largest(C,(city(C),loc(C,D),const(D,countryid(usa))))))"}
+{"nl": "which rivers run through the state with the lowest elevation in the usa ?", "prolog": "answer(A,(river(A),traverse(A,B),state(B),loc(C,B),lowest(C,(place(C),loc(C,D),const(D,countryid(usa))))))"}
+{"nl": "which state border kentucky ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(kentucky))))"}
+{"nl": "which state borders florida ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(florida))))"}
+{"nl": "which state borders most states ?", "prolog": "answer(A,most(A,B,(state(A),next_to(A,B),state(B))))"}
+{"nl": "which state contains most rivers ?", "prolog": "answer(A,most(A,B,(state(A),loc(B,A),river(B))))"}
+{"nl": "which state has the greatest density ?", "prolog": "answer(A,largest(B,(state(A),density(A,B))))"}
+{"nl": "which state has the highest peak in the country ?", "prolog": "answer(A,(state(A),loc(B,A),highest(B,(mountain(B)))))"}
+{"nl": "which state has the largest city ?", "prolog": "answer(A,(state(A),loc(B,A),largest(B,(city(B)))))"}
+{"nl": "which state has the largest density ?", "prolog": "answer(A,largest(B,(state(A),density(A,B))))"}
+{"nl": "which state has the least population density ?", "prolog": "answer(A,smallest(B,(state(A),density(A,B))))"}
+{"nl": "which state has the longest river ?", "prolog": "answer(A,(state(A),loc(B,A),longest(B,(river(B)))))"}
+{"nl": "which state has the most people ?", "prolog": "answer(A,largest(B,(state(A),population(A,B))))"}
+{"nl": "which state has the most rivers running through it ?", "prolog": "answer(A,most(A,B,(state(A),river(B),traverse(B,A))))"}
+{"nl": "which state has the red river ?", "prolog": "answer(A,(state(A),loc(B,A),const(B,riverid(red)),river(B)))"}
+{"nl": "which state has the smallest area that borders texas ?", "prolog": "answer(A,smallest(B,(state(A),area(A,B),next_to(A,C),const(C,stateid(texas)))))"}
+{"nl": "which state has the sparsest population density ?", "prolog": "answer(A,smallest(B,(state(A),density(A,B))))"}
+{"nl": "which state is kalamazoo in ?", "prolog": "answer(A,(state(A),const(B,cityid(kalamazoo,_)),loc(B,A)))"}
+{"nl": "which state is the city denver located in ?", "prolog": "answer(A,(state(A),city(B),const(B,cityid(denver,_)),loc(B,A)))"}
+{"nl": "which state is the largest city in montana in ?", "prolog": "answer(A,(state(A),largest(B,(city(B),loc(B,C),const(C,stateid(montana)))),loc(B,A)))"}
+{"nl": "which states adjoin alabama ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(alabama))))"}
+{"nl": "which states border alabama ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(alabama))))"}
+{"nl": "which states border alaska ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(alaska))))"}
+{"nl": "which states border arizona ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(arizona))))"}
+{"nl": "which states border colorado ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(colorado))))"}
+{"nl": "which states border hawaii ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(hawaii))))"}
+{"nl": "which states border iowa ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(iowa))))"}
+{"nl": "which states border michigan ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(michigan))))"}
+{"nl": "which states border new york ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid('new york'))))"}
+{"nl": "which states border no other states ?", "prolog": "answer(A,(state(A),not((next_to(A,B),state(B)))))"}
+{"nl": "which states border south dakota ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid('south dakota'))))"}
+{"nl": "which states border states through which the mississippi traverses ?", "prolog": "answer(A,(state(A),next_to(A,B),state(B),const(C,riverid(mississippi)),traverse(C,B)))"}
+{"nl": "which states border texas ?", "prolog": "answer(A,(state(A),next_to(A,B),const(B,stateid(texas))))"}
+{"nl": "which states border the longest river in the usa ?", "prolog": "answer(A,(state(A),next_to(A,B),longest(B,(river(B),loc(B,C),const(C,countryid(usa))))))"}
+{"nl": "which states do colorado river flow through ?", "prolog": "answer(A,(state(A),const(B,riverid(colorado)),river(B),traverse(B,A)))"}
+{"nl": "which states does not border texas ?", "prolog": "answer(A,(state(A),not((next_to(A,B),const(B,stateid(texas))))))"}
+{"nl": "which states does the colorado river run through ?", "prolog": "answer(A,(state(A),const(B,riverid(colorado)),traverse(B,A)))"}
+{"nl": "which states does the longest river cross ?", "prolog": "answer(A,(state(A),longest(B,river(B)),traverse(B,A)))"}
+{"nl": "which states does the mississippi river run through ?", "prolog": "answer(A,(state(A),const(B,riverid(mississippi)),river(B),traverse(B,A)))"}
+{"nl": "which states does the missouri river pass through ?", "prolog": "answer(A,(state(A),const(B,riverid(missouri)),traverse(B,A)))"}
+{"nl": "which states does the missouri river run through ?", "prolog": "answer(A,(state(A),const(B,riverid(missouri)),river(B),traverse(B,A)))"}
+{"nl": "which states have a major city named austin ?", "prolog": "answer(A,(state(A),loc(B,A),major(B),city(B),const(B,cityid(austin,_))))"}
+{"nl": "which states have points higher than the highest point in colorado ?", "prolog": "answer(A,(state(A),loc(B,A),place(B),higher(B,C),highest(C,(place(C),loc(C,D),const(D,stateid(colorado))))))"}
+{"nl": "which states have points that are higher than the highest point in texas ?", "prolog": "answer(A,(state(A),loc(B,A),higher(B,C),highest(C,(place(C),loc(C,D),const(D,stateid(texas))))))"}
+{"nl": "which states lie on the largest river in the united states ?", "prolog": "answer(A,(state(A),traverse(B,A),longest(B,(river(B),loc(B,C),const(C,countryid(usa))))))"}
